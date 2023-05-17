@@ -25,3 +25,5 @@ Soy estudiante avanzada de la Licenciatura en Diseño Industrial, actualmente me
 
 **Mateo Espósito**, tengo 19 años y soy de Villa Martelli - Buenos Aires.
 Trabajo en una veterinaria y estudio Programación Web Full Stack en digital house. Soy fanático de los autos y motos, también de los juegos de pc. Previamente estudié ingeniería informática en UADE y planeo retomar cuando finalice el curso de Digital House. 
+
+**Lucia Cejas**, tengo 23 años y soy chef patisserie de restaurantes y hoteles de primera linea, Entre mis hobbies es jugar video juegos y viajar. Vivo en Quilmes bs.as con mis mascotas.
