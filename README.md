@@ -1,4 +1,4 @@
-#PetLandia 🐶
+# PetLandia 🐶
 
 ## Tematica, descripcion y publico objetivo
 > PetLandia es un petshop online (E-Commerce) especializada en productos y servicios para mascotas. Ofrece una amplia gama de productos como alimentos, accesorios, juguetes y productos de cuidado. Está dirigido a amantes de los animales y dueños de mascotas que buscan comodidad al realizar compras desde su casa, brindándoles una experiencia de compra para satisfacer las necesidades de sus mascotas.
