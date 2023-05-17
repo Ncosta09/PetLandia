@@ -23,5 +23,5 @@ Link del tablero [PetLandia - Trello](https://trello.com/b/FJBZEvdV/proyecto-pet
 **Camila Eliana Villasuso** ,tengo 35 años y soy de Berazategui – Buenos Aires.
 Soy estudiante avanzada de la Licenciatura en Diseño Industrial, actualmente me encuentro con la tesis de la misma en desarrollo; también soy estudiante de Programación Full Stack en Digital House sin conocimientos previos. Trabajo como profesora de Estampación Textil en un centro de Formación Profesional y como profesora de Informática básica para la tercera edad en PAMI. 
 
-**Mateo Espósito**,tengo 19 años y soy de Villa Martelli - Buenos Aires.
-Trabajo en una veterinaria y estudio Programación Web Full Stack en digital house. Soy fanático de los autos y motos, también de los juegos de pc. Previamente estudié ingeniería informática en UADE y planeo retomar cuando finalice el curso de digital house. 
+**Mateo Espósito**, tengo 19 años y soy de Villa Martelli - Buenos Aires.
+Trabajo en una veterinaria y estudio Programación Web Full Stack en digital house. Soy fanático de los autos y motos, también de los juegos de pc. Previamente estudié ingeniería informática en UADE y planeo retomar cuando finalice el curso de Digital House. 
