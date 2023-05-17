@@ -19,3 +19,6 @@ Link del tablero [PetLandia - Trello](https://trello.com/b/FJBZEvdV/proyecto-pet
 **Karina Lorena Marczuk**, tengo 50 años, vivo en rancagua a 20km de pergamino, en pareja con dos hijos varones, tengo tres perros. Trabajo como secretaria de tres médicos. Estudie analista de sistemas en la UTN. Y ahora estoy actualizando mis conocimientos con Digital House.
 
 **Manuela Suárez Orozco**, tengo 26 años, vivo en Colombia – Medellín, Soy Tecnóloga en Gestión Bancaria y De Entidades Financieras, trabajo para una entidad bancaria como Asesor Integral, vivo con mis padres, mi hermano menor y con mi mascota niña. Actualmente estoy actualizando mis conocimientos con el curso de Desarrollador Web Full Stack en Digital House para cumplir mi sueño de entrar al campo de la programación.
+
+**Camila Eliana Villasuso** ,tengo 35 años y soy de Berazategui – Buenos Aires.
+Soy estudiante avanzada de la Licenciatura en Diseño Industrial, actualmente me encuentro con la tesis de la misma en desarrollo; también soy estudiante de Programación Full Stack en Digital House sin conocimientos previos. Trabajo como profesora de Estampación Textil en un centro de Formación Profesional y como profesora de Informática básica para la tercera edad en PAMI. 
