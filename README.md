@@ -17,3 +17,5 @@ Link del tablero [PetLandia - Trello](https://trello.com/b/FJBZEvdV/proyecto-pet
 **Nicolás Costa**, tengo 22 años, vivo en la provincia de Buenos Aires, trabajo como Analista de Redes y Telecomunicaciones. Soy estudiante de la Tecnicatura en Programación de la UTN y actualmente estoy cursando el curso de Desarrollador Web Full Stack en Digital House para ampliar y fortalecer mis conocimientos en el campo de la programación.
 
 **Karina Lorena Marczuk**, tengo 50 años, vivo en rancagua a 20km de pergamino, en pareja con dos hijos varones, tengo tres perros. Trabajo como secretaria de tres médicos. Estudie analista de sistemas en la UTN. Y ahora estoy actualizando mis conocimientos con Digital House.
+
+**Manuela Suárez Orozco**, tengo 26 años, vivo en Colombia – Medellín, Soy Tecnóloga en Gestión Bancaria y De Entidades Financieras, trabajo para una entidad bancaria como Asesor Integral, vivo con mis padres, mi hermano menor y con mi mascota niña. Actualmente estoy actualizando mis conocimientos con el curso de Desarrollador Web Full Stack en Digital House para cumplir mi sueño de entrar al campo de la programación.
