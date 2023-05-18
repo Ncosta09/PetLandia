@@ -27,3 +27,5 @@ Soy estudiante avanzada de la Licenciatura en Diseño Industrial, actualmente me
 Trabajo en una veterinaria y estudio Programación Web Full Stack en digital house. Soy fanático de los autos y motos, también de los juegos de pc. Previamente estudié ingeniería informática en UADE y planeo retomar cuando finalice el curso de Digital House. 
 
 **Lucia Cejas**, tengo 23 años y soy chef patisserie de restaurantes y hoteles de primera linea, Entre mis hobbies es jugar video juegos y viajar. Vivo en Quilmes bs.as con mis mascotas.
+
+**Mauro**, tengo 33 años, de la provincia de Tucumán, Técnico en Higiene y Seguridad laboral y comerciante, estudiante actualmente de Digital House, tengo un perro llamado Buddy y es un salchicha mini, muy amoroso y rompe todo!
