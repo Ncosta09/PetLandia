@@ -1,7 +1,7 @@
 # PetLandia 🐶
 
 ## Tematica, descripcion y publico objetivo
-> PetLandia es un petshop online (E-Commerce) especializada en productos y servicios para mascotas. Ofrece una amplia gama de alimentos, accesorios, juguetes y elementos para higiene. Está dirigido a amantes de los animales y dueños de mascotas que buscan comodidad al realizar sus compras desde casa, brindándoles una experiencia unica en satisfacer las necesidades de sus fieles compañeros.
+> PetLandia es un petshop online (E-Commerce) especializada en productos y servicios para mascotas. Ofrece una amplia gama de alimentos, accesorios, juguetes y elementos para higiene. Está dirigido a amantes de los animales y dueños de mascotas que buscan comodidad al realizar sus compras desde casa, brindándoles una experiencia única en satisfacer las necesidades de sus fieles compañeros.
 
 ## Paginas referentes del proyecto
 * [Puppis](https://www.puppis.com.ar/)
