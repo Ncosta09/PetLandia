@@ -13,6 +13,13 @@
 ## Tablero del proyecto
 Link del tablero [PetLandia - Trello](https://trello.com/b/FJBZEvdV/proyecto-petlandia)
 
+## Wireframes del proyecto
+[![Wireframe-1.png](https://i.postimg.cc/15HzmpXb/Wireframe-1.png)](https://postimg.cc/svMzKGpJ)
+[![Wireframe-2.png](https://i.postimg.cc/jjJK7Nqx/Wireframe-2.png)](https://postimg.cc/TyGZ8KWF)
+[![Wireframe-3.png](https://i.postimg.cc/ncLym7Ty/Wireframe-3.png)](https://postimg.cc/3WPf5ks1)
+[![Wireframe-4.png](https://i.postimg.cc/Y93PGqF2/Wireframe-4.png)](https://postimg.cc/HcrzFm3F)
+[![Wireframe-5.png](https://i.postimg.cc/vmw206LH/Wireframe-5.png)](https://postimg.cc/hXM0jv5H)
+
 ## Integrantes
 **Nicolás Costa**, tengo 22 años, vivo en la provincia de Buenos Aires, trabajo como Analista de Redes y Telecomunicaciones. Soy estudiante de la Tecnicatura en Programación de la UTN y actualmente estoy cursando el curso de Desarrollador Web Full Stack en Digital House para ampliar y fortalecer mis conocimientos en el campo de la programación.
 
