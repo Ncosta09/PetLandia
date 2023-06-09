@@ -62,6 +62,7 @@
 .main-bottom-bar ul{
     list-style: none;
     padding: 0;
+    margin-bottom: 5px;
 }
 
 .main-bottom-bar > ul{
@@ -89,6 +90,7 @@
     background-color: #75362d;
     width: 100%;
     display: none;
+    z-index: 5;
 }
 
 .nav-submenu li a{
@@ -101,4 +103,16 @@
 
 .nav-menu li:hover .nav-submenu{
     display: block;
+}
+
+.carousel-mods{
+    margin: 0;
+    top: 0;
+}
+
+.header-info{
+    height: 70px;
+    width: 100%;
+    margin-top: 5px;
+    background-color: grey;
 }
