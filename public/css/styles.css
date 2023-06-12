@@ -2,6 +2,7 @@
     box-sizing: border-box;
 }
 
+/* Esto pertenece a la primer navbar donde se encuentra el logo, la search bar y el carrito con el login y el registo etc */
 .main-header-top-bar{
     background-color: #ac8464;
     padding: 10px;
@@ -53,6 +54,7 @@
     margin: 0 5px 0 5px;
 }
 
+/* Esto pertenece al segundo navbar donde se encuentra el menu desplegable al cual luego hay que asignarle las opciones */
 .main-bottom-bar{
     width: 100%;
     margin: auto;
@@ -105,11 +107,13 @@
     display: block;
 }
 
+/* Esto pertenece al carrusel, es una mini modificacion de estilo porque esta hecho con boostrap */
 .carousel-mods{
     margin: 0;
     top: 0;
 }
 
+/* Esto pertenece al recuadro de informacion que se encuentra abajo del carrusel */
 .header-info{
     width: 100%;
     margin-top: 5px;
@@ -140,4 +144,87 @@
 .info-container p{
     font-size: 11px;
     margin: 0;
+}
+
+/* Esto pertenece al main, donde se van a encontrar todos los productos y lo referenciado a eso */
+main{
+    margin-top: 5px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.titles{
+    text-align: left;
+    font-weight: 500;
+    font-style: italic;
+    margin: 15px 0 0 10px;
+}
+
+.all-products{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+.product{
+    padding: 15px;
+    border: solid 1px #ebebeb;
+    border-radius: 8px;
+    margin: 10px;
+    position: relative;
+}
+
+.truck{
+    left: 23px;
+    bottom: 160px;
+    color: green;
+}
+
+.price-discount{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.product-price{
+    font-size: 18px;
+    margin-bottom: 2px;
+    margin-right: 15px;
+}
+
+.product-discount{
+    font-size: 12px;
+    color: green;
+    margin: 0;
+}
+
+.product img{
+    width: 100%;
+    border-bottom: solid 0.5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 5px;
+}
+
+.product h2{
+    text-align: left;
+    font-size: 18px;
+    margin: 0;
+    font-weight: 100;
+}
+
+.product:hover{
+    box-shadow: 0px 0px 10px #646464;
+}
+
+.product h2{
+    display: none;
+}
+
+.product:hover h2{
+    display: block;
+    text-align: left;
+    font-size: 18px;
+    margin: 0;
+    font-weight: 100;
 }
