@@ -228,3 +228,39 @@ main{
     margin: 0;
     font-weight: 100;
 }
+
+.all-pets{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 5px 0px 0px 5px;
+}
+
+.animal-circle{
+    position: relative;
+}
+
+.animal-circle img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+
+.animal-circle h2{
+    display: none;
+}
+
+.animal-circle:hover h2{
+    display: block;
+    position: absolute;
+    font-size: 18px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    top: 0;
+    text-align: center;
+    padding-top: 50%;
+    color: white;
+}
