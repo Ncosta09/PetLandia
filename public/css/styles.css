@@ -234,13 +234,20 @@ main{
 .all-pets{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    margin: 5px 0px 0px 5px;
+    justify-content: center;
+    margin: 5px 10px 5px 10px;
 }
 
 .animal-circle{
     position: relative;
-    margin: 0px 10px 0px 10px;
+    margin: 0px 20px 0px 20px;
+}
+
+.animals{
+    text-align: center;
+    background-color: #d4bca4;
+    width: 80%;
+    margin: auto;
 }
 
 .animal-circle img{
