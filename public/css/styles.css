@@ -218,11 +218,11 @@ main{
 }
 
 .product h2{
-    display: none;
+    visibility: hidden;
 }
 
 .product:hover h2{
-    display: block;
+    visibility: visible;
     text-align: left;
     font-size: 18px;
     margin: 0;
