@@ -238,6 +238,7 @@ main{
 
 .animal-circle{
     position: relative;
+    margin: 0px 10px 0px 10px;
 }
 
 .animal-circle img{
@@ -255,7 +256,7 @@ main{
     position: absolute;
     font-size: 18px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #d4c2ae;
     width: 200px;
     height: 200px;
     border-radius: 100%;
@@ -263,4 +264,50 @@ main{
     text-align: center;
     padding-top: 50%;
     color: white;
+}
+
+.all-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center, flex-start;
+    background-color: #ac8464;
+    margin-top: 10px;
+}
+
+.footer-info-three ul, .footer-info-one ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-info-three a, .footer-info-one a{
+    text-decoration: none;
+    color: black;
+}
+
+.footer-info-two{
+    text-align: center;
+}
+
+.footer-info-two i{
+    margin: 10px;
+}
+
+.footer-info-three i{
+    margin-right: 10px;
+}
+
+.whatsapp-icon{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 15px;
+}
+
+.whatsapp-icon i{
+    font-size: 40px;    
+    color: white;
+    background-color: #25D366;
+    padding: 10px;
+    border-radius: 100%;
 }
