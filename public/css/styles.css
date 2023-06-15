@@ -298,3 +298,18 @@ main{
     margin-right: 10px;
     font-size: 12px;
 }
+
+.whatsapp-icon{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 15px;
+}
+
+.whatsapp-icon i{
+    font-size: 25px;    
+    color: white;
+    background-color: #25D366;
+    padding: 10px;
+    border-radius: 100%;
+}

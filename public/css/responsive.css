@@ -27,6 +27,11 @@
     .footer-info-one a, .footer-info-two a, .footer-info-three a{
         font-size: 12px;
     }
+    
+    .whatsapp-icon i{
+        font-size: 40px;    
+        padding: 10px;
+    }
 }
 
 @media (min-width: 800px){
