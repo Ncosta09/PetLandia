@@ -246,6 +246,10 @@ main{
     font-weight: 100;
 }
 
+.main-animals{
+    display: none;
+}
+
 .all-footer{
     display: flex;
     flex-direction: row;
