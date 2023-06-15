@@ -15,14 +15,14 @@
 }
 
 .logo{
-    width: 100px;
+    width: 70px;
     border-radius: 8px;
 }
 
 .search-bar{
     border-radius: 15px;
     border: none;
-    width: 300px;
+    width: 150px;
     height: 30px;
     color: black;
     background-color: #d4bca4;
@@ -39,11 +39,55 @@
     margin: auto;
 }
 
+/*Menu desplegable del costado*/
+.nav-right-menu{
+    position: absolute;
+    right:0;
+    width: 50%;
+    top: 64px;
+    height: 100%;
+    z-index: 10;
+    background-color:#ac8464;
+    transform:translateX(100%);
+    transition:.4s ease;
+  }
+  
+.navigation li{
+    list-style:none;
+    width: 100%;
+  }
+  
+.navigation a{
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration:none;
+  }
+  
+#btn-nav{
+    display: none;
+  }
+  
+#btn-nav:checked ~ nav{
+    transform:translateX(0);
+  }
+  
+.btn-nav{
+    color:white;
+    font-size:30px;
+    right:0;
+    top:0;
+    cursor:pointer;
+    transition:.2s ease;
+  }
+
+/*Top bar aun no disponible, se va a ver en modo pantalla grande*/
 .main-top-bar ul{
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    /*display: flex;*/
+    display: none;
 }
 
 .main-top-bar a{
@@ -63,6 +107,7 @@
 
 .main-bottom-bar ul{
     list-style: none;
+    font-size: 10px;
     padding: 0;
     margin-bottom: 5px;
 }
@@ -82,7 +127,7 @@
 
 .nav-menu > li > a{
     display: block;
-    padding: 15px 20px;
+    padding: 7px 10px /*15px 20px cambiar en el tamano grande @media*/;
     color: #d4bca4;
     text-decoration: none;
 }
@@ -107,12 +152,6 @@
     display: block;
 }
 
-/* Esto pertenece al carrusel, es una mini modificacion de estilo porque esta hecho con boostrap */
-.carousel-mods{
-    margin: 0;
-    top: 0;
-}
-
 /* Esto pertenece al recuadro de informacion que se encuentra abajo del carrusel */
 .header-info{
     width: 100%;
@@ -120,203 +159,30 @@
     background-color: #d4c2ae;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
 }
 
 .icons{
-    font-size: 50px;
+    font-size: 30px;
     margin-right: 15px;
 }
 
 .info-container{
-    width: 33%;
-    margin: 10px;
+    width: 100%;
+    padding: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .info-container h2{
     font-size: 14px;
     margin-bottom: 3px;
+    display: none;
 }
 
 .info-container p{
     font-size: 11px;
     margin: 0;
-}
-
-/* Esto pertenece al main, donde se van a encontrar todos los productos y lo referenciado a eso */
-main{
-    margin-top: 5px;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.titles{
-    text-align: left;
-    font-weight: 500;
-    font-style: italic;
-    margin: 15px 0 0 10px;
-}
-
-.all-products{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin: 0px 20px 0px 20px;
-}
-
-.product{
-    padding: 15px;
-    border: solid 1px #ebebeb;
-    border-radius: 8px;
-    margin: 10px;
-    position: relative;
-    max-width: 200px;
-    max-height: 300px;
-}
-
-.truck{
-    left: 23px;
-    bottom: 160px;
-    color: green;
-}
-
-.price-discount{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.product-price{
-    font-size: 18px;
-    margin-bottom: 2px;
-    margin-right: 15px;
-}
-
-.product-discount{
-    font-size: 12px;
-    color: green;
-    margin: 0;
-}
-
-.product img{
-    width: 100%;
-    border-bottom: solid 0.5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 5px;
-}
-
-.product h2{
-    text-align: left;
-    font-size: 18px;
-    margin: 0;
-    font-weight: 100;
-}
-
-.product:hover{
-    box-shadow: 0px 0px 10px #646464;
-}
-
-.product h2{
-    visibility: hidden;
-}
-
-.product:hover h2{
-    visibility: visible;
-    text-align: left;
-    font-size: 18px;
-    margin: 0;
-    font-weight: 100;
-}
-
-.all-pets{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 5px 10px 5px 10px;
-}
-
-.animal-circle{
-    position: relative;
-    margin: 0px 20px 0px 20px;
-}
-
-.animals{
-    text-align: center;
-    background-color: #d4bca4;
-    width: 80%;
-    margin: auto;
-}
-
-.animal-circle img{
-    width: 170px;
-    height: 170px;
-    border-radius: 100%;
-}
-
-.animal-circle h2{
     display: none;
-}
-
-.animal-circle:hover h2{
-    display: block;
-    position: absolute;
-    font-size: 18px;
-    width: 100%;
-    background-color: #d4c2ae;
-    width: 170px;
-    height: 170px;
-    border-radius: 100%;
-    top: 0;
-    text-align: center;
-    padding-top: 50%;
-    color: white;
-}
-
-.all-footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center, flex-start;
-    background-color: #ac8464;
-    margin-top: 10px;
-}
-
-.footer-info-three ul, .footer-info-one ul{
-    list-style: none;
-    padding-left: 0;
-}
-
-.footer-info-three a, .footer-info-one a{
-    text-decoration: none;
-    color: black;
-}
-
-.footer-info-two{
-    text-align: center;
-}
-
-.footer-info-two i{
-    margin: 10px;
-}
-
-.footer-info-three i{
-    margin-right: 10px;
-}
-
-.whatsapp-icon{
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin: 15px;
-}
-
-.whatsapp-icon i{
-    font-size: 40px;    
-    color: white;
-    background-color: #25D366;
-    padding: 10px;
-    border-radius: 100%;
 }
