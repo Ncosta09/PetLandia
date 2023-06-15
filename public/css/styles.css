@@ -83,19 +83,7 @@
 
 /*Top bar aun no disponible, se va a ver en modo pantalla grande*/
 .main-top-bar ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    /*display: flex;*/
     display: none;
-}
-
-.main-top-bar a{
-    text-decoration: none;
-    color: #222222;
-    display: inline-block;
-    font-size: 15px;
-    margin: 0 5px 0 5px;
 }
 
 /* Esto pertenece al segundo navbar donde se encuentra el menu desplegable al cual luego hay que asignarle las opciones */
