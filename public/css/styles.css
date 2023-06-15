@@ -205,9 +205,8 @@ main{
 
 .all-products{
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
     margin: 0px 20px 0px 20px;
 }
 
@@ -217,8 +216,8 @@ main{
     border-radius: 8px;
     margin: 10px;
     position: relative;
-    max-width: 200px;
-    max-height: 300px;
+    width: 140px;
+    height: 200px;
 
 }
 
@@ -226,6 +225,7 @@ main{
     left: 23px;
     bottom: 160px;
     color: green;
+    font-size: 12px;
 }
 
 .price-discount{
@@ -235,26 +235,26 @@ main{
 }
 
 .product-price{
-    font-size: 18px;
+    font-size: 12px;
     margin-bottom: 2px;
     margin-right: 15px;
 }
 
 .product-discount{
-    font-size: 12px;
+    font-size: 8px;
     color: green;
     margin: 0;
 }
 
 .product img{
-    width: 100%;
+    width: 90%;
     border-bottom: solid 0.5px rgba(0, 0, 0, 0.1);
     margin-bottom: 5px;
 }
 
 .product h2{
     text-align: left;
-    font-size: 18px;
+    font-size: 12px;
     margin: 0;
     font-weight: 100;
 }
@@ -274,3 +274,50 @@ main{
     margin: 0;
     font-weight: 100;
 }*/
+
+.all-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #ac8464;
+    margin-top: 10px;
+    padding: 0px 7px 0px 7px;
+    bottom: 0;
+}
+
+.footer-info-one h2, .footer-info-two h2, .footer-info-three h2{
+    font-size: 14px;
+}
+
+.footer-info-three{
+    text-align: end;
+}
+
+.footer-info-one a, .footer-info-two a, .footer-info-three a{
+    font-size: 10px;
+}
+
+.footer-info-three ul, .footer-info-one ul{
+    list-style: none;
+    padding-left: 0;
+}
+
+.footer-info-three a, .footer-info-one a{
+    text-decoration: none;
+    color: black;
+}
+
+.footer-info-two{
+    text-align: center;
+}
+
+.footer-info-two i{
+    margin: 5px;
+    font-size: 14px;
+}
+
+.footer-info-three i{
+    margin-right: 10px;
+    font-size: 12px;
+}
