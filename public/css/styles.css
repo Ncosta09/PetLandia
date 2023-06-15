@@ -49,6 +49,7 @@
     background-color:#ac8464;
     transform:translateX(100%);
     transition:.4s ease;
+    display: none;
   }
   
 .navigation li{
@@ -67,8 +68,9 @@
     display: none;
   }
   
-#btn-nav:checked ~ nav{
+#btn-nav:checked ~ .nav-right-menu{
     transform:translateX(0);
+    display: block;
   }
   
 .btn-nav{
