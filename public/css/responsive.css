@@ -1,7 +1,34 @@
-@media (max-width: 768px){
+@media (min-width: 520px){
+    .product{
+        width: 170px;
+        height: 230px;
+    }
+    
+    .truck{
+        font-size: 14px;
+    }
 
+    .product-price{
+        font-size: 14px;
+    }
+
+    .product-discount{
+        font-size: 10px;
+    }
+
+    .product h2{
+        font-size: 14px;
+    }
+
+    .footer-info-one h2, .footer-info-two h2, .footer-info-three h2{
+        font-size: 18px;
+    }
+    
+    .footer-info-one a, .footer-info-two a, .footer-info-three a{
+        font-size: 12px;
+    }
 }
 
-@media (max-width: 480px){
-
+@media (min-width: 801px){
+    
 }
