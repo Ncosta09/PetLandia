@@ -1,6 +1,4 @@
-.producto{
-    background-color: #d4bca4;
-}
+
 .titulo{
     color: black;
     font-family: Georgia;
@@ -14,8 +12,7 @@
     padding: 15px;
 }
 .contenedor2{
-    text-align: right;
-    padding: 15px;
+   text-align: right;
 }
 .juguete{
     display: flex;
