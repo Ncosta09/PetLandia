@@ -1,0 +1,242 @@
+@media (min-width: 520px){
+    .product{
+        width: 170px;
+        height: 230px;
+    }
+    
+    .truck{
+        font-size: 14px;
+    }
+
+    .product-price{
+        font-size: 14px;
+    }
+
+    .product-discount{
+        font-size: 10px;
+    }
+
+    .product h2{
+        font-size: 14px;
+    }
+
+    .footer-info-one h2, .footer-info-two h2, .footer-info-three h2{
+        font-size: 18px;
+    }
+    
+    .footer-info-one a, .footer-info-two a, .footer-info-three a{
+        font-size: 12px;
+    }
+    
+    .whatsapp-icon i{
+        font-size: 40px;    
+        padding: 10px;
+    }
+}
+
+@media (min-width: 800px){
+    .nav-right-menu, .btn-nav{
+        display: none;
+    }
+
+    .main-top-bar ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    
+    .main-top-bar a{
+        text-decoration: none;
+        color: #222222;
+        display: inline-block;
+        font-size: 15px;
+        margin: 0 5px 0 5px;
+    }
+
+    .search-bar{
+        width: 300px;
+    }
+
+    .main-bottom-bar ul{
+        font-size: 14px;
+    }
+
+    .nav-menu > li > a{
+        padding: 10px 15px;
+    }
+
+    .icons{
+        font-size: 40px;
+    }
+
+    .info-container h2{
+        display: block;
+        font-size: 14px;
+        margin-bottom: 3px;
+    }
+    
+    .info-container p{
+        display: block;
+        font-size: 11px;
+        margin: 0;
+    }
+
+    .main-animals{
+        display: block;
+    }
+    
+    .all-pets{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 5px 10px 5px 10px;
+    }
+
+    .animal-circle{
+        position: relative;
+        margin: 0px 20px 0px 20px;
+    }
+
+    .animals{
+        text-align: center;
+        background-color: #d4bca4;
+        width: 80%;
+        margin: auto;
+    }
+
+    .animal-circle img{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+    }
+
+    .animal-circle h2{
+        display: none;
+    }
+
+    .animal-circle:hover h2{
+        display: block;
+        position: absolute;
+        font-size: 12px;
+        width: 100%;
+        background-color: #d4c2ae;
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        top: 0;
+        text-align: center;
+        padding-top: 50%;
+        color: white;
+    }
+
+    .footer-info-one h2, .footer-info-two h2, .footer-info-three h2{
+        font-size: 22px;
+    }
+    
+    .footer-info-one a, .footer-info-two a, .footer-info-three a{
+        font-size: 14px;
+    }
+
+    .footer-info-two i{
+        font-size: 18px;
+    }
+
+    .footer-info-three i{
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1200px){
+    .logo{
+        width: 100px;
+    }
+
+    .main-bottom-bar ul{
+        font-size: 16px;
+    }
+
+    .nav-menu > li > a{
+        padding: 15px 20px;
+    }
+
+    .icons{
+        font-size: 50px;
+    }
+    
+    .titles{
+        text-align: left;
+        margin: 5px 0 0 10px;
+    }
+    
+    .all-products{
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+    }
+    
+    .product{
+        width: 200px;
+        height: 300px;
+    }
+    
+    .truck{
+        font-size: 16px;
+    }
+    
+    .product-price{
+        font-size: 18px;
+    }
+    
+    .product-discount{
+        font-size: 12px;
+    }
+    
+    .product img{
+        width: 100%;
+    }
+    
+    .product h2{
+        text-align: left;
+        font-size: 18px;
+    }
+    
+    .product:hover{
+        box-shadow: 0px 0px 10px #646464;
+    }
+    
+    .product h2{
+        visibility: hidden;
+    }
+    
+    .product:hover h2{
+        visibility: visible;
+        text-align: left;
+        font-size: 18px;
+        margin: 0;
+        font-weight: 100;
+    }
+
+    .animals{
+        text-align: center;
+        background-color: #d4bca4;
+        width: 80%;
+        margin: auto;
+    }
+
+    .animal-circle img{
+        width: 170px;
+        height: 170px;
+    }
+
+    .animal-circle:hover h2{
+        font-size: 18px;
+        width: 170px;
+        height: 170px;
+    }
+
+    .all-footer{
+        justify-content: space-around;
+        align-items: center, flex-start;
+    }
+}

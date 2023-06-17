@@ -15,14 +15,13 @@
 }
 
 .logo{
-    width: 100px;
-    border-radius: 8px;
+    width: 70px;
 }
 
 .search-bar{
     border-radius: 15px;
     border: none;
-    width: 300px;
+    width: 150px;
     height: 30px;
     color: black;
     background-color: #d4bca4;
@@ -39,19 +38,53 @@
     margin: auto;
 }
 
-.main-top-bar ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
+/*Menu desplegable del costado*/
+.nav-right-menu{
+    position: absolute;
+    right:0;
+    width: 50%;
+    top: 64px;
+    height: 100%;
+    z-index: 10;
+    background-color:#ac8464;
+    transform:translateX(100%);
+    transition:.4s ease;
+    display: none;
+  }
+  
+.navigation li{
+    list-style:none;
+    width: 100%;
+  }
+  
+.navigation a{
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration:none;
+  }
+  
+#btn-nav{
+    display: none;
+  }
+  
+#btn-nav:checked ~ .nav-right-menu{
+    transform:translateX(0);
+    display: block;
+  }
+  
+.btn-nav{
+    color:white;
+    font-size:30px;
+    right:0;
+    top:0;
+    cursor:pointer;
+    transition:.2s ease;
+  }
 
-.main-top-bar a{
-    text-decoration: none;
-    color: #222222;
-    display: inline-block;
-    font-size: 15px;
-    margin: 0 5px 0 5px;
+/*Top bar aun no disponible, se va a ver en modo pantalla grande*/
+.main-top-bar ul{
+    display: none;
 }
 
 /* Esto pertenece al segundo navbar donde se encuentra el menu desplegable al cual luego hay que asignarle las opciones */
@@ -63,6 +96,7 @@
 
 .main-bottom-bar ul{
     list-style: none;
+    font-size: 10px;
     padding: 0;
     margin-bottom: 5px;
 }
@@ -82,7 +116,7 @@
 
 .nav-menu > li > a{
     display: block;
-    padding: 15px 20px;
+    padding: 7px 10px;
     color: #d4bca4;
     text-decoration: none;
 }
@@ -107,12 +141,6 @@
     display: block;
 }
 
-/* Esto pertenece al carrusel, es una mini modificacion de estilo porque esta hecho con boostrap */
-.carousel-mods{
-    margin: 0;
-    top: 0;
-}
-
 /* Esto pertenece al recuadro de informacion que se encuentra abajo del carrusel */
 .header-info{
     width: 100%;
@@ -120,30 +148,32 @@
     background-color: #d4c2ae;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
 }
 
 .icons{
-    font-size: 50px;
+    font-size: 30px;
     margin-right: 15px;
 }
 
 .info-container{
-    width: 33%;
-    margin: 10px;
+    width: 100%;
+    padding: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
 }
 
 .info-container h2{
     font-size: 14px;
     margin-bottom: 3px;
+    display: none;
 }
 
 .info-container p{
     font-size: 11px;
     margin: 0;
+    display: none;
 }
 
 /* Esto pertenece al main, donde se van a encontrar todos los productos y lo referenciado a eso */
@@ -155,17 +185,18 @@ main{
 }
 
 .titles{
-    text-align: left;
+    text-align: center;
     font-weight: 500;
     font-style: italic;
-    margin: 15px 0 0 10px;
+    margin-top: 15px;
+    margin-bottom: 0;
 }
 
 .all-products{
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-around;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 0px 20px 0px 20px;
 }
 
 .product{
@@ -174,12 +205,16 @@ main{
     border-radius: 8px;
     margin: 10px;
     position: relative;
+    width: 140px;
+    height: 200px;
+
 }
 
 .truck{
     left: 23px;
     bottom: 160px;
     color: green;
+    font-size: 12px;
 }
 
 .price-discount{
@@ -189,90 +224,55 @@ main{
 }
 
 .product-price{
-    font-size: 18px;
+    font-size: 12px;
     margin-bottom: 2px;
     margin-right: 15px;
 }
 
 .product-discount{
-    font-size: 12px;
+    font-size: 8px;
     color: green;
     margin: 0;
 }
 
 .product img{
-    width: 100%;
+    width: 90%;
     border-bottom: solid 0.5px rgba(0, 0, 0, 0.1);
     margin-bottom: 5px;
 }
 
 .product h2{
     text-align: left;
-    font-size: 18px;
+    font-size: 12px;
     margin: 0;
     font-weight: 100;
 }
 
-.product:hover{
-    box-shadow: 0px 0px 10px #646464;
-}
-
-.product h2{
-    visibility: hidden;
-}
-
-.product:hover h2{
-    visibility: visible;
-    text-align: left;
-    font-size: 18px;
-    margin: 0;
-    font-weight: 100;
-}
-
-.all-pets{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 5px 0px 0px 5px;
-}
-
-.animal-circle{
-    position: relative;
-    margin: 0px 10px 0px 10px;
-}
-
-.animal-circle img{
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
-}
-
-.animal-circle h2{
+.main-animals{
     display: none;
-}
-
-.animal-circle:hover h2{
-    display: block;
-    position: absolute;
-    font-size: 18px;
-    width: 100%;
-    background-color: #d4c2ae;
-    width: 200px;
-    height: 200px;
-    border-radius: 100%;
-    top: 0;
-    text-align: center;
-    padding-top: 50%;
-    color: white;
 }
 
 .all-footer{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center, flex-start;
+    justify-content: space-between;
+    align-items: flex-start;
     background-color: #ac8464;
     margin-top: 10px;
+    padding: 0px 7px 0px 7px;
+    bottom: 0;
+}
+
+.footer-info-one h2, .footer-info-two h2, .footer-info-three h2{
+    font-size: 14px;
+}
+
+.footer-info-three{
+    text-align: end;
+}
+
+.footer-info-one a, .footer-info-two a, .footer-info-three a{
+    font-size: 10px;
 }
 
 .footer-info-three ul, .footer-info-one ul{
@@ -290,11 +290,13 @@ main{
 }
 
 .footer-info-two i{
-    margin: 10px;
+    margin: 5px;
+    font-size: 14px;
 }
 
 .footer-info-three i{
     margin-right: 10px;
+    font-size: 12px;
 }
 
 .whatsapp-icon{
@@ -305,7 +307,7 @@ main{
 }
 
 .whatsapp-icon i{
-    font-size: 40px;    
+    font-size: 25px;    
     color: white;
     background-color: #25D366;
     padding: 10px;
