@@ -1,0 +1,93 @@
+
+
+.cuerpo {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginbox{
+    position:relative;
+    width:500px;
+    height:500px;
+    background-color:#75362d;
+    color:antiquewhite;
+    padding: 40px 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    box-shadow: 0 5px 10px #ac8464;
+    
+}
+
+.loginbox h1{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 18px;
+    margin: 0%;
+    padding:0%;
+    font-weight: bold;
+}
+
+.email{
+    text-align: left;
+    width: 100%;
+    font-size: 14px;
+    margin: 0%;
+    padding: 0%;
+    display: block;
+    border:none;
+    border-bottom: 1px solid antiquewhite;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: antiquewhite;
+    font-size: 16px;
+}
+.contraseña{
+    text-align: left;
+    width: 100%;
+    font-size: 14px;
+    margin: 0%;
+    padding: 0%;
+    display: block;
+    border:none;
+    border-bottom: 1px solid antiquewhite;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: antiquewhite;
+    font-size: 16px;
+}
+
+.checkbox{
+    display: flex;
+    justify-content:flex-start;
+    text-align: left;
+    align-items: center;
+  
+}
+.boton{
+    position: absolute;
+    left:75%;
+    background-color: #ac8464;
+    border: none;
+    font-size: 20px;
+    color: antiquewhite;
+    padding: 5px 15px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center; 
+    transition-property: background-color, box-shadow;
+    transition-duration: 300ms;
+}
+
+.boton:hover{
+    background-color: #b18078;
+    box-shadow: 0 5px 5px #383232;
+}
+
+
