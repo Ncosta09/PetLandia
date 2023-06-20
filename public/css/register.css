@@ -1,0 +1,172 @@
+* {
+    margin: 0px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/* Esto pertenece a la primer navbar donde se encuentra el logo, la search bar y el carrito con el login y el registo etc */
+.main-header-top-bar{
+    background-color: #ac8464;
+    padding: 10px;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 70px;
+}
+
+.search-bar{
+    border-radius: 15px;
+    border: none;
+    width: 150px;
+    height: 30px;
+    color: black;
+    background-color: #d4bca4;
+}
+
+.button-search-bar{
+    background: none;
+    border: none;
+    border-radius: 100%;
+    background-color: #d4bca4;
+    color: white;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+}
+
+/*Menu desplegable del costado*/
+.nav-right-menu{
+    position: absolute;
+    right:0;
+    width: 50%;
+    top: 64px;
+    height: 100%;
+    z-index: 10;
+    background-color:#ac8464;
+    transform:translateX(100%);
+    transition:.4s ease;
+    display: none;
+  }
+  
+.navigation li{
+    list-style:none;
+    width: 100%;
+  }
+  
+.navigation a{
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration:none;
+  }
+  
+#btn-nav{
+    display: none;
+  }
+  
+#btn-nav:checked ~ .nav-right-menu{
+    transform:translateX(0);
+    display: block;
+  }
+  
+.btn-nav{
+    color:white;
+    font-size:30px;
+    right:0;
+    top:0;
+    cursor:pointer;
+    transition:.2s ease;
+  }
+
+/*Top bar aun no disponible, se va a ver en modo pantalla grande*/
+.main-top-bar ul{
+    display: none;
+}
+
+/* Esto pertenece al segundo navbar donde se encuentra el menu desplegable al cual luego hay que asignarle las opciones */
+.main-bottom-bar{
+    width: 100%;
+    margin: auto;
+    background-color: #75362d;
+}
+
+.main-bottom-bar ul{
+    list-style: none;
+    font-size: 10px;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.main-bottom-bar > ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.nav-menu > li{
+    position: relative;
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+}
+
+.nav-menu > li > a{
+    display: block;
+    padding: 7px 10px;
+    color: #d4bca4;
+    text-decoration: none;
+}
+
+.nav-submenu{
+    position: absolute;
+    background-color: #75362d;
+    width: 100%;
+    display: none;
+    z-index: 5;
+}
+
+.nav-submenu li a{
+    display: block;
+    padding: 10px 0px 10px 10px;
+    text-decoration: none;
+    color: #d4bca4;
+    text-align: left;
+}
+
+.nav-menu li:hover .nav-submenu{
+    display: block;
+}
+
+/*Registro*/
+
+.tituloform {
+    text-align: center;
+}
+
+.registro {
+    background-color: #ac8464;
+    display: flex;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    margin: 0 auto;
+    align-items: stretch;
+    line-height: 50px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.registro input {
+    border: 1px solid #CCC;
+    border-radius: 1em;
+}
