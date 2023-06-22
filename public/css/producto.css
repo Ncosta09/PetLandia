@@ -1,10 +1,8 @@
 .product-top{
     display: flex;
     flex-direction: column-reverse;
-}
-
-.product-top h2{
-    width: 300px;
+    justify-content: center;
+    align-items: center;
 }
 
 .product-img{
@@ -13,6 +11,10 @@
     display: block;
     margin: auto;
     margin-bottom: 10px;
+}
+
+.copy-title{
+    display: none;
 }
 
 .price{
@@ -42,7 +44,7 @@
     font-weight: 600;
 }
 
-.product-stock, .product-buttons, .product-info, .product-top > h2, .product-footer{
+.product-stock, .product-buttons, .product-info, .product-footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,4 +124,71 @@
 .description{
     width: 300px;
     font-size: 12px;
+}
+
+/* -- Responsive */
+@media (min-width: 768px){
+
+    .product-top{
+        height: 365px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .product-img{
+        width: 300px;
+        height: 300px;
+        margin-top: 0;
+        margin-left: 20px;
+    }
+
+    .product-title{
+        display: none;
+    }
+
+    .copy-title{
+        display: block;
+        width: 300px;
+    }
+
+    .product-info{
+        position: absolute;
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        top: 100px;
+    }
+
+    .product-footer{
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 120px;
+    }
+
+    .footer-title{
+        width: 700px;
+        font-weight: 600;
+        font-size: 14px;
+        color: white;
+        background-color: #d4c2ae;
+        padding: 5px;
+        margin-bottom: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    
+    .description{
+        width: 700px;
+        font-size: 12px;
+    }
+
+    footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
 }
