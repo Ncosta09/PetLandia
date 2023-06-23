@@ -4,11 +4,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>PetLandia</title>
-
   <!-- Links -->
   <script src="https://kit.fontawesome.com/b29db1d018.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="/css/producto.css">
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/styles.css">
@@ -16,115 +15,166 @@
 </head>
 <body>
 
-  <header>
-    <!--Menu superior-->
-    <div class="main-header-top-bar">
-        <img src="/images/PetLandia-V3 (1).png" alt="logo-PetLandia" class="logo">
+<header>
+  <!--Menu superior-->
+  <div class="main-header-top-bar">
+    <img src="/images/PetLandia-V3 (1).png" alt="logo-PetLandia" class="logo">
+    <form action="" method="post" class="main-search">
+      <input class="search-bar" type="search" name="" placeholder="   Buscar">
+      <button class="button-search-bar" type="submit"> <i class="fa-solid fa-magnifying-glass"></i> </button>
+    </form>
 
-        <form action="" method="post" class="main-search">
-            <input class="search-bar" type="search" name="" placeholder="   Buscar">
-            <button class="button-search-bar" type="submit"> <i class="fa-solid fa-magnifying-glass"></i> </button>
-        </form>
+    <div class="hamburger-button">
+      <label for="btn-nav" class="btn-nav"><i class="fas fa-bars"></i></label>
+      <input type="checkbox" id="btn-nav">
+                  
+      <nav class="nav-right-menu">
+        <ul class="navigation">
+          <li><a href=""><i class="fa-solid fa-user"></i> Ingresar</a></li>
+          <li><a href=""><i class="fa-regular fa-user"></i> Registrate</a></li>
+          <li><a href=""><i class="fa-solid fa-star"></i> Favoritos</a></li>
+          <li><a href=""><i class="fa-solid fa-cart-shopping"></i> Carro</a></li>
+        </ul>
+      </nav>
+    </div>
 
-        <div class="hamburger-button">
-            <label for="btn-nav" class="btn-nav"><i class="fas fa-bars"></i></label>
-            <input type="checkbox" id="btn-nav">
-            
-            <nav class="nav-right-menu">
-              <ul class="navigation">
-                <li><a href=""><i class="fa-solid fa-user"></i> Ingresar</a></li>
-                <li><a href=""><i class="fa-regular fa-user"></i> Registrate</a></li>
-                <li><a href=""><i class="fa-solid fa-star"></i> Favoritos</a></li>
-                <li><a href=""><i class="fa-solid fa-cart-shopping"></i> Carro</a></li>
-              </ul>
-            </nav>
-        </div>
-
-        <nav class="main-top-bar">
-            <ul>
-                <li><a href="#">LogIn</a></li>
-                <li>/</li>
-                <li><a href="#">Sign up</a></li>
-                <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-            </ul>
-        </nav>
-     </div>
-
-    <!--Menu desplegable-->
-    <nav class="main-bottom-bar">
-        <ul class="nav-menu">
-            <li><a href="#">Mascotas <i class="fa-solid fa-angle-down"></i></a>
-                <ul class="nav-submenu">
-                    <li><a href="#">Servicio #1</a></li>
-                    <li><a href="#">Servicio #2</a></li>
-                    <li><a href="#">Servicio #3</a></li>
-                </ul> 
-            </li>
-            <li><a href="#">Productos <i class="fa-solid fa-angle-down"></i></a>
-                <ul class="nav-submenu">
-                    <li><a href="producto.html">Juguetes</a></li>
-                    <li><a href="#">Servicio #2</a></li>
-                    <li><a href="#">Servicio #3</a></li>
-                </ul> 
-            </li>
-            <li><a href="#">Marcas <i class="fa-solid fa-angle-down"></i></a>
-                <ul class="nav-submenu">
-                    <li><a href="#">Servicio #1</a></li>
-                    <li><a href="#">Servicio #2</a></li>
-                    <li><a href="#">Servicio #3</a></li>
-                </ul> 
-            </li>
-            <li><a href="#">Servicios <i class="fa-solid fa-angle-down"></i></a>
-                <ul class="nav-submenu">
-                    <li><a href="#">Servicio #1</a></li>
-                    <li><a href="#">Servicio #2</a></li>
-                    <li><a href="#">Servicio #3</a></li>
-                </ul> 
-            </li>
+    <nav class="main-top-bar">
+        <ul>
+            <li><a href="/login">LogIn</a></li>
+            <li>/</li>
+            <li><a href="/register">Sign up</a></li>
+            <li>/</li>
+            <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
         </ul>
     </nav>
+  </div>
+
+  <!--Menu desplegable-->
+  <nav class="main-bottom-bar">
+    <ul class="nav-menu">
+      <li><a href="#">Mascotas <i class="fa-solid fa-angle-down"></i></a>
+        <ul class="nav-submenu">
+          <li><a href="#">Servicio #1</a></li>
+          <li><a href="#">Servicio #2</a></li>
+          <li><a href="#">Servicio #3</a></li>
+        </ul> 
+      </li>
+      <li><a href="#">Productos <i class="fa-solid fa-angle-down"></i></a>
+        <ul class="nav-submenu">
+          <li><a href="#">Juguetes</a></li>
+          <li><a href="#">Servicio #2</a></li>
+          <li><a href="#">Servicio #3</a></li>
+        </ul> 
+      </li>
+      <li><a href="#">Marcas <i class="fa-solid fa-angle-down"></i></a>
+        <ul class="nav-submenu">
+          <li><a href="#">Servicio #1</a></li>
+          <li><a href="#">Servicio #2</a></li>
+          <li><a href="#">Servicio #3</a></li>
+        </ul> 
+      </li>
+      <li><a href="#">Servicios <i class="fa-solid fa-angle-down"></i></a>
+        <ul class="nav-submenu">
+          <li><a href="#">Servicio #1</a></li>
+          <li><a href="#">Servicio #2</a></li>
+          <li><a href="#">Servicio #3</a></li>
+        </ul> 
+      </li>
+    </ul>
+  </nav>
 </header>
-<div class="producto">
-    <h2 class="titulo">Pelota anti stress para perros</h2>
-    <h2 class="titulo">$2.000</h2>
-    <div class="contenedor1">
-      <label for="Cantidad">Cantidad:</label>
-      <input type="number" id="Cantidad" name="Cantidad" min="1" max="10"> 
+
+<main>
+  <div class="product-detail">
+    <div class="product-top">
+      <img class="product-img" src="https://puppis.vteximg.com.br/arquivos/ids/167602-1000-1000/150042.jpg?v=637021774610770000" alt="">
+      <h2 class="product-title">Alimento Excellent - 20kg</h2>
     </div>
-    <div class="contenedor2">
-      <i class="fa-solid fa-truck truck"></i>
-      <i class="fa-solid fa-cart-shopping"></i>
-    </div>  
-    <img class="juguete" src="/images/perrojuguete1.jpg" alt="tu imagen de perfil">
-    <p class="parrafo">Si nuestra mascota siente ansiedad cuando salimos por la puerta, o se aburre en casa solo, podemos recurrir a juguetes especialmente
-    diseñados para tenerlos entretenidos durante horas. Pruébalos antes con tu animal de compañía y comprueba que de verdad se divierte.</p>
-</div>
-    <footer>
+
+    <div class="product-info">
+      <h2 class="copy-title">Alimento Excellent - 20kg</h2>
+      <p class="price">$ 16.190</p>
+      <div class="product-truck">
+        <i class="fa-solid fa-truck truck-i"></i>
+        <p class="truck-p">Llega gratis</p>
+      </div>
+
+      <div class="product-stock">
+        <p class="stock">Stock disponible</p>
+        <div class="stock-space">
+          <label for="select" class="product-label">Cantidad:</label>
+          <select name="select" class="product-select">
+            <option value="value1">1</option>
+            <option value="value2">2</option>
+            <option value="value3">3</option>
+            <option value="value4">4</option>
+            <option value="value5">5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="product-buttons">
+        <button class="product-btn buynow">Comprar ahora</button>
+        <button class="product-btn buythen">Agregar al carrito</button>
+      </div>
+
+    </div>
+
+    <div class="product-footer">
+      <details open>
+        <summary class="footer-title">Descripcion</summary>
+        <div class="description">
+          <p>La exclusiva combinación de ingredientes seleccionados le confiere a las fórmulas Excellent la propiedad de generar cambios significativos en la calidad de vida de los perros y gatos, a través de una nutrición de vanguardia con beneficios fácilmente comprobables, que van desde una protección extra al sistema de defensas, un incremento en la absorción de nutrientes, hasta una conformación más consistente de las heces. Los perros adultos tienen diferentes necesidades nutricionales que los cachorros o los perros maduros. PURINA® Excellent® ADULT CHICKEN & RICE ofrece una fórmula completa que incluye aminoácidos esenciales, inulina, vitaminas, minerales y zeolita, aportando un óptimo balance nutricional y un sabor irresistible.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary class="footer-title">Informacion</summary>
+        <div class="description">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolorum fugit veniam numquam a, eveniet sapiente ullam quibusdam repellendus quam nam vitae odit, iusto labore mollitia doloremque aperiam, voluptatem totam.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary class="footer-title">Opiniones</summary>
+        <div class="description">
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus, dicta consequuntur odit est exercitationem inventore laboriosam aliquid possimus nisi neque! Minus tempore hic officia itaque sapiente doloremque officiis sequi earum?</p>
+        </div>
+      </details>
+    </div>
+
+  </div>
+
+</main>
+
+<footer>
   <div class="all-footer">
-      <div class="footer-info-one">
-          <h2>Sobre nosotros</h2>
-          <ul>
-              <li><a href="">¿Quienes somos?</a></li>
-              <li><a href="">Informacion util</a></li>
-              <li><a href="">Soporte</a></li>
-          </ul>
-      </div>
-      <div class="footer-info-two">
-          <h2>Redes</h2>
-          <i class="fa-brands fa-facebook-f"></i>
-          <i class="fa-brands fa-instagram"></i>
-          <i class="fa-brands fa-twitter"></i>
-      </div>
-      <div class="footer-info-three">
-          <h2>Contacto</h2>
-          <ul>
-              <li><i class="fa-solid fa-phone"></i><a href="">11-7878-2354</a></li>
-              <li><i class="fa-solid fa-envelope"></i><a href="">info@petlandia.com.ar</a></li>
-          </ul>
-      </div>
+    <div class="footer-info-one">
+      <h2>Sobre nosotros</h2>
+      <ul>
+        <li><a href="">¿Quienes somos?</a></li>
+        <li><a href="">Informacion util</a></li>
+        <li><a href="">Soporte</a></li>
+      </ul>
+    </div>
+    <div class="footer-info-two">
+      <h2>Redes</h2>
+      <i class="fa-brands fa-facebook-f"></i>
+      <i class="fa-brands fa-instagram"></i>
+      <i class="fa-brands fa-twitter"></i>
+    </div>
+    <div class="footer-info-three">
+      <h2>Contacto</h2>
+      <ul>
+        <li><i class="fa-solid fa-phone"></i><a href="">11-7878-2354</a></li>
+        <li><i class="fa-solid fa-envelope"></i><a href="">info@petlandia.com.ar</a></li>
+      </ul>
+    </div>
   </div>
 </footer>
-  
+
+<!-- Links -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>

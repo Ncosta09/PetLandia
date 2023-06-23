@@ -148,7 +148,7 @@
 }
 
 @media (min-width: 1200px){
-    .logo{
+    /*.logo{
         width: 100px;
     }
 
@@ -162,7 +162,7 @@
 
     .icons{
         font-size: 50px;
-    }
+    }*/
     
     .titles{
         text-align: left;
