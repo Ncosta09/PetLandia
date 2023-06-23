@@ -1,0 +1,221 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  /* Esto pertenece a la primer navbar donde se encuentra el logo, la search bar y el carrito con el login y el registo etc */
+  .main-header-top-bar{
+    background-color: #ac8464;
+    padding: 10px;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo{
+    width: 100px;
+    border-radius: 8px;
+  }
+  
+  .search-bar{
+    border-radius: 15px;
+    border: none;
+    width: 300px;
+    height: 30px;
+    color: black;
+    background-color: #d4bca4;
+  }
+  
+  .button-search-bar{
+    background: none;
+    border: none;
+    border-radius: 100%;
+    background-color: #d4bca4;
+    color: white;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+  }
+  
+  .main-top-bar ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .main-top-bar a{
+    text-decoration: none;
+    color: #222222;
+    display: inline-block;
+    font-size: 15px;
+    margin: 0 5px 0 5px;
+  }
+  
+  /* Esto pertenece al segundo navbar donde se encuentra el menu desplegable al cual luego hay que asignarle las opciones */
+  .main-bottom-bar{
+    width: 100%;
+    margin: auto;
+    background-color: #75362d;
+  }
+  
+  .main-bottom-bar ul{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 5px;
+  }
+  
+  .main-bottom-bar > ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .nav-menu > li{
+    position: relative;
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+  }
+  
+  .nav-menu > li > a{
+    display: block;
+    padding: 15px 20px;
+    color: #d4bca4;
+    text-decoration: none;
+  }
+  
+  .nav-submenu{
+    position: absolute;
+    background-color: #75362d;
+    width: 100%;
+    display: none;
+    z-index: 5;
+  }
+  
+  .nav-submenu li a{
+    display: block;
+    padding: 10px 0px 10px 10px;
+    text-decoration: none;
+    color: #d4bca4;
+    text-align: left;
+  }
+  
+  .nav-menu li:hover .nav-submenu{
+    display: block;
+  }
+  
+  .titulo {
+    color: #555;
+    text-align: center;
+    
+  }
+  
+  
+  .container1 {
+    width: 420px;
+    margin: 100px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    justify-content: center;
+    position: absolute;
+    left: 28%;
+    background-color: #ac8464;
+  }
+  
+  .producto img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
+   }
+   
+   .producto h3 {
+     margin-top: 10px;
+     font-size: 18px;
+     color: #555;
+   }
+   
+   .producto p {
+     margin-top: 5px;
+     font-size: 14px;
+     color: #555;
+   }
+   
+   .agregar-carrito {
+      display: flex;
+      padding: 10px 50px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      background-color: #75362d;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      align-self: center;
+      position: relative;
+      left: 25%;
+    }
+     
+   
+   
+   .agregar-carrito:hover {
+     background-color: #75362d;
+   }
+   
+   .agregar-carrito:active {
+     background-color: #75362d;
+   }
+  
+    
+    .subtotal,
+    .shipping,
+    .total {
+      
+     
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    }
+    
+    span {
+    font-weight: bold;
+    }
+    
+    .subtotal span,
+    .shipping span,
+    .total span {
+      color: #555;
+    }
+    
+    .total span {
+     color: #555;
+    }
+  
+    .finalizar-btn {
+      display: flex;
+      padding: 10px 50px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      background-color: #75362d;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      align-self: center;
+      position: relative;
+      left: 25%;
+    }
+    
+    .finalizar-btn:hover {
+     background-color: #75362d;
+    }
+    
+    .finalizar-btn:active {
+      background-color: #75362d;
+    }
