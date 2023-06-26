@@ -174,7 +174,7 @@
         position: relative;
         width: 100%;
         margin-top: 20px;
-        margin-bottom: 120px;
+        margin-bottom: 20px;
     }
 
     .footer-title{
@@ -192,12 +192,6 @@
     .description{
         width: 700px;
         font-size: 12px;
-    }
-
-    footer{
-        position: fixed;
-        bottom: 0;
-        width: 100%;
     }
 
 }
