@@ -4,27 +4,31 @@ const path = require('path');
 const app = express();
 
 const publicpath = path.resolve(__dirname, '../public');
+
 app.use(express.static(publicpath));
-app.set('views', path.resolve(__dirname, 'views'))
-app.set('view engine', 'ejs')
+
+app.set('views', path.resolve(__dirname, 'views'));
+
+app.set('view engine', 'ejs');
+
 app.get('/', (req, res) => {
     res.render('index');
 });
 
 app.get('/producto', (req, res) => {
-    res.render(path.resolve(__dirname, './src/views/producto'));
+    res.render('producto');
 });
 
 app.get('/login', (req, res) => {
-    res.render(path.resolve(__dirname, './src/views/login'));
+    res.render('login');
 });
 
 app.get('/register', (req, res) => {
-    res.render(path.resolve(__dirname, './src/views/register'));
+    res.render('register');
 });
 
 app.get('/carrito', (req, res) => {
-    res.render(path.resolve(__dirname, './src/views/carrito'));
+    res.render('carrito');
 });
 
 app.listen(3200, () => {
