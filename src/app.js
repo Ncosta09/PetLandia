@@ -1,3 +1,7 @@
+const mainRoutes = require('./../src/routes/mainRoutes');
+const productRoutes = require('./../src/routes/productRoutes');
+const userRoutes = require('./../src/routes/userRoutes');
+
 const express = require('express');
 const path = require('path');
 
@@ -9,27 +13,13 @@ app.use(express.static(publicpath));
 
 app.set('views', path.resolve(__dirname, 'views'));
 
+app.use('/', mainRoutes);
+
+app.use('/', productRoutes);
+
+app.use('/', userRoutes);
+
 app.set('view engine', 'ejs');
-
-app.get('/', (req, res) => {
-    res.render('index');
-});
-
-app.get('/producto', (req, res) => {
-    res.render('producto');
-});
-
-app.get('/login', (req, res) => {
-    res.render('login');
-});
-
-app.get('/register', (req, res) => {
-    res.render('register');
-});
-
-app.get('/carrito', (req, res) => {
-    res.render('carrito');
-});
 
 app.listen(3200, () => {
     console.log("Servidor corriendo en el puerto 3200");
