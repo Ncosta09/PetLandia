@@ -4,7 +4,8 @@
   "description": "## Tematica, descripcion y publico objetivo > PetLandia es un petshop online (E-Commerce) especializada en productos y servicios para mascotas. Ofrece una amplia gama de alimentos, accesorios, juguetes y elementos para higiene. Está dirigido a amantes de los animales y dueños de mascotas que buscan comodidad al realizar sus compras desde casa, brindándoles una experiencia única en satisfacer las necesidades de sus fieles compañeros.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
   },
   "keywords": [],
   "author": "",

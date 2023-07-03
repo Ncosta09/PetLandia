@@ -1,85 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>Registro</title>
-
+    
+        <title>PetLandia</title>
+        
         <!-- Links -->
         <script src="https://kit.fontawesome.com/b29db1d018.js" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <link rel="stylesheet" href="/css/normalize.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/register.css">
+        <link rel="stylesheet" href="/css/normalize.css"> 
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/responsive.css">
     </head>
-</head>
 
-<body>
-    <header>
-        <!--Menu superior-->
-        <div class="main-header-top-bar">
-            <img src="/images/PetLandia-V3 (1).png" alt="logo-PetLandia" class="logo">
+    <body>
+        <%- include('./partials/header.ejs') %> <!--include header-->
 
-            <form action="" method="post" class="main-search">
-                <input class="search-bar" type="search" name="" placeholder="   Buscar">
-                <button class="button-search-bar" type="submit"> <i class="fa-solid fa-magnifying-glass"></i> </button>
-            </form>
-
-            <!-- <div class="hamburger-button">
-                <label for="btn-nav" class="btn-nav"><i class="fas fa-bars"></i></label>
-                <input type="checkbox" id="btn-nav">
-
-                <nav class="nav-right-menu">
-                    <ul class="navigation">
-                        <li><a href=""><i class="fa-solid fa-star"></i> Favoritos</a></li>
-                        <li><a href=""><i class="fa-solid fa-cart-shopping"></i> Carro</a></li>
-                    </ul>
-                </nav>
-            </div> -->
-
-            <nav class="main-top-bar">
-                <ul>
-                    <li><a href="#">LogIn</a></li>
-                    <li><a href="#">Sign up</a></li>
-                    <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                </ul>
-            </nav>
-        </div>
-        <br>
-
-        <!-- Mauro Formulario -->
-
-        <form action="/views/register.html" method="post" class="registro">
-
-            <h1 class="tituloform">Formulario de Registro</h1>
-
-            <label for="name">Nombre:</label>
-            <input type="text" id="name">
-
-            <label for="name">Apellido:</label>
-            <input type="text" id="last name">
-
-            <label for="name">Email:</label>
-            <input type="email" id="email">
-
-            <label for="name">Contraseña:</label>
-            <input type="password" id="password">
-
-            <label for="name">Confirmar Contraseña:</label>
-            <input type="password" id="Confirm Password"><br>
-
-            <div class="botonenviar">
-                <input type="submit" value="Enviar">
-                <input type="reset" value="Borrar">
+        <main class="main-chart">
+            <div class="up-chart">
+                <h2>registrarse <i class="fa-solid fa-dog"></i></h2>
             </div>
-        </form>
 
-</body>
+            <div class="register-container">
+                <img src="" alt="">
 
+                <form class="register-form">
+                    <div class="user-info">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    
+                        <label for="apellido">Apellido:</label>
+                        <input type="text" id="apellido" name="apellido" required>
+
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="contrasena">Contraseña:</label>
+                        <input type="password" id="contrasena" name="contrasena" required>
+                    
+                        <label for="confirmar_contrasena">Confirmar Contraseña:</label>
+                        <input type="password" id="confirmar_contrasena" name="confirmar_contrasena" required>
+
+                        <label for="foto_perfil">Foto de Perfil:</label>
+                        <input type="file" id="foto_perfil" name="foto_perfil" class="photo"> 
+                    </div>
+                    
+                    <div class="bottom-info">
+                        <button type="submit"> Registrarse <i class="fa-solid fa-paw"></i> </button>
+                        <a href="/usuario/login"> O Iniciar sesion</a>
+                    </div>
+                </form>
+
+            </div>
+        </main>
+
+        <%- include('./partials/footer.ejs') %> <!--include footer-->
+
+    </body>
 </html>

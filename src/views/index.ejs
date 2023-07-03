@@ -1,23 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('./partials/head.ejs') %> <!--include head-->
+    <%- include('./partials/head.ejs') %> <!--include head-->
 
     <body>
+
         <%- include('./partials/header.ejs') %> <!--include header-->
 
-            <%- include('./partials/main.ejs') %> <!--include main-->
-
-                <%- include('./partials/footer.ejs') %> <!--include footer-->
-
-                    <div class="whatsapp-icon">
-                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        <header>
+            <!--Carrusel-->
+            <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
+                <div class="carousel-indicators mb-0">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://http2.mlstatic.com/D_NQ_684941-MLA69724614122_052023-OO.webp"
+                            class="d-block w-100" alt="...">
                     </div>
+                    <div class="carousel-item">
+                        <img src="https://http2.mlstatic.com/D_NQ_617583-MLA69889488839_062023-OO.webp"
+                            class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://http2.mlstatic.com/D_NQ_952815-MLA69858572040_062023-OO.webp"
+                            class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        
+            <!--recuadro de informacion que se encuentra abajo del carrusel-->
+            <div class="header-info">
+                <div class="info-container">
+                    <i class="fa-solid fa-credit-card icons"></i>
+                    <div>
+                        <h2>Elegí cómo pagar</h2>
+                        <p>Podés pagar con credito, débito en hasta 12 cuotas sin intereses.</p>
+                    </div>
+                </div>
+                <div class="info-container">
+                    <i class="fa-solid fa-truck-fast icons"></i>
+                    <div>
+                        <h2>Envío gratis desde $ 3.000</h2>
+                        <p>En PetLandia tenés envíos gratis en miles de productos.</p>
+                    </div>
+                </div>
+                <div class="info-container">
+                    <i class="fa-solid fa-shield-dog icons"></i>
+                    <div>
+                        <h2>Seguridad, de principio a fin</h2>
+                        <p>¿No te gusta? ¡Devolvelo! En PetLandia, estás siempre protegido.</p>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-                    <!-- Links -->
-                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-                        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-                        crossorigin="anonymous"></script>
+        <main>
+            <!--Seccion Ofertas-->
+            <div>
+                <h2 class="titles">Ofertas imperdibles</h2>
+                <div class="all-products">
+                    <a href="/producto/producto">
+                        <article class="product">
+                            <img src="https://puppis.vteximg.com.br/arquivos/ids/167602-1000-1000/150042.jpg?v=637021774610770000"
+                                alt="">
+                            <i class="fa-solid fa-truck truck"></i>
+                            <div class="price-discount">
+                                <p class="product-price">$ 16.190</p>
+                                <p class="product-discount">10% OFF</p>
+                            </div>
+                            <h2>Alimento Excellent - 20kg</h2>
+                        </article>
+                    </a>
+                    <article class="product">
+                        <img src="https://puppis.vteximg.com.br/arquivos/ids/179808-1000-1000/7613287031051_1.png?v=637570861371300000"
+                            alt="">
+                        <i class="fa-solid fa-truck truck"></i>
+                        <div class="price-discount">
+                            <p class="product-price">$ 20.600</p>
+                            <p class="product-discount"></p>
+                        </div>
+                        <h2>Alimento Pro Plan - 15kg</h2>
+                    </article>
+                    <article class="product">
+                        <img src="https://puppis.vteximg.com.br/arquivos/ids/190297-1000-1000/156154.jpg?v=638028352034700000"
+                            alt="">
+                        <i class="fa-solid fa-truck truck"></i>
+                        <div class="price-discount">
+                            <p class="product-price">$ 22.050</p>
+                            <p class="product-discount"></p>
+                        </div>
+                        <h2>Alimento Royal Canin - 15kg</h2>
+                    </article>
+                    <article class="product">
+                        <img src="https://puppis.vteximg.com.br/arquivos/ids/186507-1000-1000/148052.jpg?v=637871009908500000"
+                            alt="">
+                        <i class="fa-solid fa-truck truck"></i>
+                        <div class="price-discount">
+                            <p class="product-price">$ 12.685</p>
+                            <p class="product-discount">15% OFF</p>
+                        </div>
+                        <h2>Alimento Old Prince - 15+3kg</h2>
+                    </article>
+                </div>
+            </div>
+        
+            <!--Seccion Destacados-->
+            <div>
+                <h2 class="titles">Productos destacados</h2>
+                <div class="all-products">
+                    <article class="product">
+                        <img src="https://puppis.vteximg.com.br/arquivos/ids/167602-1000-1000/150042.jpg?v=637021774610770000"
+                            alt="">
+                        <i class="fa-solid fa-truck truck"></i>
+                        <div class="price-discount">
+                            <p class="product-price">$ 16.190</p>
+                            <p class="product-discount">10% OFF</p>
+                        </div>
+                        <h2>Alimento Excellent - 20kg</h2>
+                    </article>
+                    <article class="product">
+                        <img src="https://puppis.vteximg.com.br/arquivos/ids/179808-1000-1000/7613287031051_1.png?v=637570861371300000"
+                            alt="">
+                        <i class="fa-solid fa-truck truck"></i>
+                        <div class="price-discount">
+                            <p class="product-price">$ 20.600</p>
+                            <p class="product-discount"></p>
+                        </div>
+                        <h2>Alimento Pro Plan - 15kg</h2>
+                    </article>
+                    <article class="product">
+                        <img src="https://puppis.vteximg.com.br/arquivos/ids/190297-1000-1000/156154.jpg?v=638028352034700000"
+                            alt="">
+                        <i class="fa-solid fa-truck truck"></i>
+                        <div class="price-discount">
+                            <p class="product-price">$ 22.050</p>
+                            <p class="product-discount"></p>
+                        </div>
+                        <h2>Alimento Royal Canin - 15kg</h2>
+                    </article>
+                    <article class="product">
+                        <img src="https://puppis.vteximg.com.br/arquivos/ids/186507-1000-1000/148052.jpg?v=637871009908500000"
+                            alt="">
+                        <i class="fa-solid fa-truck truck"></i>
+                        <div class="price-discount">
+                            <p class="product-price">$ 12.685</p>
+                            <p class="product-discount">15% OFF</p>
+                        </div>
+                        <h2>Alimento Old Prince - 15+3kg</h2>
+                    </article>
+                </div>
+            </div>
+        
+            <!--Filtro por animales-->
+            <div class="main-animals">
+                <h2 class="titles animals">Productos para cada mascota</h2>
+                <div class="all-pets">
+                    <div class="animal-circle">
+                        <a href="#">
+                            <img src="https://images.ecestaticos.com/h34TvzTFVdrau9Un4Wdmwhed_e4=/0x115:2265x1390/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F8ec%2F08c%2F85c%2F8ec08c85c866ccb70c4f1c36492d890f.jpg"
+                                alt="">
+                            <h2>Perro</h2>
+                        </a>
+                    </div>
+                    <div class="animal-circle">
+                        <a href="#">
+                            <img src="https://okdiario.com/img/2022/10/18/los-gatos-pueden-ver-en-color-1-655x368.jpg"
+                                alt="">
+                            <h2>Gato</h2>
+                        </a>
+                    </div>
+                    <div class="animal-circle">
+                        <a href="#">
+                            <img src="https://imagenes.muyinteresante.es/files/image_620_410/uploads/2022/10/12/6346a346987e1.jpeg"
+                                alt="">
+                            <h2>Roedores</h2>
+                        </a>
+                    </div>
+                    <div class="animal-circle">
+                        <a href="#">
+                            <img src="https://humanidades.com/wp-content/uploads/2017/03/pajaro-azul-e1563758291533.jpg"
+                                alt="">
+                            <h2>Aves</h2>
+                        </a>
+                    </div>
+                    <div class="animal-circle">
+                        <a href="#">
+                            <img src="https://www.fundacionaquae.org/wp-content/uploads/2019/09/pez.jpg" alt="">
+                            <h2>Peces</h2>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        
+        </main>
+
+        <%- include('./partials/footer.ejs') %> <!--include footer-->
+
+        <div class="whatsapp-icon">
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+
+        <!-- Links -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"> </script>
+
     </body>
 
 </html>

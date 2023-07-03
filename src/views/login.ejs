@@ -1,137 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>PetLandia</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- Links -->
-    <script src="https://kit.fontawesome.com/b29db1d018.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/login.css">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/responsive.css">
-</head>
-<body>
-    <header>
+        <title>PetLandia</title>
+        
+        <!-- Links -->
+        <script src="https://kit.fontawesome.com/b29db1d018.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/normalize.css"> 
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/responsive.css">
+    </head>
 
-        <!--Menu superior-->
-        <div class="main-header-top-bar">
-            <img src="/images/PetLandia-V3 (1).png" alt="logo-PetLandia" class="logo">
+    <body>
+        <%- include('./partials/header.ejs') %> <!--include header-->
 
-            <form action="" method="post" class="main-search">
-                <input class="search-bar" type="search" name="" placeholder="   Buscar">
-                <button class="button-search-bar" type="submit"> <i class="fa-solid fa-magnifying-glass"></i> </button>
-            </form>
-
-            <nav class="main-top-bar">
-                <ul>
-                    <li><a href="/login">LogIn</a></li>
-                    <li>/</li>
-                    <li><a href="#">Sign up</a></li>
-                    <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
-                </ul>
-            </nav>
-        </div>
-
-        <!--Menu desplegable-->
-        <nav class="main-bottom-bar">
-            <ul class="nav-menu">
-                <li><a href="#">Mascotas <i class="fa-solid fa-angle-down"></i></a>
-                    <ul class="nav-submenu">
-                        <li><a href="#">Servicio #1</a></li>
-                        <li><a href="#">Servicio #2</a></li>
-                        <li><a href="#">Servicio #3</a></li>
-                    </ul> 
-                </li>
-                <li><a href="#">Productos <i class="fa-solid fa-angle-down"></i></a>
-                    <ul class="nav-submenu">
-                        <li><a href="#">Servicio #1</a></li>
-                        <li><a href="#">Servicio #2</a></li>
-                        <li><a href="#">Servicio #3</a></li>
-                    </ul> 
-                </li>
-                <li><a href="#">Marcas <i class="fa-solid fa-angle-down"></i></a>
-                    <ul class="nav-submenu">
-                        <li><a href="#">Servicio #1</a></li>
-                        <li><a href="#">Servicio #2</a></li>
-                        <li><a href="#">Servicio #3</a></li>
-                    </ul> 
-                </li>
-                <li><a href="#">Servicios <i class="fa-solid fa-angle-down"></i></a>
-                    <ul class="nav-submenu">
-                        <li><a href="#">Servicio #1</a></li>
-                        <li><a href="#">Servicio #2</a></li>
-                        <li><a href="#">Servicio #3</a></li>
-                    </ul> 
-                </li>
-            </ul>
-        </nav>
-
-    <main class="cuerpo">
-    
-        <div class="loginbox">
-            <h1>INGRESA</h1>
-            <br/>
-            <form>
-                <label for="email">EMAIL</label>
-                <input class=email type="email" placeholder="Ingrese su email"></input>
-                <br/>
-                <br/>
-                <label for="password">CONTRASEÑA</label>
-                <input class=contraseña type="password" placeholder="ingrese contraseña"></input>
-                <br/>
-                <br/>
-                <div class="checkbox">
-                    <input type="checkbox" value="Si">
-                    <label for="recordarme">Recordarme</label>
-                </div>
-                <a href="#">¿Olvidó su contraseña?</a>
-                <br/>
-                <br/>
-                <br/>
-                <button type="submit" class="boton">Ingresar</button>
-            </form>
-
-
-        </div>
-    </main>
-
-
-    <footer>
-        <div class="all-footer">
-            <div class="footer-info-one">
-                <h2>Sobre nosotros</h2>
-                <ul>
-                    <li><a href="">¿Quienes somos?</a></li>
-                    <li><a href="">Informacion util</a></li>
-                    <li><a href="">Soporte</a></li>
-                </ul>
+        <main class="main-chart">
+            <div class="up-chart">
+                <h2>Ingresar <i class="fa-solid fa-dog"></i></h2>
             </div>
-            <div class="footer-info-two">
-                <h2>Redes</h2>
-                <i class="fa-brands fa-facebook-f"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-twitter"></i>
+            <div class="login-container">
+                <form class="login-form">
+                    <div class="user">
+                        <label for="username">Usuario:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                
+                    <div class="pass">
+                        <label for="password">Contraseña:</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <a class="pass-remind" href="#">Olvidaste tu contraseña?</a>
+                    <div class="down-chart">
+                        <button type="submit"> Iniciar sesion <i class="fa-solid fa-paw"></i> </button>
+                        <a href="/usuario/register"> O registrarse</a>
+                    </div>
+                </form>
             </div>
-            <div class="footer-info-three">
-                <h2>Contacto</h2>
-                <ul>
-                    <li><i class="fa-solid fa-phone"></i><a href="">11-7878-2354</a></li>
-                    <li><i class="fa-solid fa-envelope"></i><a href="">info@petlandia.com.ar</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
+        </main>
 
-    <div class="whatsapp-icon">
-        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-    </div>
+        <%- include('./partials/footer.ejs') %> <!--include footer-->
 
-<!-- Links -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-</body>
+    </body>
 </html>

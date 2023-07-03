@@ -14,10 +14,8 @@ app.use(express.static(publicpath));
 app.set('views', path.resolve(__dirname, 'views'));
 
 app.use('/', mainRoutes);
-
-app.use('/', productRoutes);
-
-app.use('/', userRoutes);
+app.use('/producto', productRoutes);
+app.use('/usuario', userRoutes);
 
 app.set('view engine', 'ejs');
 
