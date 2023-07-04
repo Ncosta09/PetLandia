@@ -1,3 +1,7 @@
+main{
+    min-height: 680px;
+}
+
 .product-top{
     display: flex;
     flex-direction: column-reverse;

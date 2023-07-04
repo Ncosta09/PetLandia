@@ -1,6 +1,5 @@
-html, body{
-    height: 100%;
-    position: relative;
+main{
+    min-height: 680px;
 }
 
 .info-bar{

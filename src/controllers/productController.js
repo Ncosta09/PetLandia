@@ -6,6 +6,10 @@ const productController = {
 
     carrito: (req, res) => {
         res.render('carrito');
+    },
+
+    crearArticulo: (req, res) => {
+        res.render('crear');
     }
 }
 

@@ -54,6 +54,10 @@
         margin: 0 5px 0 5px;
     }
 
+    .add-article {
+        color: #5f2c24 !important;
+    }
+
     .search-bar{
         width: 300px;
     }
