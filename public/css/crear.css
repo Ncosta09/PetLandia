@@ -59,7 +59,7 @@
     margin-right: 20px;
 }
 
-.prod-name input, .prod-price input, .prod-disc input, .prod-cat input, .prod-desc textarea, .prod-photo input{
+.prod-name input, .prod-price input, .prod-disc input, .prod-cat select, .prod-desc textarea, .prod-photo input{
     width: 100%;
 }
 
