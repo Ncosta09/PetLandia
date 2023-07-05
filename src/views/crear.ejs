@@ -9,6 +9,17 @@
         
         <!-- Links -->
         <script src="https://kit.fontawesome.com/b29db1d018.js" crossorigin="anonymous"></script>
+        <script>
+            // Función para mostrar la imagen seleccionada
+            function previewImage(event) {
+                var reader = new FileReader();
+                reader.onload = function () {
+                    var preview = document.getElementById('preview');
+                    preview.src = reader.result;
+                }
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        </script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/crear.css">
         <link rel="stylesheet" href="/css/normalize.css"> 
@@ -19,9 +30,51 @@
     <body>
         <%- include('./partials/header.ejs') %> <!--include header-->
 
-        <main></main>
+        <main>
+            <div class="all-form">
+                <div class="prod-top">
+                    <h2>Publicar articulo</h2>
+                </div>
+                <form class="public-form">
+                    <div class="prod-name">
+                        <label>Nombre del producto:</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="prod-price-disc">
+                        <div class="prod-price">
+                            <label>Precio:</label>
+                            <input type="text" required>
+                        </div>
+                        <div class="prod-disc">
+                            <label>Descuento:</label>
+                            <input type="text" required>
+                        </div>
+                    </div>
+                    <div class="prod-cat">
+                        <label>Categoria:</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="prod-desc">
+                        <label>Descripcion:</label>
+                        <textarea rows="5"></textarea>
+                    </div>
+                    <div class="prod-photo">
+                        <label>Foto:</label>
+                        <input type="file" id="foto_perfil" name="foto_perfil" onchange="previewImage(event)" accept="image/*" required>
+                    </div>
+                    <div class="preview-image">
+                        <div class="image-container" onclick="document.getElementById('foto_perfil').click()">
+                            <img id="preview" src="#" alt="">
+                        </div>
+                    </div>
+                    <div class="create-buttons">
+                        <button class="public" type="submit">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </main>
 
-        <!-- <%- include('./partials/footer.ejs') %> include footer-->
+        <%- include('./partials/footer.ejs') %> <!-- include footer -->
 
     </body>
 </html>
