@@ -1,0 +1,70 @@
+[
+ {
+  "id": 1,
+  "name": "aaa",
+  "price": 123,
+  "discount": null,
+  "category": "Ofertas",
+  "description": "1111",
+  "info": "aaaaa",
+  "image": "1689042587246156177.jpg"
+ },
+ {
+  "id": 2,
+  "name": "Comilona",
+  "price": 2222,
+  "discount": null,
+  "category": "Destacados",
+  "description": "Ofertonn",
+  "info": "aaaaa",
+  "image": "1689042820334Comida1.jpg"
+ },
+ {
+  "id": 3,
+  "name": "10 kg de royal cannin",
+  "price": 1000,
+  "discount": 10,
+  "category": "Ofertas",
+  "description": "Ofertonnn",
+  "info": "aaaaa",
+  "image": "1689044252859156177.jpg"
+ },
+ {
+  "id": 4,
+  "name": "Comida Rica",
+  "price": 200,
+  "discount": 1,
+  "category": "Ofertas",
+  "description": "Comidaaaa",
+  "info": "Hola maria",
+  "image": "1689046540830Comida1.jpg"
+ },
+ {
+  "id": 5,
+  "name": "Mi nombre es Juan",
+  "price": 10000,
+  "discount": 15,
+  "category": "Destacados",
+  "description": "Hola Juan mi nombre es pedro",
+  "image": "1689048213035unnamed.png"
+ },
+ {
+  "id": 6,
+  "name": "Meme",
+  "price": 100000,
+  "discount": 10,
+  "category": "Ofertas",
+  "description": "mi nombre es meme",
+  "image": "1689048359078unnamed.png"
+ },
+ {
+  "id": 7,
+  "name": "AAAAAA",
+  "price": 12345,
+  "discount": 10,
+  "category": "Destacados",
+  "description": "AAAAAAAAA",
+  "info": "aaaaaaaaa",
+  "image": "1689048452803Comida1.jpg"
+ }
+]

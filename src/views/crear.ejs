@@ -35,42 +35,47 @@
                 <div class="prod-top">
                     <h2>Publicar articulo</h2>
                 </div>
-                <form class="public-form">
+                <form action="/producto/crear" method="post" enctype="multipart/form-data" class="public-form">
                     <div class="prod-name">
                         <label>Nombre del producto:</label>
-                        <input type="text" required>
+                        <input type="text" id="name" name="Nombre" required>
                     </div>
                     <div class="prod-price-disc">
                         <div class="prod-price">
                             <label>Precio:</label>
-                            <input type="text" required>
+                            <input type="text" id="Price" name="Precio" required>
                         </div>
                         <div class="prod-disc">
                             <label>Descuento:</label>
-                            <input type="text">
+                            <input type="text" id="Discount" name="Descuento">
                         </div>
                     </div>
                     <div class="prod-cat">
                         <label>Categoria:</label>
-                        <select name="select" class="product-select" required>
-                            <option value="value0" selected>Ninguna</option>
-                            <option value="value1">Ofertas</option>
-                            <option value="value2">Destacados</option>
+                        <select id="Category" name="Categoria" class="product-select" required>
+                            <option value="" selected>Ninguna</option>
+                            <option value="Ofertas">Ofertas</option>
+                            <option value="Destacados">Destacados</option>
                           </select>
                     </div>
                     <div class="prod-desc">
                         <label>Descripcion:</label>
-                        <textarea rows="5"></textarea>
+                        <textarea rows="5" id="Description" name="Descripcion"></textarea>
+
+                        <label>Informacion:</label>
+                        <textarea rows="5" id="Information" name="Informacion"></textarea>
                     </div>
+
                     <div class="prod-photo">
                         <label>Foto:</label>
-                        <input type="file" id="foto_perfil" name="foto_perfil" onchange="previewImage(event)" accept="image/*" required>
+                        <input type="file" id="foto_perfil" name="imagenProducto" onchange="previewImage(event)" accept="image/*">
                     </div>
                     <div class="preview-image">
                         <div class="image-container" onclick="document.getElementById('foto_perfil').click()">
                             <img id="preview" src="#" alt="">
                         </div>
                     </div>
+
                     <div class="create-buttons">
                         <button class="public" type="submit">Guardar</button>
                     </div>

@@ -10,6 +10,8 @@ const app = express();
 const publicpath = path.resolve(__dirname, '../public');
 
 app.use(express.static(publicpath));
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 
 app.set('views', path.resolve(__dirname, 'views'));
 

@@ -21,10 +21,32 @@ main{
     display: none;
 }
 
+.detail-price-disc{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+}
+
 .price{
     font-size: 30px;
-    margin-bottom: 10px;
     width: 300px;
+    text-decoration: line-through;
+    margin: 0;
+}
+
+.price-confirmation{
+    font-size: 30px;
+    width: 300px;
+}
+
+.disc{
+    color: green;
+    width: 350px;
+    text-align: left;
+    margin: 0;
 }
 
 .product-truck{
@@ -109,6 +131,16 @@ main{
     color: #ac8464;
 }
 
+.edit{
+    background-color:#ff9800;
+    color: black;
+}
+
+.delete{
+    background-color:#ce2307;
+    color: black;
+}
+
 .product-footer{
     margin-top: 30px;
 }
@@ -164,7 +196,7 @@ main{
         width: 300px;
     }
 
-    .product-info{ /*ACA*/
+    .product-info{
         position: absolute;
         width: 50%;
         right: 0;
@@ -174,10 +206,26 @@ main{
         top: 140px;
     }
 
+    .edit-delete-buttons{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 300px;
+    }
+
+    .edit{
+        margin-right: 10px;
+    }
+
+    .edit, .delete{
+        font-size: 14px;
+    }
+
     .product-footer{
         position: relative;
         width: 100%;
-        margin-top: 40px;
+        margin-top: 70px;
         margin-bottom: 30px;
     }
 

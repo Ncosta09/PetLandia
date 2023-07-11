@@ -20,13 +20,23 @@
 <main>
   <div class="product-detail">
     <div class="product-top">
-      <img class="product-img" src="https://puppis.vteximg.com.br/arquivos/ids/167602-1000-1000/150042.jpg?v=637021774610770000" alt="">
-      <h2 class="product-title">Alimento Excellent - 20kg</h2>
+      <img class="product-img" src="/images/products/<%=producto.image%>" alt="">
+      <h2 class="product-title"><%=producto.name%></h2>
     </div>
 
     <div class="product-info">
-      <h2 class="copy-title">Alimento Excellent - 20kg</h2>
-      <p class="price">$ 16.190</p>
+      <h2 class="copy-title"><%=producto.name%></h2>
+      <% if(producto.discount > 0){ %>
+      <div class="detail-price-disc">
+        <p class="price">$ <%=producto.price%></p>
+        <% if(producto.discount > 0 && producto.discount <= 100 ){ %>
+        <p class="disc"><%=producto.discount%>% OFF</p>
+        <% } %>
+      </div>
+      <p class="price-confirmation">$ <%=(producto.price - ((producto.price) * (producto.discount)/100))%></p>
+      <% }else{ %>
+      <p class="price-confirmation">$ <%=producto.price%></p>
+      <% } %>
       <div class="product-truck">
         <i class="fa-solid fa-truck truck-i"></i>
         <p class="truck-p">Llega gratis</p>
@@ -49,6 +59,10 @@
       <div class="product-buttons">
         <button class="product-btn buynow">Comprar ahora</button>
         <button class="product-btn buythen">Agregar al carrito</button>
+        <div class="edit-delete-buttons">
+          <button class="product-btn edit">Editar publicacion</button>
+          <button class="product-btn delete">Borrar publicacion</button>
+        </div>
       </div>
 
     </div>
@@ -57,14 +71,14 @@
       <details open>
         <summary class="footer-title">Descripcion</summary>
         <div class="description">
-          <p>La exclusiva combinación de ingredientes seleccionados le confiere a las fórmulas Excellent la propiedad de generar cambios significativos en la calidad de vida de los perros y gatos, a través de una nutrición de vanguardia con beneficios fácilmente comprobables, que van desde una protección extra al sistema de defensas, un incremento en la absorción de nutrientes, hasta una conformación más consistente de las heces. Los perros adultos tienen diferentes necesidades nutricionales que los cachorros o los perros maduros. PURINA® Excellent® ADULT CHICKEN & RICE ofrece una fórmula completa que incluye aminoácidos esenciales, inulina, vitaminas, minerales y zeolita, aportando un óptimo balance nutricional y un sabor irresistible.</p>
+          <p><%=producto.description%></p>
         </div>
       </details>
 
       <details>
         <summary class="footer-title">Informacion</summary>
         <div class="description">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et dolorum fugit veniam numquam a, eveniet sapiente ullam quibusdam repellendus quam nam vitae odit, iusto labore mollitia doloremque aperiam, voluptatem totam.</p>
+          <p><%=producto.info%></p>
         </div>
       </details>
 
