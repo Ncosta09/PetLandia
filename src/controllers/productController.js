@@ -7,30 +7,30 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productController = {
 
-    productoDetalle: (req, res) => {
-        let idProducto = req.params.idProducto;
-        let productoDetalle;
+	productoDetalle: (req, res) => {
+		let idProducto = req.params.idProducto;
+		let productoDetalle;
 
-        for(let obj of products){
-            if(obj.id == idProducto){
-                productoDetalle = obj;
-                break;
-            }
-        }
-        res.render('producto', {producto: productoDetalle});
-    },
+		for (let obj of products) {
+			if (obj.id == idProducto) {
+				productoDetalle = obj;
+				break;
+			}
+		}
+		res.render('producto', { producto: productoDetalle });
+	},
 
-    crearArticulo: (req, res) => {
-        res.render('crear');
-    },
+	crearArticulo: (req, res) => {
+		res.render('crear');
+	},
 
-    creador: (req, res) => {
+	creador: (req, res) => {
 
-        let datosFormulario = req.body;
-		let idNuevoProducto = (products[products.length-1].id)+1;
+		let datosFormulario = req.body;
+		let idNuevoProducto = (products[products.length - 1].id) + 1;
 
-        let nombreImagen = req.file.filename;
-		
+		let nombreImagen = req.file.filename;
+
 		let objNuevoProducto = {
 			id: idNuevoProducto,
 			name: datosFormulario.Nombre,
@@ -38,18 +38,64 @@ const productController = {
 			discount: parseInt(datosFormulario.Descuento),
 			category: datosFormulario.Categoria,
 			description: datosFormulario.Descripcion,
-            info: datosFormulario.Informacion,
+			info: datosFormulario.Informacion,
 			image: nombreImagen
 		}
 
 		products.push(objNuevoProducto);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products,null,' '));
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 		res.redirect('/');
-    },
+	},
 
-    carrito: (req, res) => {
-        res.render('carrito');
-    }
+	editarProducto: (req, res) => {
+		let idProducto = req.params.idProducto;
+		let productoEnEdicion;
+
+		for (let obj of products) {
+			if (obj.id == idProducto) {
+				productoEnEdicion = obj;
+				break;
+			}
+		}
+
+		res.render('editar', { productoEnEdicion });
+	},
+	update: (req, res) => {
+
+		let idProducto = req.params.idProducto;
+
+		for (let obj of products) {
+			if (obj.id == idProducto) {
+				obj.name = req.body.Nombre;
+				obj.price = parseInt(req.body.Precio);
+				obj.discount = parseInt(req.body.Descuento);
+				obj.category = req.body.Categoria;
+				obj.description = req.body.Descripcion;
+				obj.info = req.body.Informacion;
+				obj.image = req.file.filename;
+				break;
+			}
+		}
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+		res.redirect('/');
+
+	},
+
+	destroy: (req, res) => {
+		let idProducto = req.params.idProducto;
+
+		let nuevoArregloProductos = products.filter(function (e) {
+			return e.id != idProducto;
+		});
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(nuevoArregloProductos, null, ' '));
+		res.redirect('/');
+	},
+
+	carrito: (req, res) => {
+		res.render('carrito');
+	},
 }
 
 module.exports = productController;

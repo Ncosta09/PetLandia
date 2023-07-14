@@ -30,16 +30,6 @@
   "image": "1689044252859156177.jpg"
  },
  {
-  "id": 4,
-  "name": "Comida Rica",
-  "price": 200,
-  "discount": 1,
-  "category": "Ofertas",
-  "description": "Comidaaaa",
-  "info": "Hola maria",
-  "image": "1689046540830Comida1.jpg"
- },
- {
   "id": 5,
   "name": "Mi nombre es Juan",
   "price": 10000,
@@ -47,15 +37,6 @@
   "category": "Destacados",
   "description": "Hola Juan mi nombre es pedro",
   "image": "1689048213035unnamed.png"
- },
- {
-  "id": 6,
-  "name": "Meme",
-  "price": 100000,
-  "discount": 10,
-  "category": "Ofertas",
-  "description": "mi nombre es meme",
-  "image": "1689048359078unnamed.png"
  },
  {
   "id": 7,

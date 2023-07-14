@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>PetLandia</title>
+        
+        <!-- Links -->
+        <script src="https://kit.fontawesome.com/b29db1d018.js" crossorigin="anonymous"></script>
+        <script>
+            // Función para mostrar la imagen seleccionada
+            function previewImage(event) {
+                var reader = new FileReader();
+                reader.onload = function () {
+                    var preview = document.getElementById('preview');
+                    preview.src = reader.result;
+                }
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        </script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/crear.css">
+        <link rel="stylesheet" href="/css/normalize.css"> 
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/responsive.css">
+    </head>
+
+    <body>
+        <%- include('./partials/header.ejs') %> <!--include header-->
+
+        <main>
+            <div class="all-form">
+                <div class="prod-top">
+                    <h2>Articulo en edicion</h2>
+                </div>
+                <form action="/producto/editar/<%=productoEnEdicion.id%>?_method=PUT" method="POST"></form>
+                    <div class="prod-name">
+                        <label>Nombre del producto:</label>
+                        <input type="text" id="name" name="Nombre" value="<%=productoEnEdicion.name%>" required>
+                    </div>
+                    <div class="prod-price-disc">
+                        <div class="prod-price">
+                            <label>Precio:</label>
+                            <input type="text" id="Price" name="Precio" value="<%=productoEnEdicion.price%>" required>
+                        </div>
+                        <div class="prod-disc">
+                            <label>Descuento:</label>
+                            <input type="text" id="Discount" name="Descuento" value="<%=productoEnEdicion.discount%>">
+                        </div>
+                    </div>
+                    <div class="prod-cat">
+                        <label>Categoria:</label>
+                        <select id="Category" name="Categoria" value="<%=productoEnEdicion.category%>" class="product-select"  required>
+                            <option value="" selected>Ninguna</option>
+                            <option value="Ofertas">Ofertas</option>
+                            <option value="Destacados">Destacados</option>
+                          </select>
+                    </div>
+                    <div class="prod-desc">
+                        <label>Descripcion:</label>
+                        <textarea rows="5" id="Description" name="Descripcion"></textarea>
+
+                        <label>Informacion:</label>
+                        <textarea rows="5" id="Information" name="Informacion"></textarea>
+                    </div>
+
+                    <div class="prod-photo">
+                        <label>Foto:</label>
+                        <input type="file" id="foto_perfil" name="imagenProducto" onchange="previewImage(event)" accept="image/*">
+                    </div>
+                    <div class="preview-image">
+                        <div class="image-container" onclick="document.getElementById('foto_perfil').click()">
+                            <img id="preview" src="#" alt="">
+                        </div>
+                    </div>
+
+                    <div class="create-buttons">
+                        <button class="public" type="submit">Guardar</button>
+                    </div>
+                
+            </div>
+        </main>
+
+        <%- include('./partials/footer.ejs') %> <!-- include footer -->
+
+    </body>
+</html>

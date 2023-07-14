@@ -60,8 +60,10 @@
         <button class="product-btn buynow">Comprar ahora</button>
         <button class="product-btn buythen">Agregar al carrito</button>
         <div class="edit-delete-buttons">
-          <button class="product-btn edit">Editar publicacion</button>
-          <button class="product-btn delete">Borrar publicacion</button>
+          <a href="/producto/editar/<%=producto.id%>" class="product-btn edit">Editar publicacion</a>
+          <form action="/producto/borrar/<%= producto.id %>?_method=DELETE" method="post">
+            <button class="product-btn delete">Borrar publicacion</button>
+          </form>
         </div>
       </div>
 

@@ -5,6 +5,8 @@ const userRoutes = require('./../src/routes/userRoutes');
 const express = require('express');
 const path = require('path');
 
+const methodOverride = require('method-override');
+
 const app = express();
 
 const publicpath = path.resolve(__dirname, '../public');
@@ -12,6 +14,9 @@ const publicpath = path.resolve(__dirname, '../public');
 app.use(express.static(publicpath));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+
+app.use(methodOverride('_method'));
+
 
 app.set('views', path.resolve(__dirname, 'views'));
 
