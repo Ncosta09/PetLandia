@@ -20,6 +20,10 @@ const productController = {
 		res.render('producto', { producto: productoDetalle });
 	},
 
+	carrito: (req, res) => {
+		res.render('carrito');
+	},
+
 	crearArticulo: (req, res) => {
 		res.render('crear');
 	},
@@ -43,7 +47,7 @@ const productController = {
 		}
 
 		products.push(objNuevoProducto);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+		fs.writeFileSync(productsFilePath, JSON.stringify(producto, null, ' '));
 		res.redirect('/');
 	},
 
@@ -71,13 +75,11 @@ const productController = {
 				obj.discount = parseInt(req.body.Descuento);
 				obj.category = req.body.Categoria;
 				obj.description = req.body.Descripcion;
-				obj.info = req.body.Informacion;
-				obj.image = req.file.filename;
 				break;
 			}
 		}
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+		fs.writeFileSync(productsFilePath, JSON.stringify(producto, null, ' '));
 		res.redirect('/');
 
 	},
@@ -93,9 +95,7 @@ const productController = {
 		res.redirect('/');
 	},
 
-	carrito: (req, res) => {
-		res.render('carrito');
-	},
+	
 }
 
 module.exports = productController;
