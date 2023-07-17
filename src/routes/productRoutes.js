@@ -27,7 +27,7 @@ router.get('/crear', productController.crearArticulo);
 router.post('/crear', uploadFile.single('imagenProducto'), productController.creador);
 
 router.get('/editar/:idProducto', productController.editarProducto);
-router.put('/editar/:idProducto', productController.update);
+router.put('/editar/:idProducto', uploadFile.single('imagenProducto'), productController.update);
 
 router.delete('/borrar/:idProducto', productController.destroy);
 module.exports = router;

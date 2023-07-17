@@ -47,11 +47,12 @@ const productController = {
 		}
 
 		products.push(objNuevoProducto);
-		fs.writeFileSync(productsFilePath, JSON.stringify(producto, null, ' '));
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 		res.redirect('/');
 	},
 
 	editarProducto: (req, res) => {
+		
 		let idProducto = req.params.idProducto;
 		let productoEnEdicion;
 
@@ -61,7 +62,7 @@ const productController = {
 				break;
 			}
 		}
-
+		
 		res.render('editar', { productoEnEdicion });
 	},
 	update: (req, res) => {
@@ -75,11 +76,22 @@ const productController = {
 				obj.discount = parseInt(req.body.Descuento);
 				obj.category = req.body.Categoria;
 				obj.description = req.body.Descripcion;
+				obj.info = req.body.Informacion;
+				if(req.file) {
+					obj.image = req.file.filename;
+					} 
+					else{
+					obj.image = products.image;
+					}
 				break;
 			}
 		}
 
-		fs.writeFileSync(productsFilePath, JSON.stringify(producto, null, ' '));
+		if(req.file){
+
+		}
+
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
 		res.redirect('/');
 
 	},

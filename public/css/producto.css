@@ -109,10 +109,10 @@ main{
     margin-bottom: 20px;
 }
 
-.product-btn{
+.product-btn, .product-form button{
     width: 300px;
+    height: 35px;
     margin-bottom: 10px;
-    padding: 10px;
     border-radius: 10px;
     border: none;
     display: flex;
@@ -134,6 +134,8 @@ main{
 .edit{
     background-color:#ff9800;
     color: black;
+    text-decoration: none;
+    padding: 0;
 }
 
 .delete{
@@ -169,7 +171,7 @@ main{
         display: block;
     }
 
-    .product-top{ /*ACA*/
+    .product-top{
         width: 50%;
         margin-top: 35px;
         height: 365px;
@@ -205,17 +207,21 @@ main{
         align-items: flex-start;
         top: 140px;
     }
-
+    
     .edit-delete-buttons{
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-around;
-        width: 300px;
     }
 
     .edit{
         margin-right: 10px;
+        width: 140px;
+    }
+
+    .product-form  .delete{
+        width: 150px;
     }
 
     .edit, .delete{

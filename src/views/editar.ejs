@@ -33,9 +33,9 @@
         <main>
             <div class="all-form">
                 <div class="prod-top">
-                    <h2>Articulo en edicion</h2>
+                    <h2>Edicion articulo</h2>
                 </div>
-                <form action="/producto/editar/<%=productoEnEdicion.id%>?_method=PUT" method="POST"></form>
+                <form action="/producto/editar/<%=productoEnEdicion.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="public-form">
                     <div class="prod-name">
                         <label>Nombre del producto:</label>
                         <input type="text" id="name" name="Nombre" value="<%=productoEnEdicion.name%>" required>
@@ -52,18 +52,24 @@
                     </div>
                     <div class="prod-cat">
                         <label>Categoria:</label>
-                        <select id="Category" name="Categoria" value="<%=productoEnEdicion.category%>" class="product-select"  required>
-                            <option value="" selected>Ninguna</option>
-                            <option value="Ofertas">Ofertas</option>
-                            <option value="Destacados">Destacados</option>
+                        <select id="Category" name="Categoria" class="product-select" required>
+                            <% if(productoEnEdicion.category == 'Ofertas'){ %>
+                                <option value="">Ninguna</option>
+                                <option value="Ofertas" selected>Ofertas</option>
+                                <option value="Destacados">Destacados</option>
+                                <% }else{ %>
+                                    <option value="">Ninguna</option>
+                                    <option value="Ofertas">Ofertas</option>
+                                    <option value="Destacados" selected>Destacados</option>
+                                    <% } %>
                           </select>
                     </div>
                     <div class="prod-desc">
                         <label>Descripcion:</label>
-                        <textarea rows="5" id="Description" name="Descripcion"></textarea>
+                        <textarea rows="5" id="Description" name="Descripcion"><%=productoEnEdicion.description%></textarea>
 
                         <label>Informacion:</label>
-                        <textarea rows="5" id="Information" name="Informacion"></textarea>
+                        <textarea rows="5" id="Information" name="Informacion"><%=productoEnEdicion.info%></textarea>
                     </div>
 
                     <div class="prod-photo">
@@ -72,15 +78,14 @@
                     </div>
                     <div class="preview-image">
                         <div class="image-container" onclick="document.getElementById('foto_perfil').click()">
-                            <img id="preview" src="#" alt="">
+                            <img id="preview" src="/images/products/<%=productoEnEdicion.image%>" alt="">
                         </div>
                     </div>
-                    
+
                     <div class="create-buttons">
-                        <button type="submit" class="buy-now-button">Guardar</button>
-                        
+                        <button class="public" type="submit">Guardar</button>
                     </div>
-                    
+                </form>
             </div>
         </main>
 
