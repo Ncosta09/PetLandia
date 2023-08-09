@@ -1,0 +1,26 @@
+[
+ {
+  "id": 1,
+  "name": "mariano",
+  "surname": "closs",
+  "email": "mc@gmail.com",
+  "password": "12345678",
+  "image": "1691531307434unnamed.png"
+ },
+ {
+  "id": 2,
+  "name": "maria",
+  "surname": "apolo",
+  "email": "mapolo@gmail.com",
+  "password": "$2a$10$R8oLHHvgr2lZ2UKJAjIpxu3vrN3OkqNEMnkxadzIDyz9jLfdvrCzi",
+  "image": "1691532284096Comida1.jpg"
+ },
+ {
+  "id": 3,
+  "name": "mario",
+  "surname": "casas",
+  "email": "mcasas@gmail.com",
+  "password": "$2a$10$GVcmgJAEQi.XLSgl2WDj.utMQRIdFSfIhLqlRDYCJXct8AdSIB4dS",
+  "image": "1691532580839unnamed.png"
+ }
+]

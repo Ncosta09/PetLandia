@@ -9,7 +9,7 @@ body, html{
 .main-chart{
     width: 90%;
     max-width: 700px;
-    height: 700px;
+    height: 800px;
     background-color: rgba(212, 194, 174, 0.5);
     border-radius: 8px;
     margin-top: 30px;
@@ -34,7 +34,7 @@ body, html{
 }
 
 .register-form{
-    height: 570px;
+    height: 670px;
     padding-left: 15px;
     padding-right: 15px;
     display: flex;
@@ -89,4 +89,9 @@ body, html{
     color: #ac8464;
     font-size: 18px;
     margin-top: 5px;
+}
+
+.color-alert{
+    color: red;
+    font-size: 14px;
 }

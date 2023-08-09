@@ -9,6 +9,8 @@ const methodOverride = require('method-override');
 
 const app = express();
 
+app.use(express.urlencoded({extended: false}));
+
 const publicpath = path.resolve(__dirname, '../public');
 
 app.use(express.static(publicpath));
