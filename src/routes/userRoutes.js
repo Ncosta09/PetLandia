@@ -59,4 +59,14 @@ router.post('/register', uploadFile.single('fotoPerfil'), validations, userContr
 //LogIn
 router.get('/login',userController.iniciarSesion);
 
+//proceso del login
+router.post('/login', userController.loginProcess);
+
+//perfil de usuario
+router.get('/perfil', userController.profile);
+
+//salir de la seccion
+router.get('/logout', userController.logout);
+
+
 module.exports = router;

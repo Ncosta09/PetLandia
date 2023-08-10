@@ -12,4 +12,9 @@ Creacion de Jason y Crud
 
 >22/6/23: Se definio la división de tareas.
 
+>4/7/23: En el formulario de registro poder ingresar todos los campos con contraseña encriptada, mas foto y todo en un jason.
+
+>40/08/2023: En el formulario de login verificar datos ingresados que sean correctos, poder quedar logueado y recorrer pagina. Editar los datos para que el usuario pueda chequearlos. Tambien salir del login y seguir navegando por la misma.
+
+
 

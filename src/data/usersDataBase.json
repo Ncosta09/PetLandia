@@ -22,5 +22,13 @@
   "email": "mcasas@gmail.com",
   "password": "$2a$10$GVcmgJAEQi.XLSgl2WDj.utMQRIdFSfIhLqlRDYCJXct8AdSIB4dS",
   "image": "1691532580839unnamed.png"
+ },
+ {
+  "id": 4,
+  "name": "Karina",
+  "surname": "Marczuk",
+  "email": "lopezmarczuk@gmail.com",
+  "password": "$2a$10$bgJB7rfnkQx251YVDYT9Z.luRFsjfay0cPPEDq0q8vmU4TpmgWnLK",
+  "image": "1691622797618278800463_5769354663092920_3624764588865416333_n.jpg"
  }
 ]

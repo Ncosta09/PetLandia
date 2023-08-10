@@ -3,6 +3,9 @@ const productRoutes = require('./../src/routes/productRoutes');
 const userRoutes = require('./../src/routes/userRoutes');
 
 const express = require('express');
+
+const session = require('express-session');
+
 const path = require('path');
 
 const methodOverride = require('method-override');
@@ -12,6 +15,12 @@ const app = express();
 app.use(express.urlencoded({extended: false}));
 
 const publicpath = path.resolve(__dirname, '../public');
+
+app.use(session({
+    secret:" ",
+    resave: false,
+    saveUninitialized: false,
+}));
 
 app.use(express.static(publicpath));
 app.use(express.urlencoded({extended: false}));
