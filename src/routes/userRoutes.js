@@ -37,7 +37,8 @@ const validations = [
         
         return true;
     }),
-    body('contrasena').isLength({ min: 5 }),
+    body('contrasena').notEmpty().withMessage('Se require contraseña').bail()
+    .isLength({ min: 5 }).withMessage('La contraseña debe contener al menos 5 caracteres'), 
     body('confirmarContrasena').custom((value, { req }) => {
       if (value !== req.body.contrasena) {
         throw new Error('Las contraseñas no coinciden');

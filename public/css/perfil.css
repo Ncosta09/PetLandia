@@ -47,3 +47,25 @@ body, html{
     height: 370px;
 }
 
+.profilePicture{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.profilePicture img{
+    height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    border: 3px solid black;
+}
+
+.profilename{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
