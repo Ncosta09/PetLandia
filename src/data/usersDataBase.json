@@ -30,5 +30,21 @@
   "email": "lopezmarczuk@gmail.com",
   "password": "$2a$10$bgJB7rfnkQx251YVDYT9Z.luRFsjfay0cPPEDq0q8vmU4TpmgWnLK",
   "image": "1691622797618278800463_5769354663092920_3624764588865416333_n.jpg"
+ },
+ {
+  "id": 5,
+  "name": "aa",
+  "surname": "aa",
+  "email": "aa@a.com",
+  "password": "$2a$10$Hn3cWC5XWW0CH97343jq1.l7kwmq4AUQ/KHVlgrRUhwPVUBMI7d0W",
+  "image": "1691722085507ab6761610000e5eb2ec5e757d04cc4c00a974dab.jpeg"
+ },
+ {
+  "id": 6,
+  "name": "Nicolas",
+  "surname": "Costa",
+  "email": "ncosta@gmail.com",
+  "password": "$2a$10$56Npb8b4EUvrRipdA2xb3.GT9LDijfLVSyEMmZgFfKF7ATwEUB.Yi",
+  "image": "1691956526315ab6761610000e5eb2ec5e757d04cc4c00a974dab.jpeg"
  }
 ]

@@ -26,9 +26,13 @@
         <nav class="main-top-bar">
             <ul>
                 <li><a href="/producto/crear" class="add-article">Publicar articulo</a></li>
+                <% if(locals.logeado){ %>
+                <li><a href="/usuario/perfil">Perfil</a></li>
+                <li><a href="/usuario/logout">LogOut</a></li>
+                <% } else{ %>
                 <li><a href="/usuario/login">LogIn</a></li>
-                <li><a href="/usuario/perfil"><i class="dropdown-item"></i>Mi perfil</a></li></li>
                 <li><a href="/usuario/register">Sign up</a></li>
+                <% } %>
                 <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
                 <li><a href="/producto/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>

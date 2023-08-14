@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+
 const User = {
 	fileName: path.join(__dirname,'../data/usersDataBase.json'),
 

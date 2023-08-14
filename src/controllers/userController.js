@@ -1,9 +1,11 @@
 const { validationResult } = require('express-validator');
 const fs = require('fs');
 const path = require('path');
-const bcrypt = require('bcryptjs');
-const modeloUsuario = require('../model/Usuario.js');
+const bcryptjs = require('bcryptjs');
+
+const User = require('../model/Usuario');
 const userFilePath = path.join(__dirname, '../data/usersDataBase.json');
+
 let user = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
 
 const userController = {
@@ -32,13 +34,13 @@ const userController = {
                 name: datosFormulario.nombre,
                 surname: datosFormulario.apellido,
                 email: datosFormulario.email,
-                password: bcrypt.hashSync(datosFormulario.contrasena, 10),
+                password: bcryptjs.hashSync(datosFormulario.contrasena, 10),
                 image: nombreImagen
             }
     
             user.push(objNuevoUsuario);
             fs.writeFileSync(userFilePath, JSON.stringify(user, null, ' '));
-            res.redirect('/');
+            res.redirect('/usuario/login');
         }
     },
 
@@ -46,42 +48,52 @@ const userController = {
         res.render('login');
     },
 
-    loginProcess: (req,res)=> {
-        let userToLogin = modeloUsuario.findByField('email', req.body.email);
-        console.log("usuario logueado 51",userToLogin)
-        if(userToLogin){
-            let isOkPassword = bcrypt.compareSync(req.body.password, userToLogin.password);
-            console.log("password ? 54", isOkPassword)
-            if (isOkPassword){
-                delete userToLogin.password;
-                req.session.userLogged = userToLogin;
-                return res.redirect('user/perfil');
-            }
-            return res.render('login', {
-                errors:{
-                    email:{
-                        msg:'Las credenciales son invalidas'
+    procesoLogin: (req,res) => {
+        let usuarioLogin = User.findByField('email', req.body.email);
+        
+        if(usuarioLogin){
+            let contrasenaCorrecta = bcryptjs.compareSync(req.body.contrasena, usuarioLogin.password); //password hace referencia a como se guardo en el JSON
+
+            if(contrasenaCorrecta){
+                delete usuarioLogin.password;
+                req.session.usuarioLogeado = usuarioLogin;
+
+                if(req.body.recordarUsuario){
+                    res.cookie('emailUsuario', req.body.email, { maxAge: (1000 * 60) * 2 });
+                }
+
+                return res.redirect('/usuario/perfil');
+
+            } else{
+                return res.render('login', {
+                    errores: {
+                        email: {
+                            msg: 'Las credenciales son incorrectas'
+                        }
                     }
-                }
-            })
+                });
+            }
         }
+
         return res.render('login', {
-            errors:{
-                email:{
-                    msg:'No se encuentra este email en nuestra base de datos'
+            errores: {
+                email: {
+                    msg: 'Este correo no se encuentra registrado'
                 }
             }
-        })
+        });
     },
 
-    profile: (req,res)=>{
-        return res.render('perfil',{
-            user: req.session.userToLogin
-        })
+    perfil: (req,res)=>{
+        res.render('perfil', {
+            usuario: req.session.usuarioLogeado
+        });
     },
+
     logout: (req,res)=>{
+        res.clearCookie('emailUsuario');
         req.session.destroy();
-        return res.redirect('/');
+        return res.redirect('/usuario/login');
     }
 }
 

@@ -19,31 +19,34 @@
     <body>
         <%- include('./partials/header.ejs') %> <!--include header-->
 
-        <main class="main-chart">
-            <div class="up-chart">
-                <h2>Ingresar <i class="fa-solid fa-dog"></i></h2>
-            </div>
-            <div class="login-container">
-                <form action="/usuario/login" method ="post" class="login-form">
-                    <div class="user">
-                        <label for="username">usuario:</label>
-                        <input type="text" id="username" name="username" required>
-                        <% if (locals.errors && errors.email) { %>
-                        <div class="text-danger"> 
-                        <%= errors.email.msg %>
+        <main class="chart-ubi">
+            <div class="main-chart">
+                <div class="up-chart">
+                    <h2>Ingresar <i class="fa-solid fa-dog"></i></h2>
+                </div>
+                <div class="login-container">
+                    <form action="/usuario/login" method ="post" class="login-form">
+                        <div class="user">
+                            <label for="email">Email:</label>
+                            <input type="text" id="email" name="email">
+                            <div class="color-alert">
+                                <% if(locals.errores && errores.email){ %>
+                                    <%= errores.email.msg %>
+                                <% } %>
+                            </div>
+                        
+                        <div class="pass">
+                            <label for="contrasena">Contraseña:</label>
+                            <input type="password" id="contrasena" name="contrasena">
                         </div>
-                        <% } %>
-                
-                    <div class="pass">
-                        <label for="password">Contraseña:</label>
-                        <input type="password" id="password" name="password" required>
-                    </div>
-                    <a class="pass-remind" href="#">Olvidaste tu contraseña?</a>
-                    <div class="down-chart">
-                        <button type="submit"> Iniciar sesion <i class="fa-solid fa-paw"></i> </button>
-                        <a href="/usuario/register"> O registrarse</a>
-                    </div>
-                </form>
+                        <label><input type="checkbox" name="recordarUsuario"> Recordarme </label>
+                        <a class="pass-remind" href="#">Olvidaste tu contraseña?</a>
+                        <div class="down-chart">
+                            <button type="submit"> Iniciar sesion <i class="fa-solid fa-paw"></i> </button>
+                            <a href="/usuario/register"> O registrarse</a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </main>
 

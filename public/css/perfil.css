@@ -1,0 +1,49 @@
+body, html{
+    height: 100%;
+}
+
+.main-bottom-bar{
+    display: none;
+}
+
+.chart-ubi{
+    min-height: 750px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-chart{
+    width: 90%;
+    max-width: 700px;
+    height: 500px;
+    background-color: rgba(212, 194, 174, 0.5);
+    border-radius: 8px;
+}
+
+.up-chart{
+    height: 130px;
+    width: 100%;
+    background-color: #d4bca4;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.up-chart h2{
+    font-size: 35px;
+}
+
+.icon-size{
+    font-size: 30px;
+}
+
+.profile-container{
+    height: 370px;
+}
+

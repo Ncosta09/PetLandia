@@ -10,7 +10,7 @@
         <!-- Links -->
         <script src="https://kit.fontawesome.com/b29db1d018.js" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <link rel="stylesheet" href="/css/login.css">
+        <link rel="stylesheet" href="/css/perfil.css">
         <link rel="stylesheet" href="/css/normalize.css"> 
         <link rel="stylesheet" href="/css/styles.css">
         <link rel="stylesheet" href="/css/responsive.css">
@@ -19,23 +19,16 @@
     <body>
         <%- include('./partials/header.ejs') %> <!--include header-->
 
-        <main class="main-chart">
-            <div class="up-chart">
-                <h2> Foto de Perfil </h2>
-            </div>
-            <div class="login-container">
-                <form class="login-form">
-                    <div class="user">
-                        <label for="username">Nombre y Apellido:</label>
-                        <input type="text" id="username" name="username" required>
-                        <% if (locals.errors && errors.email) { %>
-                        <div class="text-danger"> 
-                        <%= errors.email.msg %>
-                        </div>
-                        <% } %>
-                               
-                    
-                </form>
+        <main class="chart-ubi">
+            <div class="main-chart">
+                <div class="up-chart">
+                    <h2>Perfil <i class="fa-regular fa-user icon-size"></i></h2>
+                </div>
+                <div class="profile-container">
+                    <div class="profilePicture">
+                        <img src="/images/fotoPerfil/<%= usuario.image %>" alt="">
+                    </div>
+                </div>
             </div>
         </main>
 

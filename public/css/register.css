@@ -2,6 +2,13 @@ body, html{
     height: 100%;
 }
 
+main{
+    margin-top: 5px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .main-bottom-bar{
     display: none;
 }

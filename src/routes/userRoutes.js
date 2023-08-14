@@ -1,9 +1,14 @@
 const userController = require('./../controllers/userController');
+const User = require('../model/Usuario');
+const guestMiddleware = require('../middlewares/guestMiddleware');
+const authMiddleware = require('../middlewares/authMiddleware');
+
 
 const path = require('path');
 const express = require('express');
 const router = express.Router();
 const { body } = require('express-validator');
+
 
 const multer = require('multer');
 
@@ -22,7 +27,16 @@ const uploadFile = multer({ storage: configuracionFotoPerfil });
 const validations = [
     body('nombre').notEmpty().withMessage('Escribir un Nombre valido'),
     body('apellido').notEmpty().withMessage('Escribir un Apellido valido'),
-    body('email').notEmpty().withMessage('Escribir un email valido').bail().isEmail().withMessage('Debes escribir un formato de correo valido'),
+    body('email').notEmpty().withMessage('Escribir un email valido').bail().isEmail()
+    .withMessage('Debes escribir un formato de correo valido').bail().custom((value, { req }) => {
+        let mailExistente = User.findByField('email', req.body.email);
+
+        if(mailExistente){
+            throw new Error('Este correo ya se encuentra registrado');
+        }
+        
+        return true;
+    }),
     body('contrasena').isLength({ min: 5 }),
     body('confirmarContrasena').custom((value, { req }) => {
       if (value !== req.body.contrasena) {
@@ -34,7 +48,7 @@ const validations = [
     }),
     body('fotoPerfil').custom((value, {req}) => {
         let file = req.file;
-        let extencionesPass = ['.jpg', '.png'];
+        let extencionesPass = ['.jpg', '.png', '.jpeg'];
 
         if(!file){
             throw new Error('Tenes que subir una imagen');
@@ -52,21 +66,19 @@ const validations = [
 ]
 
 //Registro
-router.get('/register',userController.registrarse); //Forrmulario
+router.get('/register', guestMiddleware, userController.registrarse); //Forrmulario
 router.post('/register', uploadFile.single('fotoPerfil'), validations, userController.procesoRegistro); //Proceso de registro
 
 
 //LogIn
-router.get('/login',userController.iniciarSesion);
-
-//proceso del login
-router.post('/login', userController.loginProcess);
+router.get('/login', guestMiddleware, userController.iniciarSesion);
+router.post('/login', userController.procesoLogin); //proceso del login
 
 //perfil de usuario
-router.get('/perfil', userController.profile);
+router.get('/perfil', authMiddleware, userController.perfil);
 
 //salir de la seccion
-router.get('/logout', userController.logout);
+router.get('/logout', userController.logout);  //En la vista: href="/user/logout"> 
 
 
 module.exports = router;

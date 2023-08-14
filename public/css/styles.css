@@ -177,7 +177,7 @@
 }
 
 /* Esto pertenece al main, donde se van a encontrar todos los productos y lo referenciado a eso */
-main{
+.main-ubication{
     margin-top: 5px;
     width: 100%;
     margin-left: auto;
