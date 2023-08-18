@@ -7,3 +7,7 @@ Sprint 4: JSON y HTTP Methods
 Sprint 5: MIDDLEWARES
 
 >Proyecto realizado exitosamente. Algunos inconvenientes con perfil y login. Pero el equipo de trabajo lo soluciono a tiempo.
+
+Sprint 6: BASE DE DATOS
+
+>
