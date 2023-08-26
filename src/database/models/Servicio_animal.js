@@ -1,14 +1,31 @@
-function servicio_animal (sequelize, Datatype){
+function servicio_animal (sequelize, Datatypes){
 
     let alias = 'Servicio_animals';
+
     let cols = {
-        ID:{type: Datatype.integer, primarykey:true, autoincrement:true},
-        Servicio_FK:{type: Datatype.integer},
-        Animal_Fk:{type: Datatype.integer},
-        } 
-    let config = {camelcase: false, timestamps:false}
+        ID: {
+            type: Datatypes.INTEGER,
+            primarykey: true, 
+            autoincrement: true
+        },
+
+        //foreignKeys
+        Servicio_FK: {
+            type: Datatypes.INTEGER
+        },
+        Animal_Fk: {
+            type: Datatypes.INTEGER
+        }
+    } 
     
-    const Servicio_animal = sequelize.define(alias, cols, config)
+    let config = {
+        camelcase: false,
+        timestamps:false
+    }
+    
+    const Servicio_animal = sequelize.define(alias, cols, config);
+    
     return Servicio_animal;
-    }  
-    module.exports = servicio_animal;
+}  
+
+module.exports = servicio_animal;

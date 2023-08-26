@@ -1,9 +1,10 @@
-module.export = {
+module.exports = {
   "development": {
-    "username": "kaloma",
-    "password": bakafa1323,
-    "database": "kaloma_pet",
-    "host": "mysql-kaloma.alwaysdata.net",
+    "username": "root",
+    "password": root,
+    "database": "Petlandia",
+    "host": "127.0.0.1",
+    "port": 8889,
     "dialect": "mysql"
   },
   "test": {

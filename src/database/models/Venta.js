@@ -1,21 +1,71 @@
-function venta(sequelize, Datatype){
+function ventaData(sequelize, Datatypes){
 
     let alias = 'Ventas';
+
     let cols = {
-        ID:{type: Datatype.integer, primarykey:true, autoincrement:true},
-        Precio_unidad:{type: Datatype.decimal(10,2)},
-        Cantidad:{type: Datatype.integer},
-        Direccion:{type: DataType.string},
-        Fecha:{type: DataType.date},
-        Usuario_FK:{type: DataType.integer},
-        Servicio_FK: {type: DataType.integer},
-        Producto_FK: {type: DataType.integer},
-        Medio_Pago_FK: {type: DataType.integer},
+        ID: {
+            type: Datatypes.INTEGER,
+            primarykey:true,
+            autoincrement:true
+        },
+        Precio_unidad: {
+            type: Datatypes.DECIMAL(10,2)
+        },
+        Cantidad: {
+            type: Datatypes.INTEGER
+        },
+        Direccion:{
+            type: Datatypes.STRING
+        },
+        Fecha: {
+            type: Datatypes.DATE
+        },
+
+        //foreignKeys
+        Usuario_FK: {
+            type: Datatypes.INTEGER
+        },
+        Servicio_FK: {
+            type: Datatypes.INTEGER
+        },
+        Producto_FK: {
+            type: Datatypes.INTEGER
+        },
+        Medio_Pago_FK: {
+            type: Datatypes.INTEGER
         }
-    let config = {camelcase: false, timestamps:false}
+    }
+
+    let config = {
+        camelcase: false,
+        timestamps: false
+    }
     
-    const Venta = sequelize.define(alias, cols, config)
+    const Venta = sequelize.define(alias, cols, config);
+
+    Venta.associate = function(modelos){
+        Venta.belongsTo(modelos.Usuario, { 
+            foreignKey: 'Usuario_FK',
+            as: 'Usuarios' 
+        });
+
+        Venta.belongsTo(modelos.Servicio, { 
+            foreignKey: 'Servicio_FK',
+            as: 'Servicios' 
+        });
+
+        Venta.belongsTo(modelos.Producto, { 
+            foreignKey: 'Producto_FK',
+            as: 'Productos' 
+        });
+
+        Venta.belongsTo(modelos.Medio_pago, { 
+            foreignKey: 'Medio_Pago_FK',
+            as: 'Medio_pagos' 
+        });
+    }
+
     return Venta;
-    }  
+}  
     
-    module.exports = venta;
+module.exports = ventaData;
