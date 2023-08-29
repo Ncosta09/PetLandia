@@ -1,38 +1,38 @@
-function ventaData(sequelize, Datatypes){
+function Petlandia(sequelize, DataTypes){
 
-    let alias = 'Ventas';
+    let alias = 'Venta';
 
     let cols = {
         ID: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primarykey:true,
             autoincrement:true
         },
         Precio_unidad: {
-            type: Datatypes.DECIMAL(10,2)
+            type: DataTypes.DECIMAL(10,2)
         },
         Cantidad: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         },
         Direccion:{
-            type: Datatypes.STRING
+            type: DataTypes.STRING
         },
         Fecha: {
-            type: Datatypes.DATE
+            type: DataTypes.DATE
         },
 
         //foreignKeys
         Usuario_FK: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         },
         Servicio_FK: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         },
         Producto_FK: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         },
         Medio_Pago_FK: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         }
     }
 
@@ -41,31 +41,31 @@ function ventaData(sequelize, Datatypes){
         timestamps: false
     }
     
-    const Venta = sequelize.define(alias, cols, config);
+    const Ventas = sequelize.define(alias, cols, config);
 
-    Venta.associate = function(modelos){
-        Venta.belongsTo(modelos.Usuario, { 
+    Ventas.associate = function(modelos){
+        Ventas.belongsTo(modelos.Usuario, { 
             foreignKey: 'Usuario_FK',
             as: 'Usuarios' 
         });
 
-        Venta.belongsTo(modelos.Servicio, { 
+        Ventas.belongsTo(modelos.Servicio, { 
             foreignKey: 'Servicio_FK',
             as: 'Servicios' 
         });
 
-        Venta.belongsTo(modelos.Producto, { 
+        Ventas.belongsTo(modelos.Producto, { 
             foreignKey: 'Producto_FK',
             as: 'Productos' 
         });
 
-        Venta.belongsTo(modelos.Medio_pago, { 
+        Ventas.belongsTo(modelos.Medio_Pago, { 
             foreignKey: 'Medio_Pago_FK',
-            as: 'Medio_pagos' 
+            as: 'Medios_pagos' 
         });
     }
 
-    return Venta;
+    return Ventas;
 }  
     
-module.exports = ventaData;
+module.exports = Petlandia;

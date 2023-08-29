@@ -1,15 +1,15 @@
-function medio_pago(sequelize, Datatypes){
+function Petlandia(sequelize, DataTypes){
 
-    let alias = 'Medio_pagos';
+    let alias = 'Medio_Pago';
 
     let cols = {
         ID: {
-            type: Datatypes.INTEGER, 
+            type: DataTypes.INTEGER, 
             primarykey:true,
             autoincrement:true
         },
         Nombre: {
-            type: Datatypes.STRING(30)
+            type: DataTypes.STRING(30)
         }
     }
 
@@ -18,16 +18,16 @@ function medio_pago(sequelize, Datatypes){
         timestamps: false
     }
     
-    const Medio_pago = sequelize.define(alias, cols, config);
+    const Medios_pagos = sequelize.define(alias, cols, config);
 
-    Medio_pago.associate = function(modelos){
-        Medio_pago.hasMany(modelos.Venta, { 
+    Medios_pagos.associate = function(modelos){
+        Medios_pagos.hasMany(modelos.Venta, { 
             foreignKey: 'Medio_Pago_FK',
             as: 'Ventas'
         });
     }
     
-    return Medio_pago;
+    return Medios_pagos;
 }  
     
-module.exports = medio_pago;
+module.exports = Petlandia;

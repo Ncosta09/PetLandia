@@ -1,15 +1,15 @@
-function animalData(sequelize, Datatypes){
+function Petlandia(sequelize, DataTypes){
 
-    let alias = 'Animales';
+    let alias = 'Animal';
 
     let cols = {
         ID: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primarykey:true,
             autoincrement:true
         },
         Nombre: {
-            type: Datatypes.STRING(30)
+            type: DataTypes.STRING(30)
         }
     }
 
@@ -18,15 +18,15 @@ function animalData(sequelize, Datatypes){
         timestamps: false
     }
     
-    const Animal = sequelize.define(alias, cols, config);
+    const Animales = sequelize.define(alias, cols, config);
 
-    Animal.associate = function(modelos){
-        Animal.hasMany(modelos.Producto, { 
+    Animales.associate = function(modelos){
+        Animales.hasMany(modelos.Producto, { 
             foreignKey: 'Animal_FK',
             as: 'Productos'
         });
 
-        Animal.belongsToMany(modelos.Servicio, {
+        Animales.belongsToMany(modelos.Servicio, {
             as: 'Servicios',
             through: 'Servicio_animal',
             foreignKey: 'Animal_Fk',
@@ -34,7 +34,7 @@ function animalData(sequelize, Datatypes){
         });
     }
 
-    return Animal;
+    return Animales;
 }  
 
-module.exports = animalData;
+module.exports = Petlandia;

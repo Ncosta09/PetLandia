@@ -1,15 +1,15 @@
-function marcaData(sequelize, Datatypes){
+function Petlandia(sequelize, DataTypes){
 
-    let alias = 'Marcas';
+    let alias = 'Marca';
 
     let cols = {
         ID: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primarykey: true,
             autoincrement: true
         },
         Nombre: {
-            type: Datatypes.STRING(30)
+            type: DataTypes.STRING(30)
         }
     }
 
@@ -18,16 +18,16 @@ function marcaData(sequelize, Datatypes){
         timestamps: false
     }
     
-    const Marca = sequelize.define(alias, cols, config);
+    const Marcas = sequelize.define(alias, cols, config);
 
-    Marca.associate = function(modelos){
-        Marca.hasMany(modelos.Producto, { 
+    Marcas.associate = function(modelos){
+        Marcas.hasMany(modelos.Producto, { 
             foreignKey: 'Marca_FK',
             as: 'Productos'
         });
     }
 
-    return Marca;
+    return Marcas;
 }
     
-module.exports = marcaData;
+module.exports = Petlandia;

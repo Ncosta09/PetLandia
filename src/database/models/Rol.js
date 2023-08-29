@@ -1,15 +1,15 @@
-function rolData(sequelize, Datatypes){
+function Petlandia(sequelize, DataTypes){
 
-    let alias = 'Rols';
+    let alias = 'Rol';
 
     let cols = {
         ID: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primarykey:true,
             autoincrement:true
         },
         Nombre: {
-            type: Datatypes.STRING(30)
+            type: DataTypes.STRING(30)
         }
     }
 
@@ -18,16 +18,16 @@ function rolData(sequelize, Datatypes){
         timestamps: false
     }
     
-    const Rol = sequelize.define(alias, cols, config);
+    const Roles = sequelize.define(alias, cols, config);
 
-    Rol.associate = function(modelos){
-        Rol.hasMany(modelos.Usuario, { 
+    Roles.associate = function(modelos){
+        Roles.hasMany(modelos.Usuario, { 
             foreignKey: 'Rol_FK',
             as: 'Usuarios'
         });
     }
 
-    return Rol;
+    return Roles;
 }  
     
-module.exports = rolData;
+module.exports = Petlandia;

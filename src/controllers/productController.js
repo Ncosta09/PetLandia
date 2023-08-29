@@ -1,6 +1,7 @@
 const { log } = require('console');
 const fs = require('fs');
 const path = require('path');
+let db = require('../database/models');
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -30,7 +31,16 @@ const productController = {
 
 	creador: (req, res) => {
 
-		let datosFormulario = req.body;
+		db.Producto.create({
+			Nombre: req.body.Nombre,
+			Descripcion: req.body.Descripcion,
+			Precio: req.body.Precio,
+			Descuento: req.body.Descuento,
+			Stock: '11', //Valor ficticio de momento
+			Imagen: req.file.filename,
+		})
+
+		/*let datosFormulario = req.body;
 		let idNuevoProducto = (products[products.length - 1].id) + 1;
 
 		let nombreImagen = req.file.filename;
@@ -47,7 +57,7 @@ const productController = {
 		}
 
 		products.push(objNuevoProducto);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' ')); */
 		res.redirect('/');
 	},
 

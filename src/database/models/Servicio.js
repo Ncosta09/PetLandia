@@ -1,33 +1,33 @@
-function servicioData(sequelize, Datatypes){
+function Petlandia(sequelize, DataTypes){
 
-    let alias = 'Servicios';
+    let alias = 'Servicio';
 
     let cols = {
         ID: {
-            type: Datatypes.integer,
+            type: DataTypes.INTEGER,
             primarykey: true, 
             autoincrement: true
         },
         Nombre: {
-            type: Datatypes.string(30)
+            type: DataTypes.STRING(30)
         },
         Descripcion: {
-            type: Datatypes.string(100)
+            type: DataTypes.STRING(100)
         },
         Precio: {
-            type: Datatypes.decimal(10,2)
+            type: DataTypes.DECIMAL(10,2)
         },
         Imagen: {
-            type: Datatypes.string(50)
+            type: DataTypes.STRING(50)
         }, 
         Fecha_Creacion: {
-            type: Datatypes.date
+            type: DataTypes.DATE
         },
         Fecha_Modificacion: {
-            type: Datatypes.date
+            type: DataTypes.DATE
         },
         Fecha_Eliminacion: {
-            type:Datatypes.date
+            type:DataTypes.DATE
         }
     } 
     
@@ -36,24 +36,24 @@ function servicioData(sequelize, Datatypes){
         timestamps: false
     }
     
-    const Servicio = sequelize.define(alias, cols, config);
+    const Servicios = sequelize.define(alias, cols, config);
 
-    Servicio.associate = function(modelos){
-        Servicio.hasMany(modelos.Venta, { 
+    Servicios.associate = function(modelos){
+        Servicios.hasMany(modelos.Venta, { 
             foreignKey: 'Servicio_FK',
             as: 'Ventas' 
         });
-        Servicio.belongsToMany(modelos.Local, {
-            as: 'Locals',
+        Servicios.belongsToMany(modelos.Local, {
+            as: 'Locales',
             through: 'Local_servicio',
             foreignKey: 'Servicio_FK',
             otherKey: 'Local_FK'
         });
-        Servicio.hasMany(modelos.Operacion, { 
+        Servicios.hasMany(modelos.Operacion, { 
             foreignKey: 'Servicio_FK',
             as: 'Operaciones' 
         });
-        Servicio.belongsToMany(modelos.Animal, {
+        Servicios.belongsToMany(modelos.Animal, {
             as: 'Animales',
             through: 'Servicio_animal',
             foreignKey: 'Servicio_FK',
@@ -61,7 +61,7 @@ function servicioData(sequelize, Datatypes){
         });
     }
 
-    return Servicio;
+    return Servicios;
 }  
 
-module.exports = servicioData;
+module.exports = Petlandia;

@@ -1,87 +1,91 @@
-function producto(sequelize, Datatypes){
+function Petlandia(sequelize, DataTypes){
 
-    let alias = 'Productos';
+    let alias = 'Producto';
 
     let cols = {
         ID: {
-            type: Datatypes.INTEGER, 
+            type: DataTypes.INTEGER, 
             primarykey: true,
             autoincrement: true
         },
         Nombre: {
-            type: Datatypes.STRING(30)
+            type: DataTypes.STRING(30)
         },
         Descripcion: {
-            type: Datatypes.STRING(100)
+            type: DataTypes.STRING(100)
         },
         Imagen: {
-            type: Datatypes.STRING(50)
+            type: DataTypes.STRING(50)
         },
         Precio: {
-            type: Datatypes.DECIMAL(10,2)
+            type: DataTypes.DECIMAL(10,2)
         },
         Stock: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
+        },
+        Descuento: {
+            type: DataTypes.INTEGER
         },
         Fecha_Creacion: {
-            type: Datatypes.DATE
+            type: DataTypes.DATE
         },
         Fecha_Modificacion: {
-            type: Datatypes.DATE
+            type: DataTypes.DATE
         },
         Fecha_Eliminacion: {
-            type:Datatypes.DATE
+            type:DataTypes.DATE
         },
 
         //foreignKeys
         Animal_FK: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         },
         Marca_FK: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         },  
         Categoria_FK: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         }
     }
 
     let config = {
+        //tableName: 'Producto',
         camelcase: false,
         timestamps: false
     }
     
-    const Producto = sequelize.define(alias, cols, config);
+    const Productos = sequelize.define(alias, cols, config);
 
-    Producto.associate = function(modelos){
-        Producto.hasMany(modelos.Venta, { 
+    Productos.associate = function(modelos){
+        Productos.hasMany(modelos.Venta, { 
             foreignKey: 'Producto_FK',
             as: 'Ventas' 
         });
-        Producto.hasMany(modelos.Operacion, { 
+        Productos.hasMany(modelos.Operacion, { 
             foreignKey: 'Producto_FK',
             as: 'Operaciones' 
         });
-        Producto.belongsTo(modelos.Animal, { 
+        Productos.belongsTo(modelos.Animal, { 
             foreignKey: 'Animal_FK',
             as: 'Animales' 
         });
-        Producto.belongsTo(modelos.Marca, { 
+        Productos.belongsTo(modelos.Marca, { 
             foreignKey: 'Marca_FK',
             as: 'Marcas'
         });
-        Producto.belongsTo(modelos.Categoria, { 
+        Productos.belongsTo(modelos.Categoria, { 
             foreignKey: 'Categoria_FK',
             as: 'Categorias'
         });
-        Producto.belongsToMany(modelos.Local, {
-            as: 'Locals',
+        Productos.belongsToMany(modelos.Local, {
+            as: 'Locales',
             through: 'Local_producto',
             foreignKey: 'Producto_FK',
             otherKey: 'Local_FK'
         });
     }
 
-    return Producto;
+    return Productos;
 }
 
-module.exports = producto;
+module.exports = Petlandia;

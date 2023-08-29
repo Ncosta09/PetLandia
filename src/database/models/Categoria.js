@@ -1,15 +1,15 @@
-function categoriaData(sequelize, Datatypes){
+function Petlandia(sequelize, DataTypes){
 
-    let alias = 'Categorias';
+    let alias = 'Categoria';
 
     let cols = {
         ID: {
-            type: Datatypes.INTEGER, 
+            type: DataTypes.INTEGER, 
             primarykey: true,
             autoincrement: true
         },
         Nombre: {
-            type: Datatypes.STRING(30)
+            type: DataTypes.STRING(30)
         }
     }
 
@@ -18,16 +18,16 @@ function categoriaData(sequelize, Datatypes){
         timestamps: false
     }
     
-    const Categoria = sequelize.define(alias, cols, config);
+    const Categorias = sequelize.define(alias, cols, config);
 
-    Categoria.associate = function(modelos){
-        Categoria.hasMany(modelos.Producto, { 
+    Categorias.associate = function(modelos){
+        Categorias.hasMany(modelos.Producto, { 
             foreignKey: 'Categoria_FK',
             as: 'Productos'
         });
     }
 
-    return Categoria;
+    return Categorias;
 }
 
-module.exports = categoriaData;
+module.exports = Petlandia;

@@ -1,20 +1,20 @@
-function servicio_animal (sequelize, Datatypes){
+function Petlandia (sequelize, DataTypes){
 
-    let alias = 'Servicio_animals';
+    let alias = 'Servicio_Animal';
 
     let cols = {
         ID: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primarykey: true, 
             autoincrement: true
         },
 
         //foreignKeys
         Servicio_FK: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         },
         Animal_Fk: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         }
     } 
     
@@ -23,9 +23,9 @@ function servicio_animal (sequelize, Datatypes){
         timestamps:false
     }
     
-    const Servicio_animal = sequelize.define(alias, cols, config);
+    const Servicio_animales = sequelize.define(alias, cols, config);
     
-    return Servicio_animal;
+    return Servicio_animales;
 }  
 
-module.exports = servicio_animal;
+module.exports = Petlandia;

@@ -1,20 +1,20 @@
-function local_producto(sequelize, Datatypes){
+function Petlandia(sequelize, DataTypes){
 
-    let alias = 'Local_productos';
+    let alias = 'Local_Producto';
 
     let cols = {
         ID: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primarykey: true,
             autoincrement: true
         },
 
         //foreignKeys
         Local_Fk: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         },
         Producto_FK: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         }
     }
 
@@ -23,9 +23,9 @@ function local_producto(sequelize, Datatypes){
         timestamps: false
     }
     
-    const Local_producto = sequelize.define(alias, cols, config);
+    const Local_productos = sequelize.define(alias, cols, config);
 
-    return Local_producto;
+    return Local_productos;
 }  
 
-module.exports = local_producto;
+module.exports = Petlandia;

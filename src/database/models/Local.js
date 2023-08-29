@@ -1,30 +1,30 @@
-function localData(sequelize, Datatypes){
+function Petlandia(sequelize, DataTypes){
 
-    let alias = 'Locals';
+    let alias = 'Local';
     
     let cols = {
         ID: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primarykey: true, 
             autoincrement: true
         },
         Nombre: {
-            type: Datatypes.STRING(30)
+            type: DataTypes.STRING(30)
         },
         Telefono: {
-            type: Datatypes.STRING(15)
+            type: DataTypes.STRING(15)
         },
         Direccion: {
-            type: Datatypes.STRING(30)
+            type: DataTypes.STRING(30)
         },
         Imagen: {
-            type: Datatypes.STRING(50)
+            type: DataTypes.STRING(50)
         }, 
         Fecha_Creacion: {
-            type: Datatypes.DATE
+            type: DataTypes.DATE
         },
         Fecha_Eliminacion: {
-            type:Datatypes.DATE
+            type:DataTypes.DATE
         }
     }
 
@@ -33,20 +33,20 @@ function localData(sequelize, Datatypes){
         timestamps: false
     }
 
-    const Local = sequelize.define(alias, cols, config);
+    const Locales = sequelize.define(alias, cols, config);
 
-    Local.associate = function(modelos){
-        Local.hasMany(modelos.Usuario, { 
+    Locales.associate = function(modelos){
+        Locales.hasMany(modelos.Usuario, { 
             foreignKey: 'Local_FK',
             as: 'Usuarios' 
         });
-        Local.belongsToMany(modelos.Producto, {
+        Locales.belongsToMany(modelos.Producto, {
             as: 'Productos',
             through: 'Local_producto',
             foreignKey: 'Local_FK',
             otherKey: 'Producto_FK'
         });
-        Local.belongsToMany(modelos.Servicio, {
+        Locales.belongsToMany(modelos.Servicio, {
             as: 'Servicios',
             through: 'Local_servicio',
             foreignKey: 'Local_FK',
@@ -54,7 +54,7 @@ function localData(sequelize, Datatypes){
         });
     }
 
-    return Local;
+    return Locales;
 }
 
-module.exports = localData;
+module.exports = Petlandia;

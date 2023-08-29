@@ -1,41 +1,41 @@
-function usuarioData(sequelize, Datatypes){
+function Petlandia(sequelize, DataTypes){
 
-    let alias = 'Usuarios';
+    let alias = 'Usuario';
 
     let cols = {
         ID: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primarykey:true,
             autoincrement:true
         },
         Nombre: {
-            type: Datatypes.STRING(30)
+            type: DataTypes.STRING(30)
         },
         Email: {
-            type: Datatypes.STRING(30)
+            type: DataTypes.STRING(30)
         },
         Password: {
-            type: Datatypes.STRING(100)
+            type: DataTypes.STRING(100)
         },
         Telefono: {
-            type: Datatypes.STRING(15)
+            type: DataTypes.STRING(15)
         },
         Imagen: {
-            type: Datatypes.STRING(50)
+            type: DataTypes.STRING(50)
         },
         Fecha_Creacion: {
-            type: Datatypes.DATE
+            type: DataTypes.DATE
         },
         Fecha_Eliminacion: {
-            type:Datatypes.DATE
+            type:DataTypes.DATE
         },
 
         //ForeignKeys
         Rol_FK: {
-            type: Datatypes.integer
+            type: DataTypes.INTEGER
         },
         Local_FK: {
-            type: Datatypes.integer
+            type: DataTypes.INTEGER
         }
     } 
 
@@ -44,34 +44,34 @@ function usuarioData(sequelize, Datatypes){
         timestamps: false
     }
     
-    const Usuario = sequelize.define(alias, cols, config);
+    const Usuarios = sequelize.define(alias, cols, config);
 
-    Usuario.associate = function(modelos){
-        Usuario.belongsTo(modelos.Local, { 
+    Usuarios.associate = function(modelos){
+        Usuarios.belongsTo(modelos.Local, { 
             foreignKey: 'Local_FK',
-            as: 'Locals' 
+            as: 'Locales' 
         });
 
-        Usuario.belongsTo(modelos.Rol, { 
+        Usuarios.belongsTo(modelos.Rol, { 
             foreignKey: 'Rol_FK',
-            as: 'Rols'
+            as: 'Roles'
         });
 
-        Usuario.hasMany(modelos.Venta, { 
+        Usuarios.hasMany(modelos.Venta, { 
             foreignKey: 'Usuario_FK',
             as: 'Ventas' 
         });
 
-        Usuario.hasMany(modelos.Operacion, { 
+        Usuarios.hasMany(modelos.Operacion, { 
             foreignKey: 'Usuario_FK',
             as: 'Operaciones' 
         });
     }
 
-    return Usuario;
+    return Usuarios;
 }
 
-module.exports = usuarioData;
+module.exports = Petlandia;
 
   
     

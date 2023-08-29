@@ -1,20 +1,20 @@
-function local_servicio(sequelize, Datatypes){
+function Petlandia(sequelize, DataTypes){
 
-    let alias = 'Local_servicios';
+    let alias = 'Local_Servicio';
     
     let cols = {
         ID: {
-            type: Datatypes.INTEGER,
+            type: DataTypes.INTEGER,
             primarykey: true,
             autoincrement: true
         },
 
         //foreignKeys
         Servicio_FK: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         },
         Local_Fk: {
-            type: Datatypes.INTEGER
+            type: DataTypes.INTEGER
         }
     }
     
@@ -23,9 +23,9 @@ function local_servicio(sequelize, Datatypes){
         timestamps: false
     }
     
-    const Local_servicio = sequelize.define(alias, cols, config);
+    const Local_servicios = sequelize.define(alias, cols, config);
 
-    return Local_servicio;
+    return Local_servicios;
 }
 
-module.exports = local_servicio;
+module.exports = Petlandia;
