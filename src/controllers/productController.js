@@ -1,6 +1,7 @@
 const { log } = require('console');
 const fs = require('fs');
 const path = require('path');
+let moment = require('moment');
 let db = require('../database/models');
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -31,13 +32,19 @@ const productController = {
 
 	creador: (req, res) => {
 
+		let fechaHoraActual = moment().format("YYYY-MM-DD hh:mm:ss");
+
 		db.Producto.create({
 			Nombre: req.body.Nombre,
 			Descripcion: req.body.Descripcion,
 			Precio: req.body.Precio,
 			Descuento: req.body.Descuento,
-			Stock: '11', //Valor ficticio de momento
+			Stock: req.body.Stock,
 			Imagen: req.file.filename,
+			Fecha_Creacion: fechaHoraActual,
+			Animal_FK: req.body.Animal,
+			Marca_FK: req.body.Marca,
+			Categoria_FK: req.body.Categoria
 		})
 
 		/*let datosFormulario = req.body;
