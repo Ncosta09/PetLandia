@@ -37,6 +37,7 @@ function Petlandia(sequelize, DataTypes){
     }
 
     let config = {
+        tableName: 'Venta',
         camelcase: false,
         timestamps: false
     }

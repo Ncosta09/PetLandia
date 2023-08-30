@@ -14,6 +14,7 @@ function Petlandia(sequelize, DataTypes){
     }
 
     let config = {
+        tableName: 'Medio_Pago',
         camelcase: false, 
         timestamps: false
     }

@@ -71,24 +71,24 @@
         </header>
 
         <main class="main-ubication">
-            <!--Seccion Ofertas-->
+            <!--Seccion Alimento-->
             <div>
-                <h2 class="titles">Ofertas imperdibles</h2>
+                <h2 class="titles">Alimento</h2>
                 <div class="all-products">
                     <% for(let i=0;i<productos.length;i++){%>
-                        <% if(productos[i].category == 'Ofertas'){%>
-                    <a href="/producto/producto/<%=productos[i].id%>">
+                        <% if(productos[i].Categoria_FK == '1'){%>
+                    <a href="/producto/producto/<%=productos[i].ID%>">
                         <article class="product">
-                            <img src="/images/products/<%=productos[i].image%>"
+                            <img src="/images/products/<%=productos[i].Imagen%>"
                                 alt="">
                             <i class="fa-solid fa-truck truck"></i>
                             <div class="price-discount">
-                                <p class="product-price">$ <%=productos[i].price%></p>
-                                <% if(productos[i].discount > 0 && productos[i].discount <= 100 ){ %>
-                                <p class="product-discount"><%=productos[i].discount%>% OFF</p>
+                                <p class="product-price">$ <%=productos[i].Precio%></p>
+                                <% if(productos[i].Descuento > 0 && productos[i].Descuento <= 100 ){ %>
+                                <p class="product-discount"><%=productos[i].Descuento%>% OFF</p>
                                 <% } %>
                             </div>
-                            <h2><%=productos[i].name%></h2>
+                            <h2><%=productos[i].Nombre%></h2>
                         </article>
                     </a>
                     <% } %>
@@ -96,24 +96,24 @@
                 </div>
             </div>
         
-            <!--Seccion Destacados-->
+            <!--Seccion Jugetes-->
             <div>
-                <h2 class="titles">Productos destacados</h2>
+                <h2 class="titles">Jugetes</h2>
                 <div class="all-products">
                     <% for(let i=0;i<productos.length;i++){%>
-                        <% if(productos[i].category == 'Destacados'){%>
-                    <a href="/producto/producto/<%=productos[i].id%>">
+                        <% if(productos[i].Categoria_FK == '2'){%>
+                    <a href="/producto/producto/<%=productos[i].ID%>">
                         <article class="product">
-                            <img src="/images/products/<%=productos[i].image%>"
+                            <img src="/images/products/<%=productos[i].Imagen%>"
                                 alt="">
                             <i class="fa-solid fa-truck truck"></i>
                             <div class="price-discount">
-                                <p class="product-price">$ <%=productos[i].price%></p>
-                                <% if(productos[i].discount > 0 && productos[i].discount <= 100 ){ %>
-                                    <p class="product-discount"><%=productos[i].discount%>% OFF</p>
+                                <p class="product-price">$ <%=productos[i].Precio%></p>
+                                <% if(productos[i].Descuento > 0 && productos[i].Descuento <= 100 ){ %>
+                                <p class="product-discount"><%=productos[i].Descuento%>% OFF</p>
                                 <% } %>
                             </div>
-                            <h2><%=productos[i].name%></h2>
+                            <h2><%=productos[i].Nombre%></h2>
                         </article>
                     </a>
                     <% } %>

@@ -14,6 +14,7 @@ function Petlandia(sequelize, DataTypes){
     }
 
     let config = {
+        tableName: 'Rol',
         camelcase: false,
         timestamps: false
     }

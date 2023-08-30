@@ -35,41 +35,87 @@
                 <div class="prod-top">
                     <h2>Edicion articulo</h2>
                 </div>
-                <form action="/producto/editar/<%=productoEnEdicion.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="public-form">
+                <form action="/producto/editar/<%=productoEnEdicion.ID%>?_method=PUT" method="POST" enctype="multipart/form-data" class="public-form">
                     <div class="prod-name">
                         <label>Nombre del producto:</label>
-                        <input type="text" id="name" name="Nombre" value="<%=productoEnEdicion.name%>" required>
+                        <input type="text" id="name" name="Nombre" value="<%=productoEnEdicion.Nombre%>" required>
                     </div>
                     <div class="prod-price-disc">
                         <div class="prod-price">
                             <label>Precio:</label>
-                            <input type="text" id="Price" name="Precio" value="<%=productoEnEdicion.price%>" required>
+                            <input type="text" id="Price" name="Precio" value="<%=productoEnEdicion.Precio%>" required>
                         </div>
                         <div class="prod-disc">
                             <label>Descuento:</label>
-                            <input type="text" id="Discount" name="Descuento" value="<%=productoEnEdicion.discount%>">
+                            <input type="text" id="Discount" name="Descuento" value="<%=productoEnEdicion.Descuento%>">
+                        </div>
+                        <div class="prod-stock">
+                            <label>Stock:</label>
+                            <input type="text" id="Stock" name="Stock" value="<%=productoEnEdicion.Stock%>">
                         </div>
                     </div>
                     <div class="prod-cat">
                         <label>Categoria:</label>
-                        <select id="Category" name="Categoria" class="product-select" required>
-                            <% if(productoEnEdicion.category == 'Ofertas'){ %>
-                                <option value="">Ninguna</option>
-                                <option value="Ofertas" selected>Ofertas</option>
-                                <option value="Destacados">Destacados</option>
-                                <% }else{ %>
-                                    <option value="">Ninguna</option>
-                                    <option value="Ofertas">Ofertas</option>
-                                    <option value="Destacados" selected>Destacados</option>
-                                    <% } %>
-                          </select>
+                        <select name="Categoria" class="product-select" required>
+                            <% let opcionesCategoria = [
+                                { value: '0', label: 'Ninguna' },
+                                { value: '1', label: 'Alimento' },
+                                { value: '2', label: 'Jugete' }
+                            ]; %>
+
+                            <% opcionesCategoria.forEach(opcion => { %>
+                                <option value="<%= opcion.value %>" 
+                                    <% if (productoEnEdicion.Categoria_FK == opcion.value) { %>selected<% } %> >
+                                    <%= opcion.label %>
+                                </option>
+                            <% }); %>
+                        </select>
                     </div>
+
+                    <div class="prod-cat">
+                        <label>Animal:</label>
+                        <select name="Animal" class="product-select" required>
+                            <% let opcionesAnimales = [
+                                { value: '0', label: 'Ninguna' },
+                                { value: '1', label: 'Perro' },
+                                { value: '2', label: 'Gato' },
+                                { value: '3', label: 'Roedor' },
+                                { value: '4', label: 'Ave' },
+                                { value: '5', label: 'Pez' }
+                            ]; %>
+
+                            <% opcionesAnimales.forEach(opcion => { %>
+                                <option value="<%= opcion.value %>" 
+                                    <% if (productoEnEdicion.Animal_FK == opcion.value) { %>selected<% } %> >
+                                    <%= opcion.label %>
+                                </option>
+                            <% }); %>
+                        </select>
+
+                    </div>
+
+                    <div class="prod-cat">
+                        <label>Marca:</label>
+                        <select name="Marca" class="product-select" required>
+                            <% let opcionesMarcas = [
+                                { value: '0', label: 'Ninguna' },
+                                { value: '1', label: 'Royal Canin' },
+                                { value: '2', label: 'Purina Pro Plan' },
+                                { value: '3', label: 'Eukanuba' }
+                            ]; %>
+
+                            <% opcionesMarcas.forEach(opcion => { %>
+                                <option value="<%= opcion.value %>" 
+                                    <% if (productoEnEdicion.Marca_FK == opcion.value) { %>selected<% } %> >
+                                    <%= opcion.label %>
+                                </option>
+                            <% }); %>
+                        </select>
+                    </div>
+
                     <div class="prod-desc">
                         <label>Descripcion:</label>
-                        <textarea rows="5" id="Description" name="Descripcion"><%=productoEnEdicion.description%></textarea>
-
-                        <label>Informacion:</label>
-                        <textarea rows="5" id="Information" name="Informacion"><%=productoEnEdicion.info%></textarea>
+                        <textarea rows="5" id="Description" name="Descripcion"><%=productoEnEdicion.Descripcion%></textarea>
                     </div>
 
                     <div class="prod-photo">
@@ -78,7 +124,7 @@
                     </div>
                     <div class="preview-image">
                         <div class="image-container" onclick="document.getElementById('foto_perfil').click()">
-                            <img id="preview" src="/images/products/<%=productoEnEdicion.image%>" alt="">
+                            <img id="preview" src="/images/products/<%=productoEnEdicion.Imagen%>" alt="">
                         </div>
                     </div>
 

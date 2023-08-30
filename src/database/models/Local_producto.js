@@ -19,6 +19,7 @@ function Petlandia(sequelize, DataTypes){
     }
 
     let config = {
+        tableName: 'Local_Producto',
         camelcase: false,
         timestamps: false
     }

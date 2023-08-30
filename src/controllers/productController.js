@@ -11,15 +11,11 @@ const productController = {
 
 	productoDetalle: (req, res) => {
 		let idProducto = req.params.idProducto;
-		let productoDetalle;
 
-		for (let obj of products) {
-			if (obj.id == idProducto) {
-				productoDetalle = obj;
-				break;
-			}
-		}
-		res.render('producto', { producto: productoDetalle });
+		db.Producto.findByPk(idProducto)
+		.then((resultado)  => { 
+            res.render('producto', {producto: resultado});
+		});
 	},
 
 	carrito: (req, res) => {
@@ -46,85 +42,77 @@ const productController = {
 			Marca_FK: req.body.Marca,
 			Categoria_FK: req.body.Categoria
 		})
-
-		/*let datosFormulario = req.body;
-		let idNuevoProducto = (products[products.length - 1].id) + 1;
-
-		let nombreImagen = req.file.filename;
-
-		let objNuevoProducto = {
-			id: idNuevoProducto,
-			name: datosFormulario.Nombre,
-			price: parseInt(datosFormulario.Precio),
-			discount: parseInt(datosFormulario.Descuento),
-			category: datosFormulario.Categoria,
-			description: datosFormulario.Descripcion,
-			info: datosFormulario.Informacion,
-			image: nombreImagen
-		}
-
-		products.push(objNuevoProducto);
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' ')); */
-		res.redirect('/');
+		.then(()  => { 
+			res.redirect('/');
+		});
 	},
 
 	editarProducto: (req, res) => {
-		
-		let idProducto = req.params.idProducto;
-		let productoEnEdicion;
 
-		for (let obj of products) {
-			if (obj.id == idProducto) {
-				productoEnEdicion = obj;
-				break;
-			}
-		}
-		
-		res.render('editar', { productoEnEdicion });
+		let idProducto = req.params.idProducto;
+
+		db.Producto.findByPk(idProducto)
+		.then((resultado)  => { 
+            res.render('editar', {productoEnEdicion: resultado});
+		});
 	},
+
 	update: (req, res) => {
 
+		let fechaHoraActual = moment().format("YYYY-MM-DD hh:mm:ss");
 		let idProducto = req.params.idProducto;
 
-		for (let obj of products) {
-			if (obj.id == idProducto) {
-				obj.name = req.body.Nombre;
-				obj.price = parseInt(req.body.Precio);
-				obj.discount = parseInt(req.body.Descuento);
-				obj.category = req.body.Categoria;
-				obj.description = req.body.Descripcion;
-				obj.info = req.body.Informacion;
-				if(req.file) {
-					obj.image = req.file.filename;
-					} 
-					else{
-					obj.image = products.image;
-					}
-				break;
+		let updateData = {
+			Nombre: req.body.Nombre,
+			Descripcion: req.body.Descripcion,
+			Precio: req.body.Precio,
+			Descuento: req.body.Descuento,
+			Stock: req.body.Stock,
+			Fecha_Modificacion: fechaHoraActual,
+			Animal_FK: req.body.Animal,
+			Marca_FK: req.body.Marca,
+			Categoria_FK: req.body.Categoria,
+		};
+
+		if (req.file) {
+			updateData.Imagen = req.file.filename;
+		} else {
+			updateData.Imagen = products.Imagen;
+		}
+
+		db.Producto.update(updateData, {
+			where: {
+				ID: idProducto
 			}
-		}
-
-		if(req.file){
-
-		}
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-		res.redirect('/');
-
+		})
+		.then(()  => { 
+            res.redirect('/producto/producto/' + idProducto);
+		});
 	},
 
 	destroy: (req, res) => {
-		let idProducto = req.params.idProducto;
+		let fechaHoraActual = moment().format("YYYY-MM-DD HH:MM:SS");
+		let idProducto = req.params.idProducto; 
 
-		let nuevoArregloProductos = products.filter(function (e) {
-			return e.id != idProducto;
+		db.Producto.update({
+			Fecha_Eliminacion: fechaHoraActual
+		}, {
+			where: {
+				ID: idProducto
+			}
+		})
+		.then(() => {
+			db.Producto.destroy({
+				where: {
+					ID: idProducto
+				}
+			})
+		})
+		.then(()  => { 
+			res.redirect('/');
 		});
-
-		fs.writeFileSync(productsFilePath, JSON.stringify(nuevoArregloProductos, null, ' '));
-		res.redirect('/');
 	},
 
-	
 }
 
 module.exports = productController;

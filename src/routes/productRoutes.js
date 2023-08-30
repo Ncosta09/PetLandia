@@ -19,15 +19,22 @@ const configuracionImagen = multer.diskStorage({
 
 const uploadFile = multer({ storage: configuracionImagen });
 
+//detalle
 router.get('/producto/:idProducto', productController.productoDetalle);
 
+//carrito
 router.get('/carrito', productController.carrito);
 
+//crear
 router.get('/crear', productController.crearArticulo);
 router.post('/crear', uploadFile.single('imagenProducto'), productController.creador);
 
+//editar
 router.get('/editar/:idProducto', productController.editarProducto);
 router.put('/editar/:idProducto', uploadFile.single('imagenProducto'), productController.update);
 
+//borrar
 router.delete('/borrar/:idProducto', productController.destroy);
+
+
 module.exports = router;

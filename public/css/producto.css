@@ -31,14 +31,14 @@ main{
 }
 
 .price{
-    font-size: 30px;
+    font-size: 25px;
     width: 300px;
     text-decoration: line-through;
     margin: 0;
 }
 
 .price-confirmation{
-    font-size: 30px;
+    font-size: 25px;
     width: 300px;
 }
 
