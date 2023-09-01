@@ -39,6 +39,6 @@ app.use('/usuario', userRoutes);
 
 app.set('view engine', 'ejs');
 
-app.listen(3200, () => {
-    console.log("Servidor corriendo en el puerto 3200");
+app.listen(3100, () => {
+    console.log("Servidor corriendo en el puerto 3100");
 });
