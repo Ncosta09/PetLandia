@@ -242,6 +242,7 @@
 
 .product img{
     width: 90%;
+    height: 65%;
     border-bottom: solid 0.5px rgba(0, 0, 0, 0.1);
     margin-bottom: 5px;
 }

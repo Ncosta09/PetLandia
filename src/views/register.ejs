@@ -53,6 +53,14 @@
                             <% } %>
                         </div>
 
+                        <label for="telefono">Telefono:</label>
+                        <input type="text" id="telefono" name="telefono" value="<%= locals.ultData ? ultData.telefono : null %>">
+                        <div class="color-alert">
+                            <% if(locals.errores && errores.telefono){ %>
+                                <%= errores.telefono.msg %>
+                            <% } %>
+                        </div>
+
                         <label for="contrasena">Contraseña:</label>
                         <input type="password" id="password" name="contrasena">
                         <div class="color-alert">

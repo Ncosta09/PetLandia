@@ -28,7 +28,7 @@ const productController = {
 
 	creador: (req, res) => {
 
-		let fechaHoraActual = moment().format("YYYY-MM-DD hh:mm:ss");
+		let fechaHoraActual = moment().format("YYYY-MM-DD HH:MM:SS");
 
 		db.Producto.create({
 			Nombre: req.body.Nombre,
@@ -59,7 +59,7 @@ const productController = {
 
 	update: (req, res) => {
 
-		let fechaHoraActual = moment().format("YYYY-MM-DD hh:mm:ss");
+		let fechaHoraActual = moment().format("YYYY-MM-DD HH:MM:SS");
 		let idProducto = req.params.idProducto;
 
 		let updateData = {

@@ -11,6 +11,9 @@ function Petlandia(sequelize, DataTypes){
         Nombre: {
             type: DataTypes.STRING(30)
         },
+        Apellido: {
+            type: DataTypes.STRING(30)
+        },
         Email: {
             type: DataTypes.STRING(30)
         },

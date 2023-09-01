@@ -5,6 +5,7 @@ const { body } = require('express-validator');
 module.exports = [
     body('nombre').notEmpty().withMessage('Escribir un Nombre valido'),
     body('apellido').notEmpty().withMessage('Escribir un Apellido valido'),
+    body('telefono').notEmpty().withMessage('Escribir un Telefono valido'),
     body('email').notEmpty().withMessage('Escribir un email valido').bail().isEmail()
     .withMessage('Debes escribir un formato de correo valido').bail().custom((value, { req }) => {
         let mailExistente = User.findByField('email', req.body.email);
