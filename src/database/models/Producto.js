@@ -15,7 +15,7 @@ function Petlandia(sequelize, DataTypes){
             type: DataTypes.STRING(100)
         },
         Imagen: {
-            type: DataTypes.STRING(50)
+            type: DataTypes.STRING(100)
         },
         Precio: {
             type: DataTypes.DECIMAL(10,2)

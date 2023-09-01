@@ -18,7 +18,7 @@ function Petlandia(sequelize, DataTypes){
             type: DataTypes.STRING(30)
         },
         Imagen: {
-            type: DataTypes.STRING(50)
+            type: DataTypes.STRING(100)
         }, 
         Fecha_Creacion: {
             type: DataTypes.DATE

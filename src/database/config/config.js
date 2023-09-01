@@ -1,11 +1,11 @@
 module.exports = {
   "development": {
-    "username": "root",
-    "password": "root",
-    "database": "Petlandia",
-    "host": "127.0.0.1",
-    "port": 8889,
-    "dialect": "mysql"
+    "username": "320437_petlandia",
+    "password": "Petlandia#123",
+    "database": "ftpetlandia_petlandia",
+    "host": "mysql-ftpetlandia.alwaysdata.net",
+    "dialect": "mysql",
+    "port": 3306
   },
   "test": {
     "username": "root",
