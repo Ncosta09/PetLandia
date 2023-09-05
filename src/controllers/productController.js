@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 let moment = require('moment');
 let db = require('../database/models');
+let Op = db.sequelize.Op;
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -22,8 +23,13 @@ const productController = {
 		res.render('carrito');
 	},
 
-	crearArticulo: (req, res) => {
-		res.render('crear');
+	crearArticulo: async (req, res) => {
+
+		let categorias = await db.Categoria.findAll();
+		let animales = await db.Animal.findAll();
+		let marcas = await db.Marca.findAll();
+
+		res.render('crear', {categorias, animales, marcas});
 	},
 
 	creador: (req, res) => {
@@ -38,23 +44,25 @@ const productController = {
 			Stock: req.body.Stock,
 			Imagen: req.file.filename,
 			Fecha_Creacion: fechaHoraActual,
+			Categoria_FK: req.body.Categoria,
 			Animal_FK: req.body.Animal,
-			Marca_FK: req.body.Marca,
-			Categoria_FK: req.body.Categoria
+			Marca_FK: req.body.Marca
 		})
-		.then(()  => { 
+		.then(()  => {
 			res.redirect('/');
 		});
 	},
 
-	editarProducto: (req, res) => {
+	editarProducto: async (req, res) => {
 
 		let idProducto = req.params.idProducto;
 
-		db.Producto.findByPk(idProducto)
-		.then((resultado)  => { 
-            res.render('editar', {productoEnEdicion: resultado});
-		});
+		let productos = await db.Producto.findByPk(idProducto);
+		let categorias = await db.Categoria.findAll();
+		let animales = await db.Animal.findAll();
+		let marcas = await db.Marca.findAll();
+
+		res.render('editar', {productoEnEdicion: productos, categorias, animales, marcas});
 	},
 
 	update: (req, res) => {

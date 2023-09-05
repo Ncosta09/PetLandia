@@ -57,16 +57,10 @@
                     <div class="prod-cat">
                         <label>Categoria:</label>
                         <select name="Categoria" class="product-select" required>
-                            <% let opcionesCategoria = [
-                                { value: '0', label: 'Ninguna' },
-                                { value: '1', label: 'Alimento' },
-                                { value: '2', label: 'Jugete' }
-                            ]; %>
-
-                            <% opcionesCategoria.forEach(opcion => { %>
-                                <option value="<%= opcion.value %>" 
-                                    <% if (productoEnEdicion.Categoria_FK == opcion.value) { %>selected<% } %> >
-                                    <%= opcion.label %>
+                            <% categorias.forEach(categoria => { %>
+                                <option value="<%= categoria.ID %>" 
+                                    <% if (productoEnEdicion.Categoria_FK == categoria.ID) { %>selected<% } %> >
+                                    <%= categoria.Nombre %>
                                 </option>
                             <% }); %>
                         </select>
@@ -75,19 +69,10 @@
                     <div class="prod-cat">
                         <label>Animal:</label>
                         <select name="Animal" class="product-select" required>
-                            <% let opcionesAnimales = [
-                                { value: '0', label: 'Ninguna' },
-                                { value: '1', label: 'Perro' },
-                                { value: '2', label: 'Gato' },
-                                { value: '3', label: 'Roedor' },
-                                { value: '4', label: 'Ave' },
-                                { value: '5', label: 'Pez' }
-                            ]; %>
-
-                            <% opcionesAnimales.forEach(opcion => { %>
-                                <option value="<%= opcion.value %>" 
-                                    <% if (productoEnEdicion.Animal_FK == opcion.value) { %>selected<% } %> >
-                                    <%= opcion.label %>
+                            <% animales.forEach(animal => { %>
+                                <option value="<%= animal.ID %>" 
+                                    <% if (productoEnEdicion.Animal_FK == animal.ID) { %>selected<% } %> >
+                                    <%= animal.Nombre %>
                                 </option>
                             <% }); %>
                         </select>
@@ -97,17 +82,10 @@
                     <div class="prod-cat">
                         <label>Marca:</label>
                         <select name="Marca" class="product-select" required>
-                            <% let opcionesMarcas = [
-                                { value: '0', label: 'Ninguna' },
-                                { value: '1', label: 'Royal Canin' },
-                                { value: '2', label: 'Purina Pro Plan' },
-                                { value: '3', label: 'Eukanuba' }
-                            ]; %>
-
-                            <% opcionesMarcas.forEach(opcion => { %>
-                                <option value="<%= opcion.value %>" 
-                                    <% if (productoEnEdicion.Marca_FK == opcion.value) { %>selected<% } %> >
-                                    <%= opcion.label %>
+                            <% marcas.forEach(marca => { %>
+                                <option value="<%= marca.ID %>" 
+                                    <% if (productoEnEdicion.Marca_FK == marca.ID) { %>selected<% } %> >
+                                    <%= marca.Nombre %>
                                 </option>
                             <% }); %>
                         </select>

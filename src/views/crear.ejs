@@ -56,32 +56,31 @@
                     </div>
                     <div class="prod-cat">
                         <label>Categoria:</label>
-                        <select id="Category" name="Categoria" class="product-select" required>
+                        <select name="Categoria" class="product-select">
                             <option value="0" selected>Ninguna</option>
-                            <option value="1">Alimento</option>
-                            <option value="2">Jugete</option>
+                            <% categorias.forEach(categoria => { %>
+                                <option value="<%= categoria.ID %>"> <%= categoria.Nombre %> </option>    
+                           <% }); %>
                         </select>
                     </div>
 
                     <div class="prod-cat">
                         <label>Animal:</label>
-                        <select name="Animal" class="product-select" required>
+                        <select name="Animal" class="product-select">
                             <option value="0" selected>Ninguna</option>
-                            <option value="1">Perro</option>
-                            <option value="2">Gato</option>
-                            <option value="3">Roedor</option>
-                            <option value="4">Ave</option>
-                            <option value="5">Pez</option>
+                            <% animales.forEach(animal => { %>
+                                <option value="<%= animal.ID %>"> <%= animal.Nombre %> </option>    
+                           <% }); %>
                         </select>
                     </div>
 
                     <div class="prod-cat">
                         <label>Marca:</label>
-                        <select name="Marca" class="product-select" required>
+                        <select name="Marca" class="product-select">
                             <option value="0" selected>Ninguna</option>
-                            <option value="1">Royal Canin</option>
-                            <option value="2">Purina Pro Plan</option>
-                            <option value="3">Eukanuba</option>
+                            <% marcas.forEach(marca => { %>
+                                <option value="<%= marca.ID %>"> <%= marca.Nombre %> </option>    
+                           <% }); %>
                         </select>
                     </div>
             

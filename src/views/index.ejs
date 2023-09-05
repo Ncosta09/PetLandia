@@ -76,7 +76,7 @@
                 <h2 class="titles">Alimento</h2>
                 <div class="all-products">
                     <% for(let i=0;i<productos.length;i++){%>
-                        <% if(productos[i].Categoria_FK == '1'){%>
+                        <% if(productos[i].Categoria_FK == '2'){%>
                     <a href="/producto/producto/<%=productos[i].ID%>">
                         <article class="product">
                             <img src="/images/products/<%=productos[i].Imagen%>"
@@ -101,7 +101,7 @@
                 <h2 class="titles">Jugetes</h2>
                 <div class="all-products">
                     <% for(let i=0;i<productos.length;i++){%>
-                        <% if(productos[i].Categoria_FK == '2'){%>
+                        <% if(productos[i].Categoria_FK == '1'){%>
                     <a href="/producto/producto/<%=productos[i].ID%>">
                         <article class="product">
                             <img src="/images/products/<%=productos[i].Imagen%>"
