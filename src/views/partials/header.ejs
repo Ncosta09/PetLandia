@@ -25,15 +25,29 @@
         </div>
 
         <nav class="main-top-bar">
-            <ul>
-                <li><a href="/producto/crear" class="add-article">Publicar articulo</a></li>
+            <ul class="ul-menu">
                 <% if(locals.logeado){ %>
-                <li><a href="/usuario/perfil">Perfil</a></li>
-                <li><a href="/usuario/logout">LogOut</a></li>
+                    <div class="menu">
+                        <ul>
+                            <li class="dropdown">
+                                <div class="user-info">
+                                    <img src="/images/fotoPerfil/<%= usuario.Imagen %>" alt="Foto de Usuario">
+                                    <div class="user-details">
+                                        <p><%= usuario.Nombre %> <%= usuario.Apellido %></p>
+                                    </div>
+                                </div>
+                                <div class="dropdown-content">
+                                    <a href="/usuario/perfil">Perfil</a>
+                                    <a href="/usuario/logout">Cerrar sesión</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 <% } else{ %>
                 <li><a href="/usuario/login">LogIn</a></li>
                 <li><a href="/usuario/register">Sign up</a></li>
                 <% } %>
+                <li><a href="/producto/crear" class="add-article">Publicar articulo</a></li>
                 <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
                 <li><a href="/producto/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>

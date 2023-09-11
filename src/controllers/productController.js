@@ -15,7 +15,7 @@ const productController = {
 
 		db.Producto.findByPk(idProducto)
 		.then((resultado)  => { 
-            res.render('producto', {producto: resultado});
+            res.render('producto', {producto: resultado, usuario: req.session.usuarioLogeado});
 		});
 	},
 
@@ -29,7 +29,7 @@ const productController = {
 		let animales = await db.Animal.findAll();
 		let marcas = await db.Marca.findAll();
 
-		res.render('crear', {categorias, animales, marcas});
+		res.render('crear', {categorias, animales, marcas, usuario: req.session.usuarioLogeado});
 	},
 
 	creador: (req, res) => {
@@ -62,7 +62,7 @@ const productController = {
 		let animales = await db.Animal.findAll();
 		let marcas = await db.Marca.findAll();
 
-		res.render('editar', {productoEnEdicion: productos, categorias, animales, marcas});
+		res.render('editar', {productoEnEdicion: productos, categorias, animales, marcas, usuario: req.session.usuarioLogeado});
 	},
 
 	update: (req, res) => {

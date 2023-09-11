@@ -45,6 +45,65 @@
         padding: 0;
         display: flex;
     }
+
+    .ul-menu{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .menu ul li a {
+        text-decoration: none;
+        color: #75362d;
+        padding: 10px 20px;
+        display: block;
+    }
+    
+    /* Estilos del menú desplegable */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #ac8464;
+        min-width: 100%;
+        z-index: 1;
+    }
+    
+    .dropdown-content a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    /* Estilos para la foto de usuario y detalles */
+    .user-info {
+        display: flex;
+        align-items: center;
+    }
+    
+    .user-info img {
+        width: 40px; /* Ajusta el tamaño de la imagen según sea necesario */
+        height: 40px;
+        border-radius: 50%; /* Esto crea una imagen redonda */
+    }
+    
+    .user-details p {
+        margin: 0;
+        text-decoration: none;
+        color: #222222;
+        display: inline-block;
+        font-size: 15px;
+        margin: 0 5px 0 5px;
+    }
     
     .main-top-bar a{
         text-decoration: none;

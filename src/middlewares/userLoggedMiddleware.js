@@ -27,6 +27,12 @@ function userLoggedMiddleware(req, res, next){
             next();
         })
     } else {
+        
+        if (req.session && req.session.usuarioLogeado) {
+            res.locals.logeado = true;
+            res.locals.usuarioLogeado = req.session.usuarioLogeado;
+        }
+        
         next();
     }
 

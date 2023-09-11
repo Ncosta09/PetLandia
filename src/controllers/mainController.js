@@ -6,7 +6,7 @@ const mainController = {
     index: (req, res) => {
         db.Producto.findAll()
         .then((resultado)  => { 
-            res.render('index', {productos: resultado});
+            res.render('index', {productos: resultado, usuario: req.session.usuarioLogeado});
 		});
     }
 }
