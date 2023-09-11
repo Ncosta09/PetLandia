@@ -85,12 +85,12 @@
     }
     
     /* Estilos para la foto de usuario y detalles */
-    .user-info {
+    .user-info-head {
         display: flex;
         align-items: center;
     }
     
-    .user-info img {
+    .user-info-head img {
         width: 40px; /* Ajusta el tamaño de la imagen según sea necesario */
         height: 40px;
         border-radius: 50%; /* Esto crea una imagen redonda */
@@ -98,6 +98,7 @@
     
     .user-details p {
         margin: 0;
+        min-width: 80px;
         text-decoration: none;
         color: #222222;
         display: inline-block;

@@ -17,7 +17,7 @@
                 <ul class="navigation">
                     <% if(locals.logeado){ %>
                         <div class="user-profile">
-                            <img src="/images/fotoPerfil/<%= usuario.Imagen %>" alt="Foto de Usuario">
+                            <img src="<%= usuario.Imagen %>" alt="Foto de Usuario">
                             <div class="user-name">
                                 <p><%= usuario.Nombre %> <%= usuario.Apellido %></p>
                             </div>
@@ -41,8 +41,8 @@
                     <div class="menu">
                         <ul>
                             <li class="dropdown">
-                                <div class="user-info">
-                                    <img src="/images/fotoPerfil/<%= usuario.Imagen %>" alt="Foto de Usuario">
+                                <div class="user-info-head">
+                                    <img src="<%= usuario.Imagen %>" alt="Foto de Usuario">
                                     <div class="user-details">
                                         <p><%= usuario.Nombre %> <%= usuario.Apellido %></p>
                                     </div>

@@ -4,6 +4,8 @@ const path = require('path');
 const bcryptjs = require('bcryptjs');
 let moment = require('moment');
 let db = require('../database/models');
+const cloudinary = require('cloudinary').v2;
+const streamifier = require('streamifier');
 
 const User = require('../model/Usuario');
 const userFilePath = path.join(__dirname, '../data/usersDataBase.json');
@@ -16,7 +18,7 @@ const userController = {
         res.render('register');
     },
 
-    procesoRegistro: (req, res) => {
+    procesoRegistro: async(req, res) => {
         let validaciones = validationResult(req);
 
         if(validaciones.errors.length > 0){
@@ -27,21 +29,37 @@ const userController = {
         } else {
 
             let fechaHoraActual = moment().format("YYYY-MM-DD HH:MM:SS");
-
-            db.Usuario.create({
-                Nombre: req.body.nombre,
-                Apellido: req.body.apellido,
-                Password: bcryptjs.hashSync(req.body.contrasena, 10),
-                Email: req.body.email,
-                Telefono: req.body.telefono,
-                Imagen: req.file.filename,
-                Fecha_Creacion: fechaHoraActual,
-                Rol_FK: '3',
-                Local_FK: '1'
-            })
-            .then(()  => { 
-                res.redirect('/usuario/login');
-            });
+            let cloudinaryImage = '';
+	
+		    if (req.file) {
+		    	const imageBuffer = req.file.buffer;
+		    	const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+		    	const customFilename = 'usuario_' + uniqueSuffix;
+		    	const folder = 'AvatarsImg';
+            
+		    	const stream = cloudinary.uploader.upload_stream({ resource_type: 'image', folder: folder, public_id: customFilename }, (error, result) => {
+                
+		    		console.log('Upload successful: ');
+		    		cloudinaryImage = result.secure_url;
+                
+                    db.Usuario.create({
+                        Nombre: req.body.nombre,
+                        Apellido: req.body.apellido,
+                        Password: bcryptjs.hashSync(req.body.contrasena, 10),
+                        Email: req.body.email,
+                        Telefono: req.body.telefono,
+                        Imagen: cloudinaryImage,
+                        Fecha_Creacion: fechaHoraActual,
+                        Rol_FK: '3',
+                        Local_FK: '1'
+                    })
+                    .then(()  => { 
+                        res.redirect('/usuario/login');
+                    });
+		    	});
+            
+		    	streamifier.createReadStream(imageBuffer).pipe(stream);
+		    }
         }
     },
 

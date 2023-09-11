@@ -9,23 +9,11 @@ const express = require('express');
 const router = express.Router();
 
 const multer = require('multer');
-
-const configuracionFotoPerfil = multer.diskStorage({
-    destination: function(req, file, cb) {
-     cb(null, path.join(__dirname,'../../public/images/fotoPerfil'));
-    },
-    filename: function(req, file, cb) {
-     let imageName =  Date.now() + file.originalname ;
-     cb(null, imageName);         
-    }
-});
-
-const uploadFile = multer({ storage: configuracionFotoPerfil });
+const uploadFile = multer();
 
 //Registro
 router.get('/register', guestMiddleware, userController.registrarse); //Forrmulario
 router.post('/register', uploadFile.single('fotoPerfil'), validations, userController.procesoRegistro); //Proceso de registro
-
 
 //LogIn
 router.get('/login', guestMiddleware, userController.iniciarSesion);
