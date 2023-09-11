@@ -15,9 +15,20 @@
 
             <nav class="nav-right-menu">
                 <ul class="navigation">
+                    <% if(locals.logeado){ %>
+                        <div class="user-profile">
+                            <img src="/images/fotoPerfil/<%= usuario.Imagen %>" alt="Foto de Usuario">
+                            <div class="user-name">
+                                <p><%= usuario.Nombre %> <%= usuario.Apellido %></p>
+                            </div>
+                        </div>
+                        <li><a href="/usuario/perfil"><i class="fa-solid fa-user"></i> Perfil</a></li>
+                        <li><a href="/usuario/logout"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesion</a></li>
+                    <% } else{ %>
+                        <li><a href="/usuario/login"><i class="fa-solid fa-user"></i> Ingresar</a></li>
+                        <li><a href="/usuario/register"><i class="fa-regular fa-user"></i> Registrate</a></li>
+                    <% } %>
                     <li><a href="/producto/crear"><i class="fa-solid fa-circle-plus"></i> Publicar articulo</a></li>
-                    <li><a href="/usuario/login"><i class="fa-solid fa-user"></i> Ingresar</a></li>
-                    <li><a href="/usuario/register"><i class="fa-regular fa-user"></i> Registrate</a></li>
                     <li><a href=""><i class="fa-solid fa-star"></i> Favoritos</a></li>
                     <li><a href="/producto/carrito"><i class="fa-solid fa-cart-shopping"></i> Carro</a></li>
                 </ul>
