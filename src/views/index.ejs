@@ -79,8 +79,7 @@
                         <% if(productos[i].Categoria_FK == '2'){%>
                     <a href="/producto/producto/<%=productos[i].ID%>">
                         <article class="product">
-                            <img src="/images/products/<%=productos[i].Imagen%>"
-                                alt="">
+                            <img src="<%=productos[i].Imagen%>" alt="">
                             <i class="fa-solid fa-truck truck"></i>
                             <div class="price-discount">
                                 <p class="product-price">$ <%=productos[i].Precio%></p>
@@ -104,8 +103,7 @@
                         <% if(productos[i].Categoria_FK == '1'){%>
                     <a href="/producto/producto/<%=productos[i].ID%>">
                         <article class="product">
-                            <img src="/images/products/<%=productos[i].Imagen%>"
-                                alt="">
+                            <img src="<%=productos[i].Imagen%>" alt="">
                             <i class="fa-solid fa-truck truck"></i>
                             <div class="price-discount">
                                 <p class="product-price">$ <%=productos[i].Precio%></p>

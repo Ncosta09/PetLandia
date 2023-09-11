@@ -2,8 +2,17 @@ const { log } = require('console');
 const fs = require('fs');
 const path = require('path');
 let moment = require('moment');
+const cloudinary = require('cloudinary').v2;
+const streamifier = require('streamifier');
+
 let db = require('../database/models');
 let Op = db.sequelize.Op;
+
+cloudinary.config({
+	cloud_name: 'dkhiluh13',
+	api_key: '773855392137736',
+	api_secret: 'oEsjKvYVUOv0RE4R0Z3uQ9dk8a8',
+});
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -32,27 +41,43 @@ const productController = {
 		res.render('crear', {categorias, animales, marcas, usuario: req.session.usuarioLogeado});
 	},
 
-	creador: (req, res) => {
+	creador: async (req, res) => {
 
 		let fechaHoraActual = moment().format("YYYY-MM-DD HH:MM:SS");
+		let cloudinaryImage = '';
+	
+		if (req.file) {
+			const imageBuffer = req.file.buffer;
+			const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+			const customFilename = 'producto_' + uniqueSuffix;
+			const folder = 'ProductosImg';
 
-		db.Producto.create({
-			Nombre: req.body.Nombre,
-			Descripcion: req.body.Descripcion,
-			Precio: req.body.Precio,
-			Descuento: req.body.Descuento,
-			Stock: req.body.Stock,
-			Imagen: req.file.filename,
-			Fecha_Creacion: fechaHoraActual,
-			Categoria_FK: req.body.Categoria,
-			Animal_FK: req.body.Animal,
-			Marca_FK: req.body.Marca
-		})
-		.then(()  => {
-			res.redirect('/');
-		});
+			const stream = cloudinary.uploader.upload_stream({ resource_type: 'image', folder: folder, public_id: customFilename }, (error, result) => {
+
+				console.log('Upload successful: ');
+				cloudinaryImage = result.secure_url;
+				
+				db.Producto.create({
+					Nombre: req.body.Nombre,
+					Descripcion: req.body.Descripcion,
+					Precio: req.body.Precio,
+					Descuento: req.body.Descuento,
+					Stock: req.body.Stock,
+					Imagen: cloudinaryImage,
+					Fecha_Creacion: fechaHoraActual,
+					Categoria_FK: req.body.Categoria,
+					Animal_FK: req.body.Animal,
+					Marca_FK: req.body.Marca
+				})
+				.then(() => {
+					res.redirect('/');
+				});
+			});
+
+			streamifier.createReadStream(imageBuffer).pipe(stream);
+		}
 	},
-
+	
 	editarProducto: async (req, res) => {
 
 		let idProducto = req.params.idProducto;
