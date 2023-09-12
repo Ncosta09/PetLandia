@@ -7,6 +7,9 @@ const path = require('path');
 const multer = require('multer');
 const uploadFile = multer();
 
+//buscar
+router.get('/buscar', productController.buscarProductos);
+
 //detalle
 router.get('/producto/:idProducto', productController.productoDetalle);
 

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <title>PetLandia</title>
+        
+        <!-- Links -->
+        <script src="https://kit.fontawesome.com/b29db1d018.js" crossorigin="anonymous"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/buscar.css">
+        <link rel="stylesheet" href="/css/normalize.css"> 
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="stylesheet" href="/css/responsive.css">
+    </head>
+
+    <body>
+        <%- include('./partials/header.ejs') %> <!--include header-->
+
+        <main class="main-search-place">
+
+            <div class="buscador">
+                <p>Buscaste: <%= terminoBusqueda %> </p>
+            </div>
+            
+            <div class="all-products">
+                <% for(let i=0;i<productos.length;i++){%>
+                    <a href="/producto/producto/<%=productos[i].ID%>">
+                        <article class="product">
+                            <img src="<%=productos[i].Imagen%>" alt="">
+                            <i class="fa-solid fa-truck truck"></i>
+                            <div class="price-discount">
+                                <p class="product-price">$ <%=productos[i].Precio%></p>
+                                <% if(productos[i].Descuento > 0 && productos[i].Descuento <= 100 ){ %>
+                                <p class="product-discount"><%=productos[i].Descuento%>% OFF</p>
+                                <% } %>
+                            </div>
+                            <h2><%=productos[i].Nombre%></h2>
+                        </article>
+                    </a>
+                <% } %>
+            </div>
+            
+        </main>
+
+        <%- include('./partials/footer.ejs') %> <!-- include footer -->
+
+    </body>
+</html>

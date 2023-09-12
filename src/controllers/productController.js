@@ -6,7 +6,7 @@ const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
 
 let db = require('../database/models');
-let Op = db.sequelize.Op;
+const { Op } = require('sequelize');
 
 cloudinary.config({
 	cloud_name: 'dkhiluh13',
@@ -18,6 +18,29 @@ const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productController = {
+
+	buscarProductos: async (req, res) => {
+		let terminoBusqueda = req.query.q;
+
+		if(terminoBusqueda){
+			await db.Producto.findAll({
+				where: {
+					Nombre: {
+						[Op.like]: `%${terminoBusqueda}%` // Búsqueda insensible a mayúsculas y minúsculas
+					}
+				}
+			})
+			.then(busqueda => {
+				res.render('buscar', {productos: busqueda, terminoBusqueda, usuario: req.session.usuarioLogeado});
+			})
+
+		} else {
+			await db.Producto.findAll()
+			.then(busqueda => {
+				res.render('buscar', {productos: busqueda, terminoBusqueda, usuario: req.session.usuarioLogeado});
+			})
+		}
+	},
 
 	productoDetalle: (req, res) => {
 		let idProducto = req.params.idProducto;
