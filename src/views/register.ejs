@@ -27,10 +27,11 @@
             <div class="register-container">
                 <img src="" alt="">
 
-                <form method="post" action="/usuario/register" enctype="multipart/form-data" class="register-form">
+                <form method="post" action="/usuario/register" enctype="multipart/form-data" class="register-form" id="registroForm">
                     <div class="user-info">
                         <label for="nombre">Nombre:</label>
                         <input type="text" id="name" name="nombre" value="<%= locals.ultData ? ultData.nombre : null %>">
+                        <div class="color-alert" id="nombreError"></div>
                         <div class="color-alert">
                             <% if(locals.errores && errores.nombre){ %>
                                 <%= errores.nombre.msg %>
@@ -39,6 +40,7 @@
                     
                         <label for="apellido">Apellido:</label>
                         <input type="text" id="surname" name="apellido" value="<%= locals.ultData ? ultData.apellido : null %>">
+                        <div class="color-alert" id="apellidoError"></div>
                         <div class="color-alert">
                             <% if(locals.errores && errores.apellido){ %>
                                 <%= errores.apellido.msg %>
@@ -47,6 +49,7 @@
 
                         <label for="email">Correo Electrónico:</label>
                         <input type="text" id="email" name="email" value="<%= locals.ultData ? ultData.email : null %>">
+                        <div class="color-alert" id="emailError"></div>
                         <div class="color-alert">
                             <% if(locals.errores && errores.email){ %>
                                 <%= errores.email.msg %>
@@ -55,6 +58,7 @@
 
                         <label for="telefono">Telefono:</label>
                         <input type="text" id="telefono" name="telefono" value="<%= locals.ultData ? ultData.telefono : null %>">
+                        <div class="color-alert" id="telefonoError"></div>
                         <div class="color-alert">
                             <% if(locals.errores && errores.telefono){ %>
                                 <%= errores.telefono.msg %>
@@ -71,6 +75,7 @@
                     
                         <label for="confirmar_contrasena">Confirmar Contraseña:</label>
                         <input type="password" id="confirmar_password" name="confirmarContrasena">
+                        <div class="color-alert" id="contrasenaError"></div>
                         <div class="color-alert">
                         <% if(locals.errores && errores.confirmarContrasena){ %>
                             <%= errores.confirmarContrasena.msg %>
@@ -79,6 +84,7 @@
 
                         <label for="foto_perfil">Foto de Perfil:</label>
                         <input type="file" id="foto_perfil" name="fotoPerfil" class="photo">
+                        <div class="color-alert" id="fotoPerfilError"></div>
                         <div class="color-alert">
                             <% if(locals.errores && errores.fotoPerfil){ %>
                                 <%= errores.fotoPerfil.msg %>
@@ -87,7 +93,7 @@
                     </div>
                     
                     <div class="bottom-info">
-                        <button type="submit"> Registrarse <i class="fa-solid fa-paw"></i> </button>
+                        <button type="submit" id="btnSubmit"> Registrarse <i class="fa-solid fa-paw"></i> </button>
                         <a href="/usuario/login"> O Iniciar sesion</a>
                     </div>
                 </form>
@@ -96,6 +102,6 @@
         </main>
 
         <%- include('./partials/footer.ejs') %> <!--include footer-->
-
+        <script src="/js/validacionesRegistro.js"></script>
     </body>
 </html>
