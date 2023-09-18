@@ -1,98 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PetLandia</title>
-  <!-- Links -->
-  <script src="https://kit.fontawesome.com/b29db1d018.js" crossorigin="anonymous"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-  <link rel="stylesheet" href="/css/producto.css">
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="/css/responsive.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetLandia</title>
+    <!-- Links -->
+    <script src="https://kit.fontawesome.com/b29db1d018.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/producto.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+  </head>
+  <body>
 
-  <%- include('./partials/header.ejs') %> <!--include header-->
+    <%- include('./partials/header.ejs') %> <!--include header-->
 
-<main>
-  <div class="product-detail">
-    <div class="product-top">
-      <img class="product-img" src="<%=producto.Imagen%>" alt="">
-      <h2 class="product-title"><%=producto.Nombre%></h2>
-    </div>
-
-    <div class="product-info">
-      <h2 class="copy-title"><%=producto.Nombre%></h2>
-      <% if(producto.Descuento > 0){ %>
-      <div class="detail-price-disc">
-        <p class="price">$ <%=producto.Precio%></p>
-        <% if(producto.Descuento > 0 && producto.Descuento <= 100 ){ %>
-        <p class="disc"><%=producto.Descuento%>% OFF</p>
-        <% } %>
-      </div>
-      <p class="price-confirmation">$ <%=(producto.Precio - ((producto.Precio) * (producto.Descuento)/100))%></p>
-      <% }else{ %>
-      <p class="price-confirmation">$ <%=producto.Precio%></p>
-      <% } %>
-      <div class="product-truck">
-        <i class="fa-solid fa-truck truck-i"></i>
-        <p class="truck-p">Llega gratis</p>
-      </div>
-
-      <div class="product-stock">
-        <p class="stock">Stock disponible</p>
-        <div class="stock-space">
-          <label for="select" class="product-label">Cantidad:</label>
-          <select name="select" class="product-select">
-            <option value="value1">1</option>
-            <option value="value2">2</option>
-            <option value="value3">3</option>
-            <option value="value4">4</option>
-            <option value="value5">5</option>
-          </select>
+    <main>
+      <div id="id-item"> <% producto.ID %> </div>
+      <div class="product-detail">
+        <div class="product-top">
+          <img class="product-img" id="id-imagen" src="<%=producto.Imagen%>" alt="">
+          <h2 class="product-title"><%=producto.Nombre%></h2>
         </div>
-      </div>
 
-      <div class="product-buttons">
-        <button class="product-btn buynow">Comprar ahora</button>
-        <button class="product-btn buythen">Agregar al carrito</button>
-      </div>
+        <div class="product-info">
+          <h2 class="copy-title" id="id-nombre"><%=producto.Nombre%></h2>
+          <% if(producto.Descuento > 0){ %>
+          <div class="detail-price-disc">
+            <p class="price" id="id-precio">$ <%=producto.Precio%></p>
+            <% if(producto.Descuento > 0 && producto.Descuento <= 100 ){ %>
+            <p class="disc" id="id-descuento"><%=producto.Descuento%>% OFF</p>
+            <% } %>
+          </div>
+          <p class="price-confirmation">$ <%=(producto.Precio - ((producto.Precio) * (producto.Descuento)/100))%></p>
+          <% }else{ %>
+          <p class="price-confirmation">$ <%=producto.Precio%></p>
+          <% } %>
+          <div class="product-truck">
+            <i class="fa-solid fa-truck truck-i"></i>
+            <p class="truck-p">Llega gratis</p>
+          </div>
 
-      <div class="edit-delete-buttons">
-        <a href="/producto/editar/<%=producto.ID%>" class="product-btn edit">Editar publicacion</a>
-        <form action="/producto/borrar/<%= producto.ID %>?_method=DELETE" method="post" class="product-form">
-          <button class="delete">Borrar publicacion</button>
-        </form>
-      </div>
+          <div class="product-stock">
+            <p class="stock">Stock disponible</p>
+            <div class="stock-space">
+              <label for="select" class="product-label">Cantidad:</label>
+              <select name="select" class="product-select" id="id-cantidad">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </div>
+          </div>
 
-    </div>
+          <div class="product-buttons">
+            <button class="product-btn buynow">Comprar ahora</button>
+            <button class="product-btn buythen" id="btnAgregar">Agregar al carrito</button>
+          </div>
 
-    <div class="product-footer">
-      <details open>
-        <summary class="footer-title">Descripcion</summary>
-        <div class="description">
-          <p><%=producto.Descripcion%></p>
+          <div class="edit-delete-buttons">
+            <a href="/producto/editar/<%=producto.ID%>" class="product-btn edit">Editar publicacion</a>
+            <form action="/producto/borrar/<%= producto.ID %>?_method=DELETE" method="post" class="product-form">
+              <button class="delete">Borrar publicacion</button>
+            </form>
+          </div>
+
         </div>
-      </details>
 
-      <details>
-        <summary class="footer-title">Opiniones</summary>
-        <div class="description">
-          <p></p>
+        <div class="product-footer">
+          <details open>
+            <summary class="footer-title">Descripcion</summary>
+            <div class="description">
+              <p><%=producto.Descripcion%></p>
+            </div>
+          </details>
+
+          <details>
+            <summary class="footer-title">Opiniones</summary>
+            <div class="description">
+              <p></p>
+            </div>
+          </details>
         </div>
-      </details>
-    </div>
 
-  </div>
+      </div>
 
-</main>
+    </main>
 
-<%- include('./partials/footer.ejs') %> <!--include footer-->
+    <%- include('./partials/footer.ejs') %> <!--include footer-->
 
-<!-- Links -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-</body>
+    <!-- Links -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="/js/manejoCarrito.js"></script>
+  </body>
 </html>
