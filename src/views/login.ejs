@@ -38,6 +38,7 @@
                         <div class="pass">
                             <label for="contrasena">Contraseña:</label>
                             <input type="password" id="contrasena" name="contrasena">
+                            <div class="color-alert" id="passError"></div>
                         </div>
                         <label><input type="checkbox" name="recordarUsuario"> Recordarme </label>
                         <a class="pass-remind" href="#">Olvidaste tu contraseña?</a>
@@ -51,6 +52,7 @@
         </main>
 
         <%- include('./partials/footer.ejs') %> <!--include footer-->
+        <script src="/js/validacionesLogin.js"></script>
 
     </body>
 </html>

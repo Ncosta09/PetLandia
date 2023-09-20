@@ -3,10 +3,10 @@ const path = require('path');
 const { body } = require('express-validator');
 
 module.exports = [
-    body('nombre').notEmpty().withMessage('Escribir un Nombre valido'),
-    body('apellido').notEmpty().withMessage('Escribir un Apellido valido'),
-    body('telefono').notEmpty().withMessage('Escribir un Telefono valido'),
-    body('email').notEmpty().withMessage('Escribir un email valido').bail().isEmail()
+    body('nombre').notEmpty().withMessage('El campo Nombre es obligatorio'),
+    body('apellido').notEmpty().withMessage('El campo Apellido es obligatorio'),
+    body('telefono').notEmpty().withMessage('Ingresa un número de teléfono válido'),
+    body('email').notEmpty().withMessage('Ingresa un correo electrónico válido').bail().isEmail()
     .withMessage('Debes escribir un formato de correo valido').bail().custom((value, { req }) => {
         let mailExistente = User.findByField('email', req.body.email);
 
@@ -16,7 +16,7 @@ module.exports = [
         
         return true;
     }),
-    body('contrasena').notEmpty().withMessage('Se require contraseña').bail()
+    body('contrasena').notEmpty().withMessage('El campo contraseña es obligatorio').bail()
     .isLength({ min: 5 }).withMessage('La contraseña debe contener al menos 5 caracteres'), 
     body('confirmarContrasena').custom((value, { req }) => {
       if (value !== req.body.contrasena) {
@@ -31,13 +31,13 @@ module.exports = [
         let extencionesPass = ['.jpg', '.png', '.jpeg'];
 
         if(!file){
-            throw new Error('Tenes que subir una imagen');
+            throw new Error('Debes seleccionar una foto de perfil');
         }
         else{
 
             let fileExtencion = path.extname(file.originalname);
             if(!extencionesPass.includes(fileExtencion)){
-                throw new Error('La extencion del archivo no es la permitida');
+                throw new Error('La foto de perfil contiene una extencion no permitida');
             }    
         }
 
