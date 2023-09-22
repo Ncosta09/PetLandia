@@ -1,4 +1,5 @@
-const productController = require('../controllers/productController')
+const productController = require('../controllers/productController');
+const postMiddleware = require('../middlewares/postMiddleware');
 
 const express = require('express');
 const router = express.Router();
@@ -17,7 +18,7 @@ router.get('/producto/:idProducto', productController.productoDetalle);
 router.get('/carrito', productController.carrito);
 
 //crear
-router.get('/crear', productController.crearArticulo);
+router.get('/crear', postMiddleware, productController.crearArticulo);
 router.post('/crear', uploadFile.single('imagenProducto'), productController.creador);
 
 //editar
