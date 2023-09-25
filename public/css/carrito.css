@@ -102,6 +102,14 @@ main{
 
 }
 
+.eliminar-producto{
+    color: red;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    left: 40%;
+}
+
 .line{
     background-color: #75362d;
     width: 90%;
@@ -186,19 +194,27 @@ main{
         display: block;
         font-size: 14px;
         margin: 0;
-        width: 200px;
+        width: 33%;
         position: relative;
-        right: 60px;
+        left: 50px;
     }
 
     .info-product-cantidad {
-        width: 100px;
-        justify-content: flex-start !important;
+        width: 33%;
+        justify-content: flex-end !important;
     }
 
     .info-product-price{
-        width: 100px;
-        justify-content: flex-start !important;
+        width: 33%;
+        justify-content: flex-end !important;
+    }
+
+    .eliminar-producto{
+        color: red;
+        background-color: transparent;
+        border: none;
+        position: relative;
+        left: 50px;
     }
 
 }

@@ -12,6 +12,14 @@ function mostrarProductosEnCarrito() {
     carrito.forEach(producto => {
         const productoDiv = document.createElement('div');
 
+        const eliminarBtn = document.createElement('button');
+        eliminarBtn.innerHTML = '<i class="fa-regular fa-circle-xmark"></i>';
+        eliminarBtn.classList.add('eliminar-producto');
+
+        eliminarBtn.addEventListener('click', function () {
+            eliminarProducto(producto.nombre);
+        });
+
         const imagenElement = document.createElement('img');
         imagenElement.src = producto.imagen;
         imagenElement.alt = producto.nombre;
@@ -40,6 +48,8 @@ function mostrarProductosEnCarrito() {
         productoDiv.appendChild(nombreElement);
         productoDiv.appendChild(cantidadElement);
         productoDiv.appendChild(precioElement);
+        productoDiv.appendChild(eliminarBtn);
+
 
         carritoContainer.appendChild(productoDiv);
     });
@@ -62,6 +72,11 @@ function calcularPrecioTotal() {
     return precioTotal;
 }
 
+function actualizarPrecioTotal() {
+    let precioTotal = calcularPrecioTotal();
+    precioTotalElement.textContent = `$${precioTotal.toFixed(2)}`;
+}
+
 //Borrar carrito
 const btnVaciarCarrito = document.getElementById('btnVaciarCarrito');
 
@@ -73,6 +88,9 @@ function vaciarCarrito() {
     carrito = [];
     guardarCarritoEnLocalStorage();
     mostrarProductosEnCarrito();
+
+    const precioTotalElement = document.querySelector('#id-total');
+    precioTotalElement.textContent = `$${0.00}`;
 }
 
 btnVaciarCarrito.addEventListener('click', function() {
@@ -80,3 +98,9 @@ btnVaciarCarrito.addEventListener('click', function() {
 });
 
 //Eliminar individual
+function eliminarProducto(nombre) {
+    
+    carrito = carrito.filter(producto => producto.nombre !== nombre);
+    guardarCarritoEnLocalStorage();
+    mostrarProductosEnCarrito();
+}
