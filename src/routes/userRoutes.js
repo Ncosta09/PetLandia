@@ -21,6 +21,7 @@ router.post('/login', userController.procesoLogin); //proceso del login
 
 //perfil de usuario
 router.get('/perfil', authMiddleware, userController.perfil);
+router.post('/perfil', userController.perfilMod);
 
 //salir de la seccion
 router.get('/logout', userController.logout);  //En la vista: href="/user/logout"> 

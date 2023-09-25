@@ -31,11 +31,34 @@
                     <div class="profilename">
                         <%= usuario.Nombre %> <%= usuario.Apellido %>
                     </div>
+                    <% if(usuario.Rol_FK == 3){ %>
+                    <div class="profile-admins">
+                        <h4>Cambio roles empleados</h4>
+                        <form id="adminRoleForm" method="POST">
+                            <div class="user-mail">
+                                <label for="email">Email usaurio:</label>
+                                <input type="text" id="email" name="email">
+                            
+                                <div class="user-rol">
+                                    <label for="newRole">Nuevo Rol:</label>
+                                    <select id="newRole" name="newRole">
+                                        <option value="1">Cliente</option>
+                                        <option value="2">Administrador</option>
+                                        <option value="3">Super-admin</option>
+                                    </select>
+                                </div>
+                            </div>
+                    
+                            <button class="btn-submit-rol" type="submit">Cambiar Rol</button>
+                        </form>
+                    </div>
+                    <% } %>
                 </div>
             </div>
         </main>
 
         <%- include('./partials/footer.ejs') %> <!--include footer-->
+        <script src="/js/validacionesCambioRol.js"></script>
 
     </body>
 </html>

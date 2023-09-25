@@ -1,4 +1,5 @@
 const User = require('../model/Usuario');
+let db = require('../database/models');
 const path = require('path');
 const { body } = require('express-validator');
 
@@ -7,8 +8,13 @@ module.exports = [
     body('apellido').notEmpty().withMessage('El campo Apellido es obligatorio'),
     body('telefono').notEmpty().withMessage('Ingresa un número de teléfono válido'),
     body('email').notEmpty().withMessage('Ingresa un correo electrónico válido').bail().isEmail()
-    .withMessage('Debes escribir un formato de correo valido').bail().custom((value, { req }) => {
-        let mailExistente = User.findByField('email', req.body.email);
+    .withMessage('Debes escribir un formato de correo valido').bail().custom( async (value, { req }) => {
+        //let mailExistente = User.findByField('email', req.body.email);
+        let mailExistente = await db.Usuario.findOne({
+            where: {
+                Email: req.body.email
+            }
+        })
 
         if(mailExistente){
             throw new Error('Este correo ya se encuentra registrado');

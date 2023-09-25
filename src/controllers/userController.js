@@ -50,7 +50,7 @@ const userController = {
                         Telefono: req.body.telefono,
                         Imagen: cloudinaryImage,
                         Fecha_Creacion: fechaHoraActual,
-                        Rol_FK: '3',
+                        Rol_FK: '1',
                         Local_FK: '1'
                     })
                     .then(()  => { 
@@ -109,10 +109,38 @@ const userController = {
         });
     },
 
-    perfil: (req,res)=>{
+    perfil: async (req,res)=>{
+
+        let roles = await db.Rol.findAll();
+
         res.render('perfil', {
-            usuario: req.session.usuarioLogeado
+            usuario: req.session.usuarioLogeado, roles
         });
+    },
+
+    perfilMod: async (req, res) => {
+
+        let updateRol = {
+            Rol_FK: req.body.newRole
+        };
+
+        await db.Usuario.findOne({
+            where: {
+                Email: req.body.email
+            }
+        })
+        .then((usuarioFind) => {
+            if (usuarioFind) {
+            
+                usuarioFind.update(updateRol);
+                console.log('Rol cambiado exitosamente');
+            } else {
+                console.log('Usuario no encontrado');
+            }
+        })
+        .then(() => {
+            return res.redirect('/usuario/perfil');
+        })
     },
 
     logout: (req,res)=>{
