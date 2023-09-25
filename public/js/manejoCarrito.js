@@ -27,7 +27,20 @@ agregarAlCarrito.forEach(button => {
             imagen: productImage
         };
 
-        carrito.push(producto);
+        let productoExistente;
+
+        for (let i = 0; i < carrito.length; i++) {
+            if (carrito[i].nombre == producto.nombre) {
+                productoExistente = carrito[i];
+            }
+        }
+
+        if (productoExistente) {
+            productoExistente.cantidad += productQuantity;
+        } else {
+            carrito.push(producto);
+        }
+
         guardarCarritoEnLocalStorage();
     });
 });
