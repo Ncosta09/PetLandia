@@ -15,11 +15,11 @@
 
             <nav class="nav-right-menu">
                 <ul class="navigation">
-                    <% if(locals.logeado){ %>
+                    <% if(locals.logeado && locals.usuarioLogeado){ %>
                         <div class="user-profile">
-                            <img src="<%= usuario.Imagen %>" alt="Foto de Usuario">
+                            <img src="<%= locals.usuarioLogeado.Imagen %>" alt="Foto de Usuario">
                             <div class="user-name">
-                                <p><%= usuario.Nombre %> <%= usuario.Apellido %></p>
+                                <p><%= locals.usuarioLogeado.Nombre %> <%= locals.usuarioLogeado.Apellido %></p>
                             </div>
                         </div>
                         <li><a href="/usuario/perfil"><i class="fa-solid fa-user"></i> Perfil</a></li>
@@ -28,9 +28,9 @@
                         <li><a href="/usuario/login"><i class="fa-solid fa-user"></i> Ingresar</a></li>
                         <li><a href="/usuario/register"><i class="fa-regular fa-user"></i> Registrate</a></li>
                     <% } %>
-                    <% if(locals.logeado && usuario.Rol_FK == 3){ %>
+                    <% if(locals.logeado && locals.usuarioLogeado.Rol_FK == 3){ %>
                         <li><a href="/producto/crear"><i class="fa-solid fa-circle-plus"></i> Publicar articulo</a></li>
-                    <% } else if(locals.logeado && usuario.Rol_FK == 2){ %>
+                    <% } else if(locals.logeado && locals.usuarioLogeado.Rol_FK == 2){ %>
                         <li><a href="/producto/crear"><i class="fa-solid fa-circle-plus"></i> Publicar articulo</a></li>
                     <% } %>
                     <li><a href=""><i class="fa-solid fa-star"></i> Favoritos</a></li>
@@ -41,14 +41,14 @@
 
         <nav class="main-top-bar">
             <ul class="ul-menu">
-                <% if(locals.logeado){ %>
+                <% if(locals.logeado && locals.usuarioLogeado){ %>
                     <div class="menu">
                         <ul>
                             <li class="dropdown">
                                 <div class="user-info-head">
-                                    <img src="<%= usuario.Imagen %>" alt="Foto de Usuario">
+                                    <img src="<%= locals.usuarioLogeado.Imagen %>" alt="Foto de Usuario">
                                     <div class="user-details">
-                                        <p><%= usuario.Nombre %> <%= usuario.Apellido %></p>
+                                        <p><%= locals.usuarioLogeado.Nombre %> <%= locals.usuarioLogeado.Apellido %></p>
                                     </div>
                                 </div>
                                 <div class="dropdown-content">
@@ -62,9 +62,9 @@
                 <li><a href="/usuario/login">LogIn</a></li>
                 <li><a href="/usuario/register">Sign up</a></li>
                 <% } %>
-                <% if(locals.logeado && usuario.Rol_FK == 3){ %> 
+                <% if(locals.logeado && locals.usuarioLogeado.Rol_FK == 3){ %> 
                     <li><a href="/producto/crear" class="add-article">Publicar articulo</a></li>
-                <% } else if(locals.logeado && usuario.Rol_FK == 2){ %>
+                <% } else if(locals.logeado && locals.usuarioLogeado.Rol_FK == 2){ %>
                     <li><a href="/producto/crear" class="add-article">Publicar articulo</a></li>
                 <% } %>
                 <li><a href="#"><i class="fa-solid fa-star"></i></a></li>
