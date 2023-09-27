@@ -1,12 +1,14 @@
+let usuarioIdentificacion = document.getElementById('userId').value;
 const agregarAlCarrito = document.querySelectorAll('#btnAgregar');
+
 let carrito = [];
 
-if (localStorage.getItem('carrito')) {
-    carrito = JSON.parse(localStorage.getItem('carrito'));
+if (localStorage.getItem(`carrito_${usuarioIdentificacion}`)) {
+    carrito = JSON.parse(localStorage.getItem(`carrito_${usuarioIdentificacion}`));
 }
 
 function guardarCarritoEnLocalStorage() {
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+    localStorage.setItem(`carrito_${usuarioIdentificacion}`, JSON.stringify(carrito));
 }
 
 agregarAlCarrito.forEach(button => {

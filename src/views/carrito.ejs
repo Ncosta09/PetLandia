@@ -51,6 +51,11 @@
                 <button class="buy" type="submit">Finalizar compra</button>
                 <button class="clear" type="reset" id="btnVaciarCarrito">Vaciar carrito</button>
             </div>
+
+            <% if(locals.logeado){ %>
+                <input type="hidden" name="userId" id="userId" value="<%= locals.usuarioLogeado.id %>">
+                <%= console.log(locals.usuarioLogeado.id); %>
+            <% } %>
         </main>
 
         <%- include('./partials/footer.ejs') %> <!-- include footer -->

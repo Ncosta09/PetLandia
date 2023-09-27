@@ -1,8 +1,14 @@
+let usuarioIdentificacion = document.getElementById('userId').value;
 let carrito = [];
 
-if (localStorage.getItem('carrito')) {
-    carrito = JSON.parse(localStorage.getItem('carrito'));
-}
+document.addEventListener('DOMContentLoaded', function() {
+    if (localStorage.getItem(`carrito_${usuarioIdentificacion}`)) {
+        carrito = JSON.parse(localStorage.getItem(`carrito_${usuarioIdentificacion}`));
+    }
+
+    // Luego de cargar el carrito, muestra los productos en el carrito
+    mostrarProductosEnCarrito();
+});
 
 function mostrarProductosEnCarrito() {
     const carritoContainer = document.querySelector('.product-list');
@@ -81,7 +87,7 @@ function actualizarPrecioTotal() {
 const btnVaciarCarrito = document.getElementById('btnVaciarCarrito');
 
 function guardarCarritoEnLocalStorage() {
-    localStorage.setItem('carrito', JSON.stringify(carrito));
+    localStorage.setItem(`carrito_${usuarioIdentificacion}`, JSON.stringify(carrito));
 }
 
 function vaciarCarrito() {

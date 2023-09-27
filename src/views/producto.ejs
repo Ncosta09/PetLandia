@@ -89,6 +89,10 @@
 
       </div>
 
+      <% if(locals.logeado){ %>
+        <input type="hidden" name="userId" id="userId" value="<%= locals.usuarioLogeado.id %>">
+        <%= console.log(locals.usuarioLogeado.id); %>
+      <% } %>
     </main>
 
     <%- include('./partials/footer.ejs') %> <!--include footer-->
