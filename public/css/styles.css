@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
 }
 
 /* Esto pertenece a la primer navbar donde se encuentra el logo, la search bar y el carrito con el login y el registo etc */
@@ -216,11 +217,16 @@
     margin-bottom: 0;
 }
 
+.index-product-container{
+    width: 80%;
+    margin: auto;
+}
+
 .all-products{
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin: 0px 20px 0px 20px;
+    margin: auto;
 }
 
 .all-products a{
@@ -236,7 +242,13 @@
     position: relative;
     width: 140px;
     height: 200px;
+}
 
+.product h2{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px; /* CAMBIAR TAMANO SEGUN RESPONSIVE */
 }
 
 .truck{
@@ -253,7 +265,7 @@
 }
 
 .product-price{
-    font-size: 12px;
+    font-size: 10px;
     margin-bottom: 2px;
     margin-right: 15px;
 }
