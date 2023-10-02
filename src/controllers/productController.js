@@ -113,8 +113,10 @@ const productController = {
 		res.render('editar', {productoEnEdicion: productos, categorias, animales, marcas, usuario: req.session.usuarioLogeado});
 	},
 
-	update: (req, res) => {
-
+	update: async (req, res) => {
+		console.log("Entrando al controlador de edición");
+	
+		
 		let fechaHoraActual = moment().format("YYYY-MM-DD HH:MM:SS");
 		let idProducto = req.params.idProducto;
 
@@ -130,21 +132,49 @@ const productController = {
 			Categoria_FK: req.body.Categoria,
 		};
 
+		console.log("Contenido de req.file:", req.file);
+	
 		if (req.file) {
-			updateData.Imagen = req.file.filename;
-		} else {
-			updateData.Imagen = products.Imagen;
-		}
+			console.log("Se encontró un archivo adjunto");
 
-		db.Producto.update(updateData, {
-			where: {
-				ID: idProducto
-			}
-		})
-		.then(()  => { 
-            res.redirect('/producto/producto/' + idProducto);
-		});
-	},
+			let imageBuffer = req.file.buffer;
+			let uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+			let customFilename = 'producto_' + uniqueSuffix;
+			let folder = 'ProductosImg';
+
+			cloudinary.uploader.upload_stream({ resource_type: 'image', folder: folder, public_id: customFilename }, (error, result) => {
+
+				console.log("URL de imagen en Cloudinary:", result.secure_url);
+
+				updateData.Imagen = result.secure_url;
+
+				db.Producto.update(updateData, {
+					where: {
+						ID: idProducto
+					}
+				})
+				.then(()  => { 
+					console.log("Actualización exitosa");
+
+					res.redirect('/producto/producto/' + idProducto);
+				});
+
+			}).end(imageBuffer);
+
+		} else {
+			console.log("No se encontró un archivo adjunto");
+
+			db.Producto.update(updateData, {
+				where: {
+					ID: idProducto
+				}
+			})
+			.then(()  => { 
+				console.log("Actualización exitosa");
+				res.redirect('/producto/producto/' + idProducto);
+			});
+		}
+	},	
 
 	destroy: (req, res) => {
 		let fechaHoraActual = moment().format("YYYY-MM-DD HH:MM:SS");
