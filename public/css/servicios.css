@@ -1,0 +1,106 @@
+main{
+    min-height: 680px;
+}
+
+.card-ubi{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.servicio-card-vet{
+    width: 85%;
+    max-width: 900px;
+    height: 280px;
+    margin: 50px auto;
+    border-radius: 10px;
+    background-image: linear-gradient(-45deg, #EDC677 65%, #BA997C 50%);
+}
+
+.servicio-card-bano{
+    width: 85%;
+    max-width: 900px;
+    height: 280px;
+    margin: 50px auto;
+    border-radius: 10px;
+    background-image: linear-gradient(-45deg, #BA997C 65%, #EDC677 50%);
+}
+
+.vet-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.vet-img img{
+    display: none;
+}
+
+.vet-info{
+    text-align: center;
+    color: white;
+    padding: 15px;
+}
+
+.vet-info h1{
+    margin-top: 20px;
+}
+
+.vet-info p{
+    margin: 0;
+}
+
+.turno-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 30px;
+}
+
+.turno-button button{
+    height: 30px;
+    width: auto;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #5C4B3B;
+}
+
+@media (min-width: 800px){
+
+    .vet-card{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .vet-total-card{
+        width: 60%;
+    }
+
+    .vet-img img{
+        display: block;
+        height: 280px;
+        width: 100%;
+    }
+
+    .vet-info h1{
+        font-size: 40px;
+    }
+    
+    .vet-info p{
+        font-size: 20px;
+    }
+
+    .turno-button{
+        align-self: flex-end;
+        height: 100%;
+    }
+
+}

@@ -210,15 +210,15 @@
 }
 
 .titles{
-    text-align: center;
     font-weight: 500;
-    font-style: italic;
-    margin-top: 15px;
-    margin-bottom: 0;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    padding: 40px;
 }
 
 .index-product-container{
-    width: 80%;
+    width: 85%;
     margin: auto;
 }
 
