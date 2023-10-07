@@ -8,29 +8,19 @@ function Petlandia(sequelize, DataTypes){
             primarykey: true, 
             autoincrement: true
         },
-        Nombre: {
+        Tipo_Servicio: {
             type: DataTypes.STRING(30)
         },
-        Descripcion: {
-            type: DataTypes.STRING(100)
+        Fecha_Turno: {
+            type: DataTypes.DATE
         },
-        Precio: {
-            type: DataTypes.DECIMAL(10,2)
+        Mensaje: {
+            type: DataTypes.TEXT
         },
-        Descuento: {
+
+        //ForeignKeys
+        Usuario_FK: {
             type: DataTypes.INTEGER
-        },
-        Imagen: {
-            type: DataTypes.STRING(100)
-        }, 
-        Fecha_Creacion: {
-            type: DataTypes.DATE
-        },
-        Fecha_Modificacion: {
-            type: DataTypes.DATE
-        },
-        Fecha_Eliminacion: {
-            type:DataTypes.DATE
         }
     } 
     
@@ -62,6 +52,10 @@ function Petlandia(sequelize, DataTypes){
             through: 'Servicio_animal',
             foreignKey: 'Servicio_FK',
             otherKey: 'Animal_Fk'
+        });
+        Servicios.belongsTo(modelos.Usuario, { 
+            foreignKey: 'Usuario_FK',
+            as: 'Usuarios'
         });
     }
 

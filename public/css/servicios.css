@@ -61,11 +61,16 @@ main{
     padding: 30px;
 }
 
-.turno-button button{
-    height: 30px;
-    width: auto;
+.turno-button a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 150px;
     border: none;
-    border-radius: 10px;
+    border-radius: 15px;
     color: white;
     background-color: #5C4B3B;
 }

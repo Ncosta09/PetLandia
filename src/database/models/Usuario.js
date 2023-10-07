@@ -70,6 +70,10 @@ function Petlandia(sequelize, DataTypes){
             foreignKey: 'Usuario_FK',
             as: 'Operaciones' 
         });
+        Usuarios.hasMany(modelos.Servicio, { 
+            foreignKey: 'Usuario_FK',
+            as: 'Servicios'
+        });
     }
 
     return Usuarios;
