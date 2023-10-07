@@ -23,23 +23,52 @@
     <%- include('./partials/header.ejs') %> <!--include header-->
 
     <main>
-        <div class="index-product-container">
-            <div class="all-products">
-                <% for(let i=0;i<productos.length;i++){%>
-                    <a href="/producto/producto/<%=productos[i].ID%>">
-                        <article class="product">
-                            <img src="<%=productos[i].Imagen%>" alt="">
-                            <i class="fa-solid fa-truck truck"></i>
-                            <div class="price-discount">
-                                <p class="product-price">$ <%=productos[i].Precio%></p>
-                                <% if(productos[i].Descuento > 0 && productos[i].Descuento <= 100 ){ %>
-                                <p class="product-discount"><%=productos[i].Descuento%>% OFF</p>
-                                <% } %>
-                            </div>
-                            <h2><%=productos[i].Nombre%></h2>
-                        </article>
-                    </a>
-                <% } %>
+        <div class="main-products-container">
+            <div class="index-product-container">
+                <div class="all-products">
+                    <% for(let i=0;i<productos.length;i++){%>
+                        <a href="/producto/producto/<%=productos[i].ID%>">
+                            <article class="product">
+                                <img src="<%=productos[i].Imagen%>" alt="">
+                                <i class="fa-solid fa-truck truck"></i>
+                                <div class="price-discount">
+                                    <p class="product-price">$ <%=productos[i].Precio%></p>
+                                    <% if(productos[i].Descuento > 0 && productos[i].Descuento <= 100 ){ %>
+                                    <p class="product-discount"><%=productos[i].Descuento%>% OFF</p>
+                                    <% } %>
+                                </div>
+                                <h2><%=productos[i].Nombre%></h2>
+                            </article>
+                        </a>
+                    <% } %>
+                </div>
+            </div>
+
+            <div class="product-filters">
+                <h1>Productos</h1>
+
+                <h3>Categorias</h3>
+                <ul>
+                    <% categorias.forEach(categoria => { %>
+                        <a href=""><li><%= categoria.Nombre %></li></a> <!-- FALTA RUTAS DE CATEGORIAS -->
+                    <% }); %>
+                </ul>
+
+                <h3>Animales</h3>
+                <ul>
+                    <% animales.forEach(animal => { %>
+                        <a href="/productos/categoria/<%= animal.Nombre %>"><li><%= animal.Nombre %></li></a>
+                    <% }); %>
+                </ul>
+
+                <h3>Marcas</h3>
+                <ul>
+                    <% marcas.forEach(marca => { %>
+                        <a href=""><li><%= marca.Nombre %></li></a> <!-- FALTA RUTAS DE MARCAS -->
+                    <% }); %>
+                </ul>
+                <!-- <h3>Envio</h3>
+                <ul></ul> -->
             </div>
         </div>
     </main>

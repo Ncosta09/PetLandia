@@ -10,11 +10,14 @@ const mainController = {
 		});
     },
 
-    todosProductos: (req, res) => {
-        db.Producto.findAll()
-        .then((resultado)  => { 
-            res.render('todosProductos', {productos: resultado, usuario: req.session.usuarioLogeado});
-		});
+    todosProductos: async (req, res) => {
+        
+        let categorias = await db.Categoria.findAll();
+		let animales = await db.Animal.findAll();
+		let marcas = await db.Marca.findAll();
+        let productos = await db.Producto.findAll();
+
+        res.render('todosProductos', {productos, marcas, animales, categorias, usuario: req.session.usuarioLogeado});
     },
 
     productosXcategoria: async (req, res) => {
