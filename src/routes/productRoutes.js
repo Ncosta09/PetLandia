@@ -1,5 +1,6 @@
 const productController = require('../controllers/productController');
 const postMiddleware = require('../middlewares/postMiddleware');
+const carritoMiddleware = require('../middlewares/carritoMiddleware');
 
 const express = require('express');
 const router = express.Router();
@@ -15,7 +16,7 @@ router.get('/buscar', productController.buscarProductos);
 router.get('/producto/:idProducto', productController.productoDetalle);
 
 //carrito
-router.get('/carrito', productController.carrito);
+router.get('/carrito', carritoMiddleware, productController.carrito);
 
 //crear
 router.get('/crear', postMiddleware, productController.crearArticulo);
