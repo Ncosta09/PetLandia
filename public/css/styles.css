@@ -258,6 +258,10 @@
     font-size: 8px;
 }
 
+#id-envio{
+    margin: 0;
+}
+
 .price-discount{
     display: flex;
     flex-direction: row;

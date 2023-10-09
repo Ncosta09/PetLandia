@@ -33,7 +33,11 @@
                         <a href="/producto/producto/<%=productoXMarca[i].ID%>">
                             <article class="product">
                                 <img src="<%=productoXMarca[i].Imagen%>" alt="">
-                                <i class="fa-solid fa-truck truck"></i>
+                                <% if(productoXMarca[i].Envio > 0){ %>
+                                    <p class="truck-p" id="id-envio"><i class="fa-solid fa-truck truck"> $ <%= productoXMarca[i].Envio %></i></p>
+                                  <% } else{ %>
+                                    <i class="fa-solid fa-truck truck"> Gratis</i>
+                                <% } %>
                                 <div class="price-discount">
                                     <p class="product-price">$ <%=productoXMarca[i].Precio%></p>
                                     <% if(productoXMarca[i].Descuento > 0 && productoXMarca[i].Descuento <= 100 ){ %>
