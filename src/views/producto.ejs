@@ -41,7 +41,7 @@
           </div>
           <p class="price-confirmation">$ <%=(producto.Precio - ((producto.Precio) * (producto.Descuento)/100))%></p>
           <% }else{ %>
-          <p class="price-confirmation">$ <%=producto.Precio%></p>
+          <p class="price-confirmation" id="id-precio">$ <%=producto.Precio%></p>
           <% } %>
           <div class="product-truck">
             <i class="fa-solid fa-truck truck-i"></i>

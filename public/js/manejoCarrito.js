@@ -16,7 +16,12 @@ agregarAlCarrito.forEach(button => {
         let productId = document.querySelector('#id-item').value;
         let productName = document.querySelector('#id-nombre').textContent;
         let productPrice = parseFloat(document.querySelector('#id-precio').textContent.replace('$', '').trim());
-        let productDiscount = parseFloat(document.querySelector('#id-descuento').textContent.replace('% OFF', '').trim());
+        let productDiscount = document.querySelector('#id-descuento');
+        if(productDiscount == 0 || productDiscount == null){
+            productDiscount = 0;
+        }else{
+            productDiscount = parseFloat(document.querySelector('#id-descuento').textContent.replace('% OFF', '').trim());
+        }
         let productQuantity = parseInt(document.querySelector('#id-cantidad').value);
         let productImage = document.querySelector('#id-imagen').src;
         
@@ -24,7 +29,7 @@ agregarAlCarrito.forEach(button => {
             id: productId,
             nombre: productName,
             precio: productDiscount ? (productPrice - (productPrice * productDiscount / 100)) : productPrice,
-            descuento: productDiscount,
+            descuento: productDiscount ? productDiscount : 0,
             cantidad: productQuantity,
             imagen: productImage
         };
