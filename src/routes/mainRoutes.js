@@ -9,7 +9,13 @@ router.get('/', mainController.index);
 //todos los productos
 router.get('/productos', mainController.todosProductos);
 
-//todos los productos de una categoria
-router.get('/productos/categoria/:idCategoria', mainController.productosXcategoria);
+//todos los productos de animal
+router.get('/productos/categoria/animales/:idAnimal', mainController.productosAnimal);
+
+//todos los productos de categoria
+router.get('/productos/categoria/categorias/:idCategoria', mainController.productosCategoria);
+
+//todos los productos de Marcas
+router.get('/productos/categoria/marcas/:idMarca', mainController.productosMarca);
 
 module.exports = router;

@@ -20,8 +20,8 @@ const mainController = {
         res.render('todosProductos', {productos, marcas, animales, categorias, usuario: req.session.usuarioLogeado});
     },
 
-    productosXcategoria: async (req, res) => {
-		let nombreAnimal = req.params.idCategoria;
+    productosAnimal: async (req, res) => {
+		let nombreAnimal = req.params.idAnimal;
 
         if(nombreAnimal == 'Perro'){
             idAnimal = 1;
@@ -44,7 +44,53 @@ const mainController = {
 		let animales = await db.Animal.findAll();
 		let marcas = await db.Marca.findAll();
 
-		res.render('productoCategoria', {productoXcategoria: productos, categorias, animales, marcas, usuario: req.session.usuarioLogeado});
+		res.render('productosAnimal', {productoXAnimal: productos, categorias, animales, marcas, usuario: req.session.usuarioLogeado});
+    },
+
+    //ACA --------------------------------------------------------------------
+
+    productosCategoria: async (req, res) => {
+		let nombreCategoria = req.params.idCategoria;
+
+        let categoria = await db.Categoria.findOne({
+            where: {
+                nombre: nombreCategoria
+            }
+        });
+
+        let productos = await db.Producto.findAll({ 
+            where: { 
+                Categoria_FK: categoria.ID
+            }
+        });
+
+		let categorias = await db.Categoria.findAll();
+		let animales = await db.Animal.findAll();
+		let marcas = await db.Marca.findAll();
+
+		res.render('productosCategoria', {productoXCategoria: productos, categorias, animales, marcas, usuario: req.session.usuarioLogeado});
+    },
+
+    productosMarca: async (req, res) => {
+		let nombreMarca = req.params.idMarca;
+
+        let marca = await db.Marca.findOne({
+            where: {
+                nombre: nombreMarca
+            }
+        });
+
+        let productos = await db.Producto.findAll({ 
+            where: { 
+                Marca_FK: marca.ID
+            }
+        });
+
+		let categorias = await db.Categoria.findAll();
+		let animales = await db.Animal.findAll();
+		let marcas = await db.Marca.findAll();
+
+		res.render('productosMarca', {productoXMarca: productos, categorias, animales, marcas, usuario: req.session.usuarioLogeado});
     }
 }
 

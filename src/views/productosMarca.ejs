@@ -29,18 +29,18 @@
 
             <div class="index-product-container">
                 <div class="all-products">
-                    <% for(let i=0;i<productoXcategoria.length;i++){%>
-                        <a href="/producto/producto/<%=productoXcategoria[i].ID%>">
+                    <% for(let i=0;i<productoXMarca.length;i++){%>
+                        <a href="/producto/producto/<%=productoXMarca[i].ID%>">
                             <article class="product">
-                                <img src="<%=productoXcategoria[i].Imagen%>" alt="">
+                                <img src="<%=productoXMarca[i].Imagen%>" alt="">
                                 <i class="fa-solid fa-truck truck"></i>
                                 <div class="price-discount">
-                                    <p class="product-price">$ <%=productoXcategoria[i].Precio%></p>
-                                    <% if(productoXcategoria[i].Descuento > 0 && productoXcategoria[i].Descuento <= 100 ){ %>
-                                    <p class="product-discount"><%=productoXcategoria[i].Descuento%>% OFF</p>
+                                    <p class="product-price">$ <%=productoXMarca[i].Precio%></p>
+                                    <% if(productoXMarca[i].Descuento > 0 && productoXMarca[i].Descuento <= 100 ){ %>
+                                    <p class="product-discount"><%=productoXMarca[i].Descuento%>% OFF</p>
                                     <% } %>
                                 </div>
-                                <h2><%=productoXcategoria[i].Nombre%></h2>
+                                <h2><%=productoXMarca[i].Nombre%></h2>
                             </article>
                         </a>
                     <% } %>
@@ -53,21 +53,21 @@
                 <h3>Categorias</h3>
                 <ul>
                     <% categorias.forEach(categoria => { %>
-                        <a href=""><li><%= categoria.Nombre %></li></a>
+                        <a href="/productos/categoria/categorias/<%= categoria.Nombre %>"><li><%= categoria.Nombre %></li></a>
                     <% }); %>
                 </ul>
     
                 <h3>Animales</h3>
                 <ul>
                     <% animales.forEach(animal => { %>
-                        <a href="/productos/categoria/<%= animal.Nombre %>"><li><%= animal.Nombre %></li></a>
+                        <a href="/productos/categoria/animales/<%= animal.Nombre %>"><li><%= animal.Nombre %></li></a>
                     <% }); %>
                 </ul>
     
                 <h3>Marcas</h3>
                 <ul>
                     <% marcas.forEach(marca => { %>
-                        <a href=""><li><%= marca.Nombre %></li></a>
+                        <a href="/productos/categoria/marcas/<%= marca.Nombre %>"><li><%= marca.Nombre %></li></a>
                     <% }); %>
                 </ul>
                 <!-- <h3>Envio</h3>
