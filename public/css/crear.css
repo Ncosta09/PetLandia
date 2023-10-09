@@ -44,7 +44,7 @@ main{
     margin-top: 30px;
 }
 
-.prod-name, .prod-price, .prod-disc, .prod-stock, .prod-cat, .prod-desc, .prod-photo{
+.prod-name, .prod-price, .prod-disc, .prod-stock, .prod-cat, .prod-desc, .prod-photo, .prod-envio{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -60,7 +60,7 @@ main{
     margin-right: 20px;
 }
 
-.prod-name input, .prod-price input, .prod-stock input, .prod-disc input, .prod-cat select, .prod-desc textarea, .prod-photo input{
+.prod-name input, .prod-price input, .prod-stock input, .prod-disc input, .prod-cat select, .prod-desc textarea, .prod-photo input, .prod-envio input{
     width: 100%;
 }
 

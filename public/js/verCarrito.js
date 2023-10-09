@@ -40,6 +40,14 @@ function mostrarProductosEnCarrito() {
         let precio = ((producto.precio) * producto.cantidad)
         precioElement.textContent = `$${precio.toFixed(2)}`;
 
+        const envioElement = document.querySelector('#id-envio');
+        let costoEnvio = calcularEnvio();
+        envioElement.textContent = `$${costoEnvio.toFixed(2)}`;
+
+        const precioSubTotalElement = document.querySelector('#id-subtotal');
+        let precioSubTotal = calcularPrecioSubTotal();
+        precioSubTotalElement.textContent = `$${precioSubTotal.toFixed(2)}`;
+
         const precioTotalElement = document.querySelector('#id-total');
         let precioTotal = calcularPrecioTotal();
         precioTotalElement.textContent = `$${precioTotal.toFixed(2)}`;
@@ -65,22 +73,46 @@ document.addEventListener('DOMContentLoaded', function() {
     mostrarProductosEnCarrito();
 });
 
-//Precio total
-function calcularPrecioTotal() {
-    let precioTotal = 0;
+//Precio envio
+function calcularEnvio(){
+    let envioTotal = 0;
+
+    for (let i = 0; i < carrito.length; i++) {
+        const producto = carrito[i];
+        const precioEnvio = producto.envio;
+        envioTotal += precioEnvio;
+    }
+
+    console.log(envioTotal)
+    return envioTotal;
+}
+
+//Precio sub-total
+function calcularPrecioSubTotal() {
+    let precioSubTotal = 0;
 
     for (let i = 0; i < carrito.length; i++) {
         const producto = carrito[i];
         const precioProducto = producto.precio * producto.cantidad;
-        precioTotal += precioProducto;
+        precioSubTotal += precioProducto;
     }
 
-    return precioTotal;
+    return precioSubTotal;
 }
 
 function actualizarPrecioTotal() {
-    let precioTotal = calcularPrecioTotal();
-    precioTotalElement.textContent = `$${precioTotal.toFixed(2)}`;
+    let precioSubTotal = calcularPrecioSubTotal();
+    precioSubTotalElement.textContent = `$${precioSubTotal.toFixed(2)}`;
+}
+
+//Precio Total
+function calcularPrecioTotal(){
+    
+    let Envio = calcularEnvio();
+    let subTotal = calcularPrecioSubTotal();
+    let resultadoFinal = Envio + subTotal;
+
+    return resultadoFinal;
 }
 
 //Borrar carrito

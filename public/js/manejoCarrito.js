@@ -23,6 +23,12 @@ agregarAlCarrito.forEach(button => {
             productDiscount = parseFloat(document.querySelector('#id-descuento').textContent.replace('% OFF', '').trim());
         }
         let productQuantity = parseInt(document.querySelector('#id-cantidad').value);
+        let productShip = document.querySelector('#id-envio');
+        if(productShip == 0 || productShip == null){
+            productShip = 0;
+        }else{
+            productShip = parseFloat(document.querySelector('#id-envio').textContent.replace('$', '').trim());
+        }
         let productImage = document.querySelector('#id-imagen').src;
         
         const producto = {
@@ -31,8 +37,11 @@ agregarAlCarrito.forEach(button => {
             precio: productDiscount ? (productPrice - (productPrice * productDiscount / 100)) : productPrice,
             descuento: productDiscount ? productDiscount : 0,
             cantidad: productQuantity,
+            envio: productShip,
             imagen: productImage
         };
+
+        console.log(producto)
 
         let productoExistente;
 

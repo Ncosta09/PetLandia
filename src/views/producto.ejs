@@ -45,7 +45,11 @@
           <% } %>
           <div class="product-truck">
             <i class="fa-solid fa-truck truck-i"></i>
-            <p class="truck-p">Llega gratis</p>
+            <% if(producto.Envio > 0){ %>
+              <p class="truck-p" id="id-envio">$ <%= producto.Envio %></p>
+            <% } else{ %>
+              <p class="truck-p">Llega gratis</p>
+            <% } %>
           </div>
 
           <div class="product-stock">
