@@ -131,6 +131,10 @@ main{
     color: #ac8464;
 }
 
+.buythen:active, .buynow:active{
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3); 
+}
+
 .edit{
     background-color:#ff9800;
     color: black;
