@@ -10,7 +10,7 @@ main{
 }
 
 .all-form{
-    height: 750px;
+    height: 900px;
     width: 90%;
     max-width: 800px;
     background-color: rgba(212, 194, 174, 0.5);
@@ -100,4 +100,9 @@ main{
     max-height: 100%;
     margin: auto;
     padding: auto;
+}
+
+.color-alert{
+    color: red;
+    font-size: 14px;
 }

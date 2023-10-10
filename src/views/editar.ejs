@@ -38,28 +38,32 @@
                 <div class="prod-top">
                     <h2>Edicion articulo</h2>
                 </div>
-                <form action="/producto/editar/<%=productoEnEdicion.ID%>?_method=PUT" method="POST" enctype="multipart/form-data" class="public-form">
+                <form action="/producto/editar/<%=productoEnEdicion.ID%>?_method=PUT" method="POST" enctype="multipart/form-data" class="public-form" id="editar-form">
                     <div class="prod-name">
                         <label>Nombre del producto:</label>
-                        <input type="text" id="name" name="Nombre" value="<%=productoEnEdicion.Nombre%>" required>
+                        <input type="text" id="name" name="Nombre" value="<%=productoEnEdicion.Nombre%>" >
+                        <div class="color-alert" id="nombreError"></div>
                     </div>
                     <div class="prod-price-disc">
                         <div class="prod-price">
                             <label>Precio:</label>
-                            <input type="text" id="Price" name="Precio" value="<%=productoEnEdicion.Precio%>" required>
+                            <input type="text" id="Price" name="Precio" value="<%=productoEnEdicion.Precio%>" >
+                            <div class="color-alert" id="precioError"></div>
                         </div>
                         <div class="prod-disc">
                             <label>Descuento:</label>
                             <input type="text" id="Discount" name="Descuento" value="<%=productoEnEdicion.Descuento%>">
+                            <div class="color-alert" id="descuentoError"></div>
                         </div>
                         <div class="prod-stock">
                             <label>Stock:</label>
                             <input type="text" id="Stock" name="Stock" value="<%=productoEnEdicion.Stock%>">
+                            <div class="color-alert" id="stockError"></div>
                         </div>
                     </div>
                     <div class="prod-cat">
                         <label>Categoria:</label>
-                        <select name="Categoria" class="product-select" required>
+                        <select name="Categoria" class="product-select" >
                             <% categorias.forEach(categoria => { %>
                                 <option value="<%= categoria.ID %>" 
                                     <% if (productoEnEdicion.Categoria_FK == categoria.ID) { %>selected<% } %> >
@@ -71,7 +75,7 @@
 
                     <div class="prod-cat">
                         <label>Animal:</label>
-                        <select name="Animal" class="product-select" required>
+                        <select name="Animal" class="product-select" >
                             <% animales.forEach(animal => { %>
                                 <option value="<%= animal.ID %>" 
                                     <% if (productoEnEdicion.Animal_FK == animal.ID) { %>selected<% } %> >
@@ -84,7 +88,7 @@
 
                     <div class="prod-cat">
                         <label>Marca:</label>
-                        <select name="Marca" class="product-select" required>
+                        <select name="Marca" class="product-select" >
                             <% marcas.forEach(marca => { %>
                                 <option value="<%= marca.ID %>" 
                                     <% if (productoEnEdicion.Marca_FK == marca.ID) { %>selected<% } %> >
@@ -96,17 +100,20 @@
 
                     <div class="prod-envio">
                         <label>Envio:</label>
-                        <input type="text" id="shiping" name="Envio" value="<%=productoEnEdicion.Envio%>" required>
+                        <input type="text" id="shiping" name="Envio" value="<%=productoEnEdicion.Envio%>" >
+                        <div class="color-alert" id="envioError"></div>
                     </div>
 
                     <div class="prod-desc">
                         <label>Descripcion:</label>
                         <textarea rows="5" id="Description" name="Descripcion"><%=productoEnEdicion.Descripcion%></textarea>
+                        <div class="color-alert" id="descripcionError"></div>
                     </div>
 
                     <div class="prod-photo">
                         <label>Foto:</label>
-                        <input type="file" id="foto_perfil" name="imagenProducto" onchange="previewImage(event)" accept="image/*">
+                        <input type="file" id="foto_perfil" name="imagenProducto" onchange="previewImage(event)" accept="image/*" data-has-image="false">
+                        <div class="color-alert" id="fotoError"></div>
                     </div>
                     <div class="preview-image">
                         <div class="image-container" onclick="document.getElementById('foto_perfil').click()">
@@ -123,5 +130,6 @@
 
         <%- include('./partials/footer.ejs') %> <!-- include footer -->
 
+        <script src="/js/editarArticuloValidaciones.js"></script>
     </body>
 </html>

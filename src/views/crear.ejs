@@ -27,23 +27,27 @@
                 <div class="prod-top">
                     <h2>Publicar articulo</h2>
                 </div>
-                <form action="/producto/crear" method="post" enctype="multipart/form-data" class="public-form">
+                <form action="/producto/crear" method="post" enctype="multipart/form-data" class="public-form" id="crear-form">
                     <div class="prod-name">
                         <label>Nombre del producto:</label>
-                        <input type="text" id="name" name="Nombre" required>
+                        <input type="text" id="name" name="Nombre" >
+                        <div class="color-alert" id="nombreError"></div>
                     </div>
                     <div class="prod-price-disc">
                         <div class="prod-price">
                             <label>Precio:</label>
-                            <input type="text" id="Price" name="Precio" required>
+                            <input type="text" id="Price" name="Precio" >
+                            <div class="color-alert" id="precioError"></div>
                         </div>
                         <div class="prod-disc">
                             <label>Descuento:</label>
                             <input type="text" id="Discount" name="Descuento">
+                            <div class="color-alert" id="descuentoError"></div>
                         </div>
                         <div class="prod-stock">
                             <label>Stock:</label>
                             <input type="text" id="Stock" name="Stock">
+                            <div class="color-alert" id="stockError"></div>
                         </div>
                     </div>
                     <div class="prod-cat">
@@ -78,17 +82,20 @@
 
                     <div class="prod-envio">
                         <label>Envio:</label>
-                        <input type="text" id="shiping" name="Envio" required>
+                        <input type="text" id="shiping" name="Envio" >
+                        <div class="color-alert" id="envioError"></div>
                     </div>
             
                     <div class="prod-desc">
                         <label>Descripcion:</label>
                         <textarea rows="5" id="Description" name="Descripcion"></textarea>
+                        <div class="color-alert" id="descripcionError"></div>
                     </div>
 
                     <div class="prod-photo">
                         <label>Foto:</label>
                         <input type="file" id="foto_perfil" name="imagenProducto" onchange="previewImage(event)" accept="image/*">
+                        <div class="color-alert" id="fotoError"></div>
                     </div>
                     <div class="preview-image">
                         <div class="image-container" onclick="document.getElementById('foto_perfil').click()">
@@ -104,6 +111,7 @@
         </main>
 
         <%- include('./partials/footer.ejs') %> <!-- include footer -->
+        <script src="/js/crearArticuloValidaciones.js"></script>
         <script src="/js/fotoPreviewProducto.js"></script>
     </body>
 </html>
