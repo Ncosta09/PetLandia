@@ -21,24 +21,30 @@ const productController = {
 
 	buscarProductos: async (req, res) => {
 		let terminoBusqueda = req.query.q;
-
-		if(terminoBusqueda){
-			await db.Producto.findAll({
-				where: {
-					Nombre: {
-						[Op.like]: `%${terminoBusqueda}%` // Búsqueda insensible a mayúsculas y minúsculas
-					}
-				}
-			})
-			.then(busqueda => {
-				res.render('buscar', {productos: busqueda, terminoBusqueda, usuario: req.session.usuarioLogeado});
-			})
+	  
+		if (terminoBusqueda) {
+		  let productos = await db.Producto.findAll({
+			where: {
+			  Nombre: {
+				[Op.like]: `%${terminoBusqueda}%`, // Búsqueda insensible a mayúsculas y minúsculas
+			  },
+			},
+		  });
+	  
+		  let categorias = await db.Categoria.findAll();
+		  let animales = await db.Animal.findAll();
+		  let marcas = await db.Marca.findAll();
+	  
+		  res.render('buscar', {productos, categorias, animales, marcas, terminoBusqueda, usuario: req.session.usuarioLogeado});
 
 		} else {
-			await db.Producto.findAll()
-			.then(busqueda => {
-				res.render('buscar', {productos: busqueda, terminoBusqueda, usuario: req.session.usuarioLogeado});
-			})
+
+		  let productos = await db.Producto.findAll();
+		  let categorias = await db.Categoria.findAll();
+		  let animales = await db.Animal.findAll();
+		  let marcas = await db.Marca.findAll();
+	  
+		  res.render('buscar', {productos, categorias, animales, marcas, terminoBusqueda, usuario: req.session.usuarioLogeado});
 		}
 	},
 

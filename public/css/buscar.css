@@ -3,5 +3,11 @@
 }
 
 .buscador{
-    margin-left: 30px;
+    width: 190px;
+    margin-left: 15px;
+}
+
+.buscador-p{
+    background-color: #d4c2ae;
+    padding-left: 10px;
 }
