@@ -81,16 +81,20 @@
             <li><a href="/servicios">Servicios </a></li>
             <li><a href="#">Marcas <i class="fa-solid fa-angle-down"></i></a>
                 <ul class="nav-submenu">
-                    <li><a href="#">Servicio #1</a></li>
-                    <li><a href="#">Servicio #2</a></li>
-                    <li><a href="#">Servicio #3</a></li>
+                    <ul>
+                        <% marcas.forEach(marca => { %>
+                            <li><a href="/productos/categoria/marcas/<%= marca.Nombre %>"> <%= marca.Nombre %> </a></li>
+                        <% }); %>
+                    </ul>
                 </ul>
             </li>
             <li><a href="#">Mascotas <i class="fa-solid fa-angle-down"></i></a>
                 <ul class="nav-submenu">
-                    <li><a href="#">Servicio #1</a></li>
-                    <li><a href="#">Servicio #2</a></li>
-                    <li><a href="#">Servicio #3</a></li>
+                    <li><a href="/productos/categoria/animales/Perro">Perro</a></li>
+                    <li><a href="/productos/categoria/animales/Gato">Gato</a></li>
+                    <li><a href="/productos/categoria/animales/Roedor">Roedores</a></li>
+                    <li><a href="/productos/categoria/animales/Ave">Aves</a></li>
+                    <li><a href="/productos/categoria/animales/Pez">Peces</a></li>
                 </ul>
             </li>
         </ul>

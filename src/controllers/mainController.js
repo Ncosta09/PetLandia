@@ -3,11 +3,12 @@ const path = require('path');
 let db = require('../database/models');
 
 const mainController = {
-    index: (req, res) => {
-        db.Producto.findAll()
-        .then((resultado)  => { 
-            res.render('index', {productos: resultado, usuario: req.session.usuarioLogeado});
-		});
+    index: async (req, res) => {
+		let animales = await db.Animal.findAll();
+		let marcas = await db.Marca.findAll();
+        let productos = await db.Producto.findAll();
+
+        res.render('index', {productos, marcas, animales, usuario: req.session.usuarioLogeado});
     },
 
     todosProductos: async (req, res) => {
