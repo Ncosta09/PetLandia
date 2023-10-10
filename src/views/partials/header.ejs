@@ -79,15 +79,6 @@
         <ul class="nav-menu">
             <li><a href="/productos">Productos </a></li>
             <li><a href="/servicios">Servicios </a></li>
-            <li><a href="#">Marcas <i class="fa-solid fa-angle-down"></i></a>
-                <ul class="nav-submenu">
-                    <ul>
-                        <% marcas.forEach(marca => { %>
-                            <li><a href="/productos/categoria/marcas/<%= marca.Nombre %>"> <%= marca.Nombre %> </a></li>
-                        <% }); %>
-                    </ul>
-                </ul>
-            </li>
             <li><a href="#">Mascotas <i class="fa-solid fa-angle-down"></i></a>
                 <ul class="nav-submenu">
                     <li><a href="/productos/categoria/animales/Perro">Perro</a></li>
@@ -97,6 +88,7 @@
                     <li><a href="/productos/categoria/animales/Pez">Peces</a></li>
                 </ul>
             </li>
+            <li><a href="#">Ayuda </a></li>
         </ul>
     </nav>
 </header>
