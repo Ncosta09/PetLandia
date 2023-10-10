@@ -66,17 +66,26 @@
             </div>
           </div>
 
-          <div class="product-buttons">
-            <button class="product-btn buynow">Comprar ahora</button>
-            <button class="product-btn buythen" id="btnAgregar">Agregar al carrito</button>
-          </div>
+          <% if(locals.logeado && locals.usuarioLogeado){ %>
+            <div class="product-buttons">
+              <button class="product-btn buynow">Comprar ahora</button>
+              <button class="product-btn buythen" id="btnAgregar">Agregar al carrito</button>
+            </div>
+          <% } else{ %>
+            <div class="product-buttons">
+              <button class="product-btn buynow transparent-btn">Comprar ahora</button>
+              <button class="product-btn buythen transparent-btn">Agregar al carrito</button>
+            </div>
+          <% } %>
 
-          <div class="edit-delete-buttons">
-            <a href="/producto/editar/<%=producto.ID%>" class="product-btn edit">Editar publicacion</a>
-            <form action="/producto/borrar/<%= producto.ID %>?_method=DELETE" method="post" class="product-form">
-              <button class="delete">Borrar publicacion</button>
-            </form>
-          </div>
+          <% if(locals.logeado && locals.usuarioLogeado.Rol_FK == 3 || locals.logeado && locals.usuarioLogeado.Rol_FK == 2){ %>
+            <div class="edit-delete-buttons">
+              <a href="/producto/editar/<%=producto.ID%>" class="product-btn edit">Editar publicacion</a>
+              <form action="/producto/borrar/<%= producto.ID %>?_method=DELETE" method="post" class="product-form">
+                <button class="delete">Borrar publicacion</button>
+              </form>
+            </div>
+          <% } %>
 
         </div>
 
