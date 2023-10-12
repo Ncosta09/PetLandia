@@ -143,12 +143,15 @@ const apiController = {
     filtros: async (req, res) => {
 
         let categorias = await db.Categoria.findAll();
-        let animals = await db.Animal.findAll();
+        let animales = await db.Animal.findAll();
         let marcas = await db.Marca.findAll();
 
         res.json({
+            totalCategoria: categorias.length,
             categoria: categorias,
-            animal: animals,
+            totalAnimal: animales.length,
+            animal: animales,
+            totalMarcas: marcas.length,
             marca: marcas,
         })
 
