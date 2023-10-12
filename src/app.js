@@ -2,6 +2,7 @@ const mainRoutes = require('./../src/routes/mainRoutes');
 const productRoutes = require('./../src/routes/productRoutes');
 const servicesRoutes = require('./../src/routes/servicesRoutes');
 const userRoutes = require('./../src/routes/userRoutes');
+const apiRoutes = require('./../src/routes/apiRoutes');
 
 const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
@@ -38,6 +39,7 @@ app.use('/', mainRoutes);
 app.use('/producto', productRoutes);
 app.use('/servicios', servicesRoutes);
 app.use('/usuario', userRoutes);
+app.use('/api', apiRoutes);
 
 app.set('view engine', 'ejs');
 
