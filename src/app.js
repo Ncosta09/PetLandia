@@ -13,6 +13,7 @@ const cookies = require('cookie-parser');
 
 const path = require('path');
 const app = express();
+const cors = require('cors');
 
 app.use(express.urlencoded({extended: false}));
 
@@ -29,7 +30,7 @@ app.use(session({
     saveUninitialized: false,
 }));
 
-
+app.use(cors());
 app.use(cookies());
 app.use(userLoggedMiddleware);
 
