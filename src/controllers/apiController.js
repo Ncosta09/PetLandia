@@ -19,10 +19,7 @@ const apiController = {
     },
 
     usuarioXId: (req, res) => {
-        db.Usuario.findOne({
-            where: {
-                ID: req.query.keyword
-            }, 
+        db.Usuario.findByPk(req.params.id,{ 
             attributes: { 
                 exclude: ['Password'] 
             }
@@ -110,10 +107,7 @@ const apiController = {
     },
 
     productoXId: (req, res) => {
-        db.Producto.findOne({
-            where: {
-                ID: req.query.keyword
-            }, 
+        db.Producto.findByPk(req.params.id,{
             include: [
                 {
                     model: db.Categoria,
