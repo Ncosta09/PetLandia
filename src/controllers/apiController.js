@@ -129,8 +129,8 @@ const apiController = {
                 exclude: ['Categoria_FK', 'Animal_FK', 'Marca_FK']
             }    
         })
-        .then(usuario => {
-            res.json({ usuario });
+        .then(producto => {
+            res.json({ producto });
         });
     },
 
