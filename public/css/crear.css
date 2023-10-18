@@ -44,7 +44,7 @@ main{
     margin-top: 30px;
 }
 
-.prod-name, .prod-price, .prod-disc, .prod-stock, .prod-cat, .prod-desc, .prod-photo, .prod-envio{
+.prod-name, .prod-price, .prod-disc, .prod-stock, .prod-cat, .prod-desc, .prod-photo, .prod-envio, .new-categoria, .new-marca{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -60,7 +60,7 @@ main{
     margin-right: 20px;
 }
 
-.prod-name input, .prod-price input, .prod-stock input, .prod-disc input, .prod-cat select, .prod-desc textarea, .prod-photo input, .prod-envio input{
+.prod-name input, .prod-price input, .prod-stock input, .prod-disc input, .prod-cat select, .prod-desc textarea, .prod-photo input, .prod-envio input, .new-categoria input, .new-marca input{
     width: 100%;
 }
 
@@ -100,6 +100,44 @@ main{
     max-height: 100%;
     margin: auto;
     padding: auto;
+}
+
+.desplegable{
+    width: 90%;
+    max-width: 800px;
+    border-radius: 8px;
+    background-color: rgba(212, 194, 174, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 20px auto;
+}
+
+.div-desplegable{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+.desplegable-title{
+    padding: 10px 0 10px 0;
+    font-weight: bold;
+}
+
+.desplegable-btn{
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.desplegable-btn button{
+    border: none;
+    background-color: #d4bca4;
+    border-radius: 8px;
+    width: 20%;
+    padding: 5px;
 }
 
 .color-alert{

@@ -135,7 +135,7 @@ const userController = {
         } else {
           res.json({ success: false, message: 'Usuario no encontrado' });
         }
-      },
+    },
 
     logout: (req,res)=>{
         res.clearCookie('emailUsuario');

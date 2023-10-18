@@ -107,6 +107,33 @@ const productController = {
 			streamifier.createReadStream(imageBuffer).pipe(stream);
 		}
 	},
+
+	agregarCatMar: (req, res) => {
+		const nuevaMarca = req.body.nuevaMarca;
+		const nuevaCategoria = req.body.nuevaCategoria;
+	  
+		// Comprobar si se proporciona una nueva marca
+		if (nuevaMarca) {
+		  db.Marca.create({
+			Nombre: nuevaMarca
+		  })
+		  .then(() => {
+			// Puedes redirigir o enviar una respuesta apropiada aquí
+			res.redirect('/');
+		  });
+		}
+	  
+		// Comprobar si se proporciona una nueva categoría
+		if (nuevaCategoria) {
+		  db.Categoria.create({
+			Nombre: nuevaCategoria
+		  })
+		  .then(() => {
+			// Puedes redirigir o enviar una respuesta apropiada aquí
+			res.redirect('/');
+		  });
+		}
+	},		 
 	
 	editarProducto: async (req, res) => {
 

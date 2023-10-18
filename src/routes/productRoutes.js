@@ -21,6 +21,7 @@ router.get('/carrito', carritoMiddleware, productController.carrito);
 //crear
 router.get('/crear', postMiddleware, productController.crearArticulo);
 router.post('/crear', uploadFile.single('imagenProducto'), productController.creador);
+router.post('/crearCatMar', productController.agregarCatMar);
 
 //editar
 router.get('/editar/:idProducto', productController.editarProducto);

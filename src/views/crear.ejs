@@ -108,6 +108,30 @@
                     </div>
                 </form>
             </div>
+
+            <div class="desplegable">
+                <div class="div-desplegable">
+                    <details class="form-details">
+                        <summary class="desplegable-title">Agregar categoria o marca</summary>
+                        <form action="/producto/crearCatMar" method="post" class="despleagble-form">
+                            <div class="new-categoria">
+                                <label>Categoria:</label>
+                                <input type="text" id="newCat" name="nuevaCategoria" >
+                                <!-- <div class="color-alert" id=""></div> -->
+                            </div>
+                            <div class="new-marca">
+                                <label>Marca:</label>
+                                <input type="text" id="newMar" name="nuevaMarca" >
+                                <!-- <div class="color-alert" id=""></div> -->
+                            </div>
+                            <div class="desplegable-btn">
+                                <button type="submit">Agregar</button>
+                            </div>
+                        </form>
+                    </details>
+                </div>
+            </div>
+
         </main>
 
         <%- include('./partials/footer.ejs') %> <!-- include footer -->
