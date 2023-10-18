@@ -119,29 +119,23 @@ const userController = {
     },
 
     perfilMod: async (req, res) => {
-
         let updateRol = {
-            Rol_FK: req.body.newRole
+          Rol_FK: req.body.newRole
         };
-
-        await db.Usuario.findOne({
-            where: {
-                Email: req.body.email
-            }
-        })
-        .then((usuarioFind) => {
-            if (usuarioFind) {
-            
-                usuarioFind.update(updateRol);
-                console.log('Rol cambiado exitosamente');
-            } else {
-                console.log('Usuario no encontrado');
-            }
-        })
-        .then(() => {
-            return res.redirect('/usuario/perfil');
-        })
-    },
+      
+        let usuarioFind = await db.Usuario.findOne({
+          where: {
+            Email: req.body.email
+          }
+        });
+    
+        if (usuarioFind) {
+          await usuarioFind.update(updateRol);
+          res.json({ success: true, message: 'Rol cambiado exitosamente' });
+        } else {
+          res.json({ success: false, message: 'Usuario no encontrado' });
+        }
+      },
 
     logout: (req,res)=>{
         res.clearCookie('emailUsuario');
