@@ -13,9 +13,17 @@ document.getElementById('adminRoleForm').addEventListener('submit', function (ev
       .then(response => response.json())
       .then(data => {
         if (data.success) {
-          alert(data.message);
+          Swal.fire({
+            icon: 'success',
+            title: 'Éxito',
+            text: data.message
+          });
         } else {
-          alert(data.message);
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: data.message
+          });
         }
     })
   });
