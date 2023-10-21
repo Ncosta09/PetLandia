@@ -17,6 +17,7 @@ router.get('/producto/:idProducto', productController.productoDetalle);
 
 //carrito
 router.get('/carrito', carritoMiddleware, productController.carrito);
+router.post('/finalizarVenta', carritoMiddleware, productController.finalizarVenta);
 
 //crear
 router.get('/crear', postMiddleware, productController.crearArticulo);

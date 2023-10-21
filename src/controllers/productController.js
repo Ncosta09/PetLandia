@@ -61,6 +61,47 @@ const productController = {
 		res.render('carrito');
 	},
 
+	finalizarVenta: async (req, res) => {
+		const fechaHoraActual = moment().format("YYYY-MM-DD HH:mm:ss");
+		const { carrito } = req.body;
+		const usuarioId = req.session.usuarioLogeado.ID;
+		
+		let precioTotal = 0;
+		let cantidadTotal = 0;
+		let costoEnvioTotal = 0;
+	  
+		for (const producto of carrito) {
+			const precioUnitario = producto.precio * producto.cantidad;
+			
+			precioTotal += precioUnitario;
+			cantidadTotal += producto.cantidad;
+			costoEnvioTotal += producto.envio;
+		}
+		
+		const nuevaVenta = await db.Venta.create({
+		  Precio_Total: precioTotal,
+		  Cantidad_Total: cantidadTotal,
+		  Direccion: null,
+		  Fecha: fechaHoraActual,
+		  Usuario_FK: usuarioId,
+		  Medio_Pago_FK: null,
+		  Costo_Envio: costoEnvioTotal,
+		});
+		
+		for (const producto of carrito) {
+		  await db.DetalleVenta.create({
+			Venta_FK: nuevaVenta.id,
+			Producto_FK: producto.id,
+			Precio_Unidad: producto.precio,
+			Cantidad: producto.cantidad,
+			Descuento: producto.descuento,
+			Envio: producto.envio,
+		  });
+		}
+		
+		res.json({ mensaje: 'Venta exitosa' });
+	},	  
+
 	crearArticulo: async (req, res) => {
 
 		let categorias = await db.Categoria.findAll();

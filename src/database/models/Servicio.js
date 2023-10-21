@@ -33,10 +33,6 @@ function Petlandia(sequelize, DataTypes){
     const Servicios = sequelize.define(alias, cols, config);
 
     Servicios.associate = function(modelos){
-        Servicios.hasMany(modelos.Venta, { 
-            foreignKey: 'Servicio_FK',
-            as: 'Ventas' 
-        });
         Servicios.belongsToMany(modelos.Local, {
             as: 'Locales',
             through: 'Local_servicio',

@@ -60,9 +60,9 @@ function Petlandia(sequelize, DataTypes){
     const Productos = sequelize.define(alias, cols, config);
 
     Productos.associate = function(modelos){
-        Productos.hasMany(modelos.Venta, { 
+        Productos.hasMany(modelos.DetalleVenta, { 
             foreignKey: 'Producto_FK',
-            as: 'Ventas' 
+            as: 'DetalleVentas' 
         });
         Productos.hasMany(modelos.Operacion, { 
             foreignKey: 'Producto_FK',

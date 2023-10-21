@@ -8,11 +8,14 @@ function Petlandia(sequelize, DataTypes){
             primarykey:true,
             autoincrement:true
         },
-        Precio_unidad: {
+        Precio_Total: {
             type: DataTypes.DECIMAL(10,2)
         },
-        Cantidad: {
+        Cantidad_Total: {
             type: DataTypes.INTEGER
+        },
+        Costo_Envio: {
+            type: DataTypes.DECIMAL(10,2)
         },
         Direccion:{
             type: DataTypes.STRING
@@ -23,12 +26,6 @@ function Petlandia(sequelize, DataTypes){
 
         //foreignKeys
         Usuario_FK: {
-            type: DataTypes.INTEGER
-        },
-        Servicio_FK: {
-            type: DataTypes.INTEGER
-        },
-        Producto_FK: {
             type: DataTypes.INTEGER
         },
         Medio_Pago_FK: {
@@ -50,19 +47,14 @@ function Petlandia(sequelize, DataTypes){
             as: 'Usuarios' 
         });
 
-        Ventas.belongsTo(modelos.Servicio, { 
-            foreignKey: 'Servicio_FK',
-            as: 'Servicios' 
-        });
-
-        Ventas.belongsTo(modelos.Producto, { 
-            foreignKey: 'Producto_FK',
-            as: 'Productos' 
-        });
-
         Ventas.belongsTo(modelos.Medio_Pago, { 
             foreignKey: 'Medio_Pago_FK',
             as: 'Medios_pagos' 
+        });
+
+        Ventas.hasMany(modelos.DetalleVenta, { 
+            foreignKey: 'Venta_FK',
+            as: 'DetalleVentas' 
         });
     }
 

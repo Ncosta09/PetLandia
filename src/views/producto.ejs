@@ -23,7 +23,7 @@
     <%- include('./partials/header.ejs') %> <!--include header-->
 
     <main>
-      <div id="id-item"> <% producto.ID %> </div>
+      <input type="hidden" name="id-item" id="id-item" value="<%= producto.ID %>">
       <div class="product-detail">
         <div class="product-top">
           <img class="product-img" id="id-imagen" src="<%=producto.Imagen%>" alt="">
