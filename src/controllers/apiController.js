@@ -149,7 +149,10 @@ const apiController = {
             ],
         });
 
-        res.json({ data: ventas });
+        res.json({ 
+            total: ventas.length,
+            data: ventas 
+        });
 
     },
 
