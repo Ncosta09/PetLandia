@@ -134,6 +134,53 @@ const apiController = {
         });
     },
 
+    ventas: async (req, res) => {
+
+        let ventas = await db.Venta.findAll({
+            include: [
+                {
+                    model: db.Usuario,
+                    as: 'Usuarios',
+                    attributes: [
+                        'Nombre', 
+                        'Apellido'
+                    ]
+                }
+            ],
+        });
+
+        res.json({ data: ventas });
+
+    },
+
+    ventaXId: async (req, res) => {
+
+        let ventaId = req.params.id;
+
+        let venta = await db.Venta.findByPk(ventaId, {
+            include: [
+                {
+                    model: db.Usuario,
+                    as: 'Usuarios',
+                    attributes: [
+                        'Nombre', 
+                        'Apellido'
+                    ]
+                },
+                {
+                    model: db.DetalleVenta, 
+                    as: 'DetalleVentas' 
+                }
+            ],
+            attributes: {
+                exclude: ['Usuario_FK', 'Medio_Pago_FK']
+            }  
+        });          
+
+        return res.json({ data: venta });
+
+    },
+
     filtros: async (req, res) => {
 
         let categorias = await db.Categoria.findAll();
