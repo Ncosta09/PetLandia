@@ -133,7 +133,33 @@
                 </div>
             </div>
 
-            <!--Seccion Alimento-->
+            <div class="main-publi">
+                <div class="publi-top">
+                    <div class="circulos">
+                        <i class="fa-regular fa-circle"></i>
+                        <i class="fa-regular fa-circle"></i>
+                    </div>
+                    <div class="cruz">
+                        <i class="fa-solid fa-x"></i>
+                    </div>
+                </div>
+                <div class="main-in">
+                    <div class="publi-text">
+                        <div class="publi-date">
+                            <p>23 al 27 de Octubre</p>
+                        </div>
+                        <div class="publi-title">
+                            <h2>SEMANA DE OFERTAS</h2>
+                        </div>
+                    </div>
+
+                    <div class="animals-img">
+                        <img src="https://i.postimg.cc/HW23PYB2/animales.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!--Seccion Alimento
             <div class="index-product-container">
                 <h2 class="titles">Alimento</h2>
                 <div class="all-products">
@@ -160,13 +186,14 @@
                     <% } %>
                 </div>
             </div>
+            -->
         
-            <!--Seccion Jugetes-->
+            <!--Seccion Ofertas-->
             <div class="index-product-container">
-                <h2 class="titles">Jugetes</h2>
+                <h2 class="titles">Ofertas de la semana</h2>
                 <div class="all-products">
                     <% for(let i=0;i<productos.length;i++){%>
-                        <% if(productos[i].Categoria_FK == '1'){%>
+                        <% if(productos[i].Descuento > 0){%>
                     <a href="/producto/producto/<%=productos[i].ID%>">
                         <article class="product">
                             <img src="<%=productos[i].Imagen%>" alt="">
