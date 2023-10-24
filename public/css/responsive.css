@@ -258,7 +258,7 @@
         width: 85%;
         max-width: 860px;
         margin: auto;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -329,7 +329,7 @@
         width: 85%;
         max-width: 1200px;
         margin: auto;
-        margin-bottom: 100px;
+        margin-bottom: 50px;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -337,6 +337,16 @@
         align-items: center;
         background-color: #ebebeb;
         border-radius: 10px;
+    }
+
+    .cartel-animales{
+        height: 400px;
+        width: 85%;
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
     }
     
     .all-products{
