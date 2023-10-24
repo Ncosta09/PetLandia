@@ -15,6 +15,12 @@ router.get('/productos', apiController.productos)
 //Ruta de Productos por ID
 router.get('/busquedaProducto/:id', apiController.productoXId)
 
+//Ruta de TODOS los Servicios
+router.get('/servicios', apiController.servicios)
+
+//Ruta de Productos por ID
+router.get('/busquedaServicio/:id', apiController.servicioXId)
+
 //Ruta de TODAS las Ventas
 router.get('/ventas', apiController.ventas)
 
