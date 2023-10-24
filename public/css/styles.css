@@ -408,6 +408,63 @@
     display: none;
 }
 
+.servicios-container{
+    width: 85%;
+    margin: auto;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ebebeb;
+    border-radius: 10px;
+}
+
+.containers{
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cont-img{
+    width: 100px;
+    height: 80px;
+}
+
+.cont-img img{
+    width: 100%;
+    height: 100%;
+}
+
+.cont-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-width: 240px;
+    max-width: 285px;
+}
+
+.cont-title{
+    height: 35px;
+    width: 100%;
+}
+
+.cont-title h2{
+    font-size: 25px;
+}
+
+.cont-info{
+    height: 130px;
+}
+
+.cont-info p{
+    font-size: 15px;
+}
+
 .all-footer{
     display: flex;
     flex-direction: row;
