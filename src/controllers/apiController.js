@@ -135,7 +135,18 @@ const apiController = {
     },
 
     servicios: (req, res) => {
-        db.Servicio.findAll({})
+        db.Servicio.findAll({
+            include: [
+                {
+                    model: db.Usuario,
+                    as: 'Usuarios',
+                    attributes: [
+                        'Nombre', 
+                        'Apellido'
+                    ]
+                }
+            ],
+        })
         .then(servicios => {
             res.json({
                 total: servicios.length,
@@ -143,22 +154,6 @@ const apiController = {
             });
         })
     },
-
-    servicioXId: (req, res) => {
-        db.Servicio.findByPk(req.params.id,{
-            include: [
-                {
-                    model: db.Usuario,
-                    as: 'Usuarios',
-                    attributes: ['Nombre', 'Apellido'],
-                }
-            ],
-        })
-        .then(servicio => {
-            res.json({ servicio });
-        });
-    },
-
 
     ventas: async (req, res) => {
 
