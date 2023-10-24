@@ -338,6 +338,11 @@
     margin: auto;
 }
 
+.all-products a{
+    text-decoration: none;
+    color: black;
+}
+
 .col-md-4 a{
     text-decoration: none;
     color: black;
