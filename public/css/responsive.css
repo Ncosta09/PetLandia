@@ -241,6 +241,14 @@
         padding: 40px;
     }
 
+    .menor{
+        display: none;
+    }
+
+    .mayor{
+        display: flex;
+    }
+
     .animal-circle img {
         width: 110px;
         height: 80px;

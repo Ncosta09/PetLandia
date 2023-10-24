@@ -158,62 +158,55 @@
                     </div>
                 </div>
             </div>
-
-            <!--Seccion Alimento
-            <div class="index-product-container">
-                <h2 class="titles">Alimento</h2>
-                <div class="all-products">
-                    <% for(let i=0;i<productos.length;i++){%>
-                        <% if(productos[i].Categoria_FK == '2'){%>
-                    <a href="/producto/producto/<%=productos[i].ID%>">
-                        <article class="product">
-                            <img src="<%=productos[i].Imagen%>" alt="">
-                            <% if(productos[i].Envio > 0){ %>
-                                <p class="truck-p" id="id-envio"><i class="fa-solid fa-truck truck"> $ <%= productos[i].Envio %></i></p>
-                              <% } else{ %>
-                                <i class="fa-solid fa-truck truck"> Gratis</i>
-                            <% } %>
-                            <div class="price-discount">
-                                <p class="product-price">$ <%=productos[i].Precio%></p>
-                                <% if(productos[i].Descuento > 0 && productos[i].Descuento <= 100 ){ %>
-                                <p class="product-discount"><%=productos[i].Descuento%>% OFF</p>
-                                <% } %>
-                            </div>
-                            <h2><%=productos[i].Nombre%></h2>
-                        </article>
-                    </a>
-                    <% } %>
-                    <% } %>
-                </div>
-            </div>
-            -->
         
-            <!--Seccion Ofertas-->
-            <div class="index-product-container">
-                <h2 class="titles">Ofertas de la semana</h2>
-                <div class="all-products">
-                    <% for(let i=0;i<productos.length;i++){%>
-                        <% if(productos[i].Descuento > 0){%>
-                    <a href="/producto/producto/<%=productos[i].ID%>">
-                        <article class="product">
-                            <img src="<%=productos[i].Imagen%>" alt="">
-                            <% if(productos[i].Envio > 0){ %>
-                                <p class="truck-p" id="id-envio"><i class="fa-solid fa-truck truck"> $ <%= productos[i].Envio %></i></p>
-                              <% } else{ %>
-                                <i class="fa-solid fa-truck truck"> Gratis</i>
-                            <% } %>
-                            <div class="price-discount">
-                                <p class="product-price">$ <%=productos[i].Precio%></p>
-                                <% if(productos[i].Descuento > 0 && productos[i].Descuento <= 100 ){ %>
-                                <p class="product-discount"><%=productos[i].Descuento%>% OFF</p>
-                                <% } %>
+            
+            <h2 class="titles">Ofertas de la semana</h2>
+            
+            <div class="menor">
+                <%- include('./partials/carousel.ejs') %>
+            </div>
+
+            <div id="carouselExample2" class="carousel slide carousel-tam mayor">
+                <div class="carousel-inner">
+                    <% for (let i = 0; i < productos.length; i += 3) { %>
+                        <div class="carousel-item<%= i === 0 ? ' active' : '' %>">
+                            <div class="carousel-center">
+                                <div class="row">
+                                    <% for (let j = i; j < i + 3 && j < productos.length; j++) { %>
+                                        <div class="col-md-4">
+                                            <a href="/producto/producto/<%= productos[j].ID %>">
+                                                <article class="product">
+                                                    <img src="<%= productos[j].Imagen %>" alt="<%= productos[j].Nombre %>">
+                                                    <% if (productos[j].Envio > 0) { %>
+                                                        <p class="truck-p" id="id-envio"><i class="fa-solid fa-truck truck"> $ <%= productos[j].Envio %></i></p>
+                                                    <% } else { %>
+                                                        <i class="fa-solid fa-truck truck"> Gratis</i>
+                                                    <% } %>
+                                                    <div class="price-discount">
+                                                        <p class="product-price">$ <%= productos[j].Precio %></p>
+                                                        <% if (productos[j].Descuento > 0 && productos[j].Descuento <= 100) { %>
+                                                            <p class="product-discount"><%= productos[j].Descuento %>% OFF</p>
+                                                        <% } %>
+                                                    </div>
+                                                    <h2><%= productos[j].Nombre %></h2>
+                                                </article>
+                                            </a>
+                                        </div>
+                                    <% } %>
+                                </div>
                             </div>
-                            <h2><%=productos[i].Nombre%></h2>
-                        </article>
-                    </a>
-                    <% } %>
+                        </div>
                     <% } %>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            
             </div>
         </main>
 

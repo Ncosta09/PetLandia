@@ -6,7 +6,14 @@ const mainController = {
     index: async (req, res) => {
 		let animales = await db.Animal.findAll();
 		let marcas = await db.Marca.findAll();
-        let productos = await db.Producto.findAll();
+        let productos = await db.Producto.findAll({
+            where: {
+              Descuento: {
+                [db.Sequelize.Op.gt]: 0 // Filtrar productos con Descuento mayor que 0
+              }
+            }
+        });
+          
 
         res.render('index', {productos, marcas, animales, usuario: req.session.usuarioLogeado});
     },

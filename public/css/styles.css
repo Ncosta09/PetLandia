@@ -304,6 +304,28 @@
     height: 100%;
 }
 
+.carousel-tam{
+    width: 85%;
+    margin: auto;
+    background-color: rgba(212, 194, 174, 0.5);
+    border-radius: 10px;
+}
+
+.carousel-center{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.menor{
+    display: flex;
+}
+
+.mayor{
+    display: none;
+}
+
 .index-product-container{
     width: 85%;
     margin: auto;
@@ -316,12 +338,13 @@
     margin: auto;
 }
 
-.all-products a{
+.col-md-4 a{
     text-decoration: none;
     color: black;
 }
 
 .product{
+    background-color: white;
     padding: 15px;
     border: solid 1px #ebebeb;
     border-radius: 8px;
