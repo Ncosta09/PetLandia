@@ -26,9 +26,9 @@ function Petlandia(sequelize, DataTypes){
         Descuento: {
             type: DataTypes.INTEGER
         },
-        Envio: {
-            type: DataTypes.DECIMAL(10,2)
-        },
+        // Envio: {
+        //     type: DataTypes.DECIMAL(10,2)
+        // },
         Fecha_Creacion: {
             type: DataTypes.DATE
         },
